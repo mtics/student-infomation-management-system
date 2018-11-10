@@ -1,0 +1,1209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="SIMS:war exploded" />
+    </artifacts-to-build>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="540eefd4-3604-48bd-a28e-8fbd4587a81a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tech/aspi/sims/Application.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tech/aspi/sims/SimsServletInitializer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tech/aspi/sims/bulletin/controller/BulletinController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tech/aspi/sims/bulletin/dao/BulletinRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tech/aspi/sims/bulletin/model/Bulletin.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tech/aspi/sims/bulletin/service/BulletinService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tech/aspi/sims/college/controller/CollegeController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tech/aspi/sims/college/dao/CollegeRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tech/aspi/sims/college/model/College.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tech/aspi/sims/college/service/CollegeService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tech/aspi/sims/major/controller/MajorController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tech/aspi/sims/major/dao/MajorRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tech/aspi/sims/major/model/Major.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tech/aspi/sims/major/service/MajorService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tech/aspi/sims/score/controller/ScoreController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tech/aspi/sims/score/dao/ScoreRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tech/aspi/sims/score/model/Score.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tech/aspi/sims/score/service/ScoreService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tech/aspi/sims/student/controller/StudentController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tech/aspi/sims/student/dao/StudentRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tech/aspi/sims/student/model/Student.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tech/aspi/sims/student/service/StudentService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tech/aspi/sims/subject/controller/SubjectController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tech/aspi/sims/subject/dao/SubjectRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tech/aspi/sims/subject/model/Subject.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tech/aspi/sims/subject/service/SubjectService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tech/aspi/sims/teacher/controller/TeacherController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tech/aspi/sims/teacher/dao/TeacherRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tech/aspi/sims/teacher/model/Teacher.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tech/aspi/sims/teacher/service/TeacherService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tech/aspi/sims/user/controller/UserController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tech/aspi/sims/user/dao/UserRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tech/aspi/sims/user/model/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tech/aspi/sims/user/service/UserService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tech/aspi/sims/user/servlet/LoginServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tech/aspi/sims/util/filter/LoginFilter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/SIMS/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/target/SIMS/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/SIMS/WEB-INF/classes/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/SIMS/WEB-INF/classes/tech/aspi/sims/Application.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/SIMS/WEB-INF/classes/tech/aspi/sims/SimsServletInitializer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/SIMS/WEB-INF/classes/tech/aspi/sims/bulletin/controller/BulletinController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/SIMS/WEB-INF/classes/tech/aspi/sims/bulletin/dao/BulletinRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/SIMS/WEB-INF/classes/tech/aspi/sims/bulletin/model/Bulletin.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/SIMS/WEB-INF/classes/tech/aspi/sims/bulletin/service/BulletinService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/SIMS/WEB-INF/classes/tech/aspi/sims/college/controller/CollegeController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/SIMS/WEB-INF/classes/tech/aspi/sims/college/dao/CollegeRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/SIMS/WEB-INF/classes/tech/aspi/sims/college/model/College.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/SIMS/WEB-INF/classes/tech/aspi/sims/college/service/CollegeService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/SIMS/WEB-INF/classes/tech/aspi/sims/major/controller/MajorController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/SIMS/WEB-INF/classes/tech/aspi/sims/major/dao/MajorRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/SIMS/WEB-INF/classes/tech/aspi/sims/major/model/Major.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/SIMS/WEB-INF/classes/tech/aspi/sims/major/service/MajorService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/SIMS/WEB-INF/classes/tech/aspi/sims/score/controller/ScoreController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/SIMS/WEB-INF/classes/tech/aspi/sims/score/dao/ScoreRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/SIMS/WEB-INF/classes/tech/aspi/sims/score/model/Score.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/SIMS/WEB-INF/classes/tech/aspi/sims/score/service/ScoreService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/SIMS/WEB-INF/classes/tech/aspi/sims/student/controller/StudentController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/SIMS/WEB-INF/classes/tech/aspi/sims/student/dao/StudentRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/SIMS/WEB-INF/classes/tech/aspi/sims/student/model/Student.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/SIMS/WEB-INF/classes/tech/aspi/sims/student/service/StudentService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/SIMS/WEB-INF/classes/tech/aspi/sims/subject/controller/SubjectController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/SIMS/WEB-INF/classes/tech/aspi/sims/subject/dao/SubjectRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/SIMS/WEB-INF/classes/tech/aspi/sims/subject/model/Subject.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/SIMS/WEB-INF/classes/tech/aspi/sims/subject/service/SubjectService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/SIMS/WEB-INF/classes/tech/aspi/sims/teacher/controller/TeacherController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/SIMS/WEB-INF/classes/tech/aspi/sims/teacher/dao/TeacherRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/SIMS/WEB-INF/classes/tech/aspi/sims/teacher/model/Teacher.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/SIMS/WEB-INF/classes/tech/aspi/sims/teacher/service/TeacherService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/SIMS/WEB-INF/classes/tech/aspi/sims/user/controller/UserController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/SIMS/WEB-INF/classes/tech/aspi/sims/user/dao/UserRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/SIMS/WEB-INF/classes/tech/aspi/sims/user/model/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/SIMS/WEB-INF/classes/tech/aspi/sims/user/service/UserService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/SIMS/WEB-INF/classes/tech/aspi/sims/user/servlet/LoginServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/SIMS/WEB-INF/classes/tech/aspi/sims/util/filter/LoginFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/SIMS/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/SIMS/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/aspi/sims/Application.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/aspi/sims/SimsServletInitializer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/aspi/sims/bulletin/controller/BulletinController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/aspi/sims/bulletin/dao/BulletinRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/aspi/sims/bulletin/model/Bulletin.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/aspi/sims/bulletin/service/BulletinService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/aspi/sims/college/controller/CollegeController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/aspi/sims/college/dao/CollegeRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/aspi/sims/college/model/College.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/aspi/sims/college/service/CollegeService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/aspi/sims/major/controller/MajorController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/aspi/sims/major/dao/MajorRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/aspi/sims/major/model/Major.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/aspi/sims/major/service/MajorService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/aspi/sims/score/controller/ScoreController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/aspi/sims/score/dao/ScoreRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/aspi/sims/score/model/Score.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/aspi/sims/score/service/ScoreService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/aspi/sims/student/controller/StudentController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/aspi/sims/student/dao/StudentRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/aspi/sims/student/model/Student.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/aspi/sims/student/service/StudentService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/aspi/sims/subject/controller/SubjectController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/aspi/sims/subject/dao/SubjectRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/aspi/sims/subject/model/Subject.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/aspi/sims/subject/service/SubjectService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/aspi/sims/teacher/controller/TeacherController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/aspi/sims/teacher/dao/TeacherRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/aspi/sims/teacher/model/Teacher.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/aspi/sims/teacher/service/TeacherService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/aspi/sims/user/controller/UserController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/aspi/sims/user/dao/UserRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/aspi/sims/user/model/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/aspi/sims/user/service/UserService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/aspi/sims/user/servlet/LoginServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/aspi/sims/util/filter/LoginFilter.class" beforeDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/target/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="1228702677">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.44" value="1" />
+          <entry key="project.open.time.6" value="1" />
+          <entry key="project.opened" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="css" value="2" />
+          <entry key="html" value="5" />
+          <entry key="java" value="59" />
+          <entry key="jsp" value="4" />
+          <entry key="properties" value="2" />
+          <entry key="xml" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="CSS" value="2" />
+          <entry key="HTML" value="5" />
+          <entry key="JAVA" value="59" />
+          <entry key="JSP" value="4" />
+          <entry key="Properties" value="2" />
+          <entry key="XML" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="css" value="6" />
+          <entry key="dummy" value="110" />
+          <entry key="html" value="79" />
+          <entry key="java" value="1658" />
+          <entry key="jsp" value="580" />
+          <entry key="properties" value="9" />
+          <entry key="xml" value="20" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="CSS" value="6" />
+          <entry key="HTML" value="79" />
+          <entry key="JAVA" value="1658" />
+          <entry key="JSP" value="580" />
+          <entry key="PLAIN_TEXT" value="110" />
+          <entry key="Properties" value="9" />
+          <entry key="XML" value="20" />
+        </counts>
+      </usages-collector>
+    </session>
+    <session id="303244117">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.30" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="java" value="76" />
+          <entry key="jsp" value="5" />
+          <entry key="properties" value="43" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JAVA" value="76" />
+          <entry key="JSP" value="5" />
+          <entry key="Properties" value="43" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="java" value="1" />
+          <entry key="xml" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="JAVA" value="1" />
+          <entry key="XML" value="1" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../The-practical-of-compiler-princples/back-end/src/main/java/tech/aspi/backend/major/controller/MajorController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-88">
+              <caret line="18" selection-start-line="18" selection-end-line="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/login.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="230">
+              <caret line="21" column="53" selection-start-line="21" selection-start-column="53" selection-end-line="21" selection-end-column="53" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../The-practical-of-compiler-princples/back-end/src/main/java/tech/aspi/backend/user/servlet/LoginServlet.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="139">
+              <caret line="51" column="67" lean-forward="true" selection-start-line="51" selection-end-line="52" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="198">
+              <caret line="84" column="17" lean-forward="true" selection-start-line="84" selection-start-column="17" selection-end-line="84" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../The-practical-of-compiler-princples/back-end/src/main/java/tech/aspi/backend/user/controller/UserController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-264">
+              <caret line="14" column="24" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../The-practical-of-compiler-princples/back-end/src/main/java/tech/aspi/backend/SimsServletInitializer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="242">
+              <caret line="12" selection-start-line="12" selection-end-line="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../The-practical-of-compiler-princples/back-end/src/main/java/tech/aspi/backend/filter/LoginFilter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="286">
+              <caret line="13" column="43" selection-start-line="13" selection-start-column="43" selection-end-line="13" selection-end-column="43" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../The-practical-of-compiler-princples/back-end/src/main/java/tech/aspi/backend/major/service/MajorService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="616">
+              <caret line="40" column="47" selection-start-line="40" selection-start-column="47" selection-end-line="40" selection-end-column="47" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../The-practical-of-compiler-princples/back-end/src/main/java/tech/aspi/backend/major/dao/MajorRepository.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="154">
+              <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Jsp File" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>login</find>
+      <find>input usernaem</find>
+      <find>login.</find>
+      <find>check</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/main/java/test/Test.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/check.jsp" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/tech/aspi/sims/user/service/UserService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/tech/aspi/sims/user/dao/UserRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/tech/aspi/sims/subject/dao/SubjectRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/tech/aspi/sims/subject/service/SubjectService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/tech/aspi/sims/student/dao/StudentRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/tech/aspi/sims/student/service/StudentService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/tech/aspi/sims/score/dao/ScoreRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/tech/aspi/sims/score/service/ScoreService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/tech/aspi/sims/bulletin/dao/BulletinRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/tech/aspi/sims/bulletin/service/BulletinService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/tech/aspi/sims/bulletin/controller/BulletinController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/tech/aspi/sims/score/controller/ScoreController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/tech/aspi/sims/student/controller/StudentController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/tech/aspi/sims/subject/controller/SubjectController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/tech/aspi/sims/user/controller/UserController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/tech/aspi/sims/user/model/User.java" />
+        <option value="$PROJECT_DIR$/src/main/java/tech/aspi/sims/student/model/Student.java" />
+        <option value="$PROJECT_DIR$/src/main/java/tech/aspi/sims/bulletin/model/Bulletin.java" />
+        <option value="$PROJECT_DIR$/src/main/java/tech/aspi/sims/score/model/Score.java" />
+        <option value="$PROJECT_DIR$/src/main/java/tech/aspi/sims/subject/model/Subject.java" />
+        <option value="$PROJECT_DIR$/src/main/java/tech/aspi/sims/teacher/model/Teacher.java" />
+        <option value="$PROJECT_DIR$/src/main/java/tech/aspi/sims/teacher/dao/TeacherRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/tech/aspi/sims/teacher/service/UserService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/tech/aspi/sims/teacher/controller/UserController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/tech/aspi/sims/teach/service/UserService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/tech/aspi/sims/teacher/controller/TeacherController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/tech/aspi/sims/college/service/UserService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/tech/aspi/sims/teach/model/Teach.java" />
+        <option value="$PROJECT_DIR$/src/main/java/tech/aspi/sims/teach/dao/TeachRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/tech/aspi/sims/teach/service/TeachService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/tech/aspi/sims/teach/controller/TeachController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/tech/aspi/sims/college/model/College.java" />
+        <option value="$PROJECT_DIR$/src/main/java/tech/aspi/sims/college/dao/CollegeRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/tech/aspi/sims/college/service/CollegeService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/tech/aspi/sims/college/controller/UserController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/tech/aspi/sims/major/dao/CollegeRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/tech/aspi/sims/major/service/MajorService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/tech/aspi/sims/major/controller/UserController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/tech/aspi/sims/filter/LoginFilter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/tech/aspi/sims/util/filter/LoginFilter.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/tech/aspi/sims/ZrlaServletInitializer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/tech/aspi/sims/SimsServletInitializer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/tech/aspi/sims/Application.java" />
+        <option value="$PROJECT_DIR$/src/main/java/tech/aspi/sims/user/servlet/LoginServlet.java" />
+        <option value="$PROJECT_DIR$/src/main/java/tech/aspi/sims/major/controller/MajorController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/src/main/webapp/login.jsp" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="SIMS Maven Webapp" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+      </expand>
+      <select />
+    </treeState>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="612" />
+    <option name="y" value="151" />
+    <option name="width" value="1855" />
+    <option name="height" value="1056" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State />
+          <State>
+            <id>Abstraction issuesJava</id>
+          </State>
+          <State>
+            <id>Google Web Toolkit</id>
+          </State>
+          <State>
+            <id>Java</id>
+          </State>
+          <State>
+            <id>SecurityJava</id>
+          </State>
+          <State>
+            <id>Serialization issuesJava</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>SerializableHasSerialVersionUIDField</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="student-infomation-management-system" type="b2602c69:ProjectViewProjectNode" />
+              <item name="student-infomation-management-system" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="student-infomation-management-system" type="b2602c69:ProjectViewProjectNode" />
+              <item name="student-infomation-management-system" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="student-infomation-management-system" type="b2602c69:ProjectViewProjectNode" />
+              <item name="student-infomation-management-system" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="student-infomation-management-system" type="b2602c69:ProjectViewProjectNode" />
+              <item name="student-infomation-management-system" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541763387447" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="Errors" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="tech.aspi.sims" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/tech/aspi/sims/major" />
+      <recent name="$PROJECT_DIR$/src/main/java/tech/aspi/sims/college" />
+      <recent name="$PROJECT_DIR$/src/main/java/tech/aspi/sims/teach" />
+      <recent name="$PROJECT_DIR$/src/main/java/tech/aspi/sims/teacher" />
+      <recent name="$PROJECT_DIR$/src/main/java/tech/aspi/sims" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="SIMS" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="tech.aspi.sims.Application" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="tomcat" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.0.53" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/sims/index.jsp" />
+      <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
+      <option name="UPDATE_CLASSES_ON_FRAME_DEACTIVATION" value="true" />
+      <deployment>
+        <artifact name="SIMS:war exploded">
+          <settings>
+            <option name="CONTEXT_PATH" value="/sims" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="Unnamed_SIMS" />
+      </server-settings>
+      <predefined_log_file id="Tomcat" enabled="true" />
+      <predefined_log_file id="Tomcat Catalina" enabled="true" />
+      <predefined_log_file id="Tomcat Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Host Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Localhost Access" enabled="false" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="36223" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="SIMS:war exploded" />
+        </option>
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="540eefd4-3604-48bd-a28e-8fbd4587a81a" name="Default Changelist" comment="" />
+      <created>1541602518006</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1541602518006</updated>
+      <workItem from="1541602522119" duration="3511000" />
+      <workItem from="1541718536011" duration="8906000" />
+      <workItem from="1541757938276" duration="3575000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="15992000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="65" y="-6" width="1855" height="1086" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16768461" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Designer" order="2" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Favorites" order="5" side_tool="true" />
+      <window_info id="Capture Tool" order="6" />
+      <window_info id="Web" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32914045" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.41914892" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Application Servers" order="7" weight="0.32914045" />
+      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.32914045" />
+      <window_info anchor="bottom" id="Java Enterprise" order="11" />
+      <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="13" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Spring" order="14" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Maven Projects" order="5" weight="0.32963988" />
+      <window_info anchor="right" id="Database" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Theme Preview" order="8" />
+      <window_info anchor="right" id="Bean Validation" order="9" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/nav.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-978">
+          <caret line="76" column="13" lean-forward="true" selection-start-line="76" selection-start-column="13" selection-end-line="76" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/login.html" />
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/css/skin_/nav.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4356">
+          <caret line="198" selection-start-line="198" selection-end-line="198" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/index.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/test/Test.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/check.jsp" />
+    <entry file="file://$PROJECT_DIR$/../The-practical-of-compiler-princples/back-end/src/main/java/tech/aspi/backend/user/service/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../The-practical-of-compiler-princples/back-end/src/main/java/tech/aspi/backend/user/dao/UserRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="5" column="21" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../The-practical-of-compiler-princples/back-end/src/main/java/tech/aspi/backend/subject/service/SubjectService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="5" column="21" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../The-practical-of-compiler-princples/back-end/src/main/java/tech/aspi/backend/student/dao/StudentRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="3" column="21" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../The-practical-of-compiler-princples/back-end/src/main/java/tech/aspi/backend/student/service/StudentService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="5" column="21" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../The-practical-of-compiler-princples/back-end/src/main/java/tech/aspi/backend/score/dao/ScoreRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="3" column="21" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../The-practical-of-compiler-princples/back-end/src/main/java/tech/aspi/backend/score/service/ScoreService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="5" column="21" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../The-practical-of-compiler-princples/back-end/src/main/java/tech/aspi/backend/bulletin/dao/BulletinRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="3" column="21" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../The-practical-of-compiler-princples/back-end/src/main/java/tech/aspi/backend/bulletin/service/BulletinService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="109">
+          <caret line="5" column="21" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../The-practical-of-compiler-princples/back-end/src/main/java/tech/aspi/backend/bulletin/controller/BulletinController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="7" column="21" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../The-practical-of-compiler-princples/back-end/src/main/java/tech/aspi/backend/score/controller/ScoreController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="7" column="21" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../The-practical-of-compiler-princples/back-end/src/main/java/tech/aspi/backend/student/controller/StudentController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="7" column="21" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../The-practical-of-compiler-princples/back-end/src/main/java/tech/aspi/backend/subject/controller/SubjectController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="7" column="21" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../The-practical-of-compiler-princples/back-end/src/main/java/tech/aspi/backend/user/model/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="19" column="31" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
+          <folding>
+            <element signature="e#418#419#0" expanded="true" />
+            <element signature="e#462#463#0" expanded="true" />
+            <element signature="e#498#499#0" expanded="true" />
+            <element signature="e#531#532#0" expanded="true" />
+            <element signature="e#560#561#0" expanded="true" />
+            <element signature="e#604#605#0" expanded="true" />
+            <element signature="e#640#641#0" expanded="true" />
+            <element signature="e#673#674#0" expanded="true" />
+            <element signature="e#705#706#0" expanded="true" />
+            <element signature="e#752#753#0" expanded="true" />
+            <element signature="e#794#795#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../The-practical-of-compiler-princples/back-end/src/main/java/tech/aspi/backend/student/model/Student.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="638">
+          <caret line="32" column="34" selection-start-line="32" selection-start-column="34" selection-end-line="32" selection-end-column="34" />
+          <folding>
+            <element signature="e#716#717#0" expanded="true" />
+            <element signature="e#766#767#0" expanded="true" />
+            <element signature="e#808#809#0" expanded="true" />
+            <element signature="e#846#847#0" expanded="true" />
+            <element signature="e#880#881#0" expanded="true" />
+            <element signature="e#934#935#0" expanded="true" />
+            <element signature="e#980#981#0" expanded="true" />
+            <element signature="e#1013#1014#0" expanded="true" />
+            <element signature="e#1042#1043#0" expanded="true" />
+            <element signature="e#1086#1087#0" expanded="true" />
+            <element signature="e#1122#1123#0" expanded="true" />
+            <element signature="e#1155#1156#0" expanded="true" />
+            <element signature="e#1186#1187#0" expanded="true" />
+            <element signature="e#1232#1233#0" expanded="true" />
+            <element signature="e#1272#1273#0" expanded="true" />
+            <element signature="e#1304#1305#0" expanded="true" />
+            <element signature="e#1332#1333#0" expanded="true" />
+            <element signature="e#1374#1375#0" expanded="true" />
+            <element signature="e#1408#1409#0" expanded="true" />
+            <element signature="e#1443#1444#0" expanded="true" />
+            <element signature="e#1474#1475#0" expanded="true" />
+            <element signature="e#1522#1523#0" expanded="true" />
+            <element signature="e#1562#1563#0" expanded="true" />
+            <element signature="e#1593#1594#0" expanded="true" />
+            <element signature="e#1623#1624#0" expanded="true" />
+            <element signature="e#1666#1667#0" expanded="true" />
+            <element signature="e#1704#1705#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../The-practical-of-compiler-princples/back-end/src/main/java/tech/aspi/backend/subject/dao/SubjectRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../The-practical-of-compiler-princples/back-end/src/main/java/tech/aspi/backend/bulletin/model/Bulletin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="28" column="32" selection-start-line="28" selection-start-column="32" selection-end-line="28" selection-end-column="32" />
+          <folding>
+            <element signature="e#657#658#0" expanded="true" />
+            <element signature="e#706#707#0" expanded="true" />
+            <element signature="e#750#751#0" expanded="true" />
+            <element signature="e#783#784#0" expanded="true" />
+            <element signature="e#812#813#0" expanded="true" />
+            <element signature="e#856#857#0" expanded="true" />
+            <element signature="e#892#893#0" expanded="true" />
+            <element signature="e#932#933#0" expanded="true" />
+            <element signature="e#968#969#0" expanded="true" />
+            <element signature="e#1026#1027#0" expanded="true" />
+            <element signature="e#1076#1077#0" expanded="true" />
+            <element signature="e#1114#1115#0" expanded="true" />
+            <element signature="e#1150#1151#0" expanded="true" />
+            <element signature="e#1206#1207#0" expanded="true" />
+            <element signature="e#1256#1257#0" expanded="true" />
+            <element signature="e#1298#1299#0" expanded="true" />
+            <element signature="e#1336#1337#0" expanded="true" />
+            <element signature="e#1398#1399#0" expanded="true" />
+            <element signature="e#1452#1453#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../The-practical-of-compiler-princples/back-end/src/main/java/tech/aspi/backend/subject/model/Subject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="11" column="7" lean-forward="true" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
+          <folding>
+            <element signature="e#406#407#0" expanded="true" />
+            <element signature="e#438#439#0" expanded="true" />
+            <element signature="e#485#486#0" expanded="true" />
+            <element signature="e#527#528#0" expanded="true" />
+            <element signature="e#558#559#0" expanded="true" />
+            <element signature="e#588#589#0" expanded="true" />
+            <element signature="e#631#632#0" expanded="true" />
+            <element signature="e#669#670#0" expanded="true" />
+            <element signature="e#707#708#0" expanded="true" />
+            <element signature="e#741#742#0" expanded="true" />
+            <element signature="e#795#796#0" expanded="true" />
+            <element signature="e#841#842#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../The-practical-of-compiler-princples/back-end/src/main/java/tech/aspi/backend/score/model/Score.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="11" column="19" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="19" />
+          <folding>
+            <element signature="e#500#501#0" expanded="true" />
+            <element signature="e#530#531#0" expanded="true" />
+            <element signature="e#573#574#0" expanded="true" />
+            <element signature="e#611#612#0" expanded="true" />
+            <element signature="e#583#584#0" expanded="true" />
+            <element signature="e#615#616#0" expanded="true" />
+            <element signature="e#662#663#0" expanded="true" />
+            <element signature="e#704#705#0" expanded="true" />
+            <element signature="e#740#741#0" expanded="true" />
+            <element signature="e#772#773#0" expanded="true" />
+            <element signature="e#822#823#0" expanded="true" />
+            <element signature="e#864#865#0" expanded="true" />
+            <element signature="e#901#902#0" expanded="true" />
+            <element signature="e#934#935#0" expanded="true" />
+            <element signature="e#986#987#0" expanded="true" />
+            <element signature="e#1030#1031#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../The-practical-of-compiler-princples/back-end/src/main/java/tech/aspi/backend/teacher/controller/TeacherController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="29" column="36" selection-start-line="29" selection-start-column="36" selection-end-line="29" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../The-practical-of-compiler-princples/back-end/src/main/java/tech/aspi/backend/teacher/service/TeacherService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="616">
+          <caret line="42" column="5" selection-start-line="42" selection-start-column="5" selection-end-line="42" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../The-practical-of-compiler-princples/back-end/src/main/java/tech/aspi/backend/teacher/model/Teacher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="638">
+          <caret line="32" column="34" selection-start-line="32" selection-start-column="34" selection-end-line="32" selection-end-column="34" />
+          <folding>
+            <element signature="e#702#703#0" expanded="true" />
+            <element signature="e#752#753#0" expanded="true" />
+            <element signature="e#794#795#0" expanded="true" />
+            <element signature="e#832#833#0" expanded="true" />
+            <element signature="e#866#867#0" expanded="true" />
+            <element signature="e#920#921#0" expanded="true" />
+            <element signature="e#966#967#0" expanded="true" />
+            <element signature="e#999#1000#0" expanded="true" />
+            <element signature="e#1031#1032#0" expanded="true" />
+            <element signature="e#1078#1079#0" expanded="true" />
+            <element signature="e#1120#1121#0" expanded="true" />
+            <element signature="e#1153#1154#0" expanded="true" />
+            <element signature="e#1182#1183#0" expanded="true" />
+            <element signature="e#1226#1227#0" expanded="true" />
+            <element signature="e#1262#1263#0" expanded="true" />
+            <element signature="e#1295#1296#0" expanded="true" />
+            <element signature="e#1326#1327#0" expanded="true" />
+            <element signature="e#1372#1373#0" expanded="true" />
+            <element signature="e#1412#1413#0" expanded="true" />
+            <element signature="e#1444#1445#0" expanded="true" />
+            <element signature="e#1472#1473#0" expanded="true" />
+            <element signature="e#1514#1515#0" expanded="true" />
+            <element signature="e#1548#1549#0" expanded="true" />
+            <element signature="e#1583#1584#0" expanded="true" />
+            <element signature="e#1614#1615#0" expanded="true" />
+            <element signature="e#1662#1663#0" expanded="true" />
+            <element signature="e#1702#1703#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../The-practical-of-compiler-princples/back-end/src/main/java/tech/aspi/backend/teacher/dao/TeacherRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/tech/aspi/sims/teach/model/Teach.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/tech/aspi/sims/teach/service/TeachService.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/tech/aspi/sims/teach/dao/TeachRepository.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/tech/aspi/sims/teach/controller/TeachController.java" />
+    <entry file="file://$PROJECT_DIR$/../The-practical-of-compiler-princples/back-end/src/main/java/tech/aspi/backend/college/model/College.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="18" column="34" selection-start-line="18" selection-start-column="34" selection-end-line="18" selection-end-column="34" />
+          <folding>
+            <element signature="e#433#434#0" expanded="true" />
+            <element signature="e#483#484#0" expanded="true" />
+            <element signature="e#525#526#0" expanded="true" />
+            <element signature="e#563#564#0" expanded="true" />
+            <element signature="e#597#598#0" expanded="true" />
+            <element signature="e#651#652#0" expanded="true" />
+            <element signature="e#697#698#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../The-practical-of-compiler-princples/back-end/src/main/java/tech/aspi/backend/college/dao/CollegeRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="6" column="22" lean-forward="true" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../The-practical-of-compiler-princples/back-end/src/main/java/tech/aspi/backend/college/service/CollegeService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="616">
+          <caret line="40" column="30" selection-start-line="40" selection-start-column="30" selection-end-line="40" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../The-practical-of-compiler-princples/back-end/src/main/java/tech/aspi/backend/college/controller/CollegeController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="638">
+          <caret line="40" column="47" selection-start-line="40" selection-start-column="47" selection-end-line="40" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../The-practical-of-compiler-princples/back-end/src/main/java/tech/aspi/backend/major/model/Major.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../The-practical-of-compiler-princples/back-end/src/main/java/tech/aspi/backend/SimsServletInitializer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="19" column="11" selection-start-line="19" selection-start-column="11" selection-end-line="19" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../The-practical-of-compiler-princples/back-end/src/main/java/tech/aspi/backend/major/service/MajorService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="616">
+          <caret line="40" column="47" selection-start-line="40" selection-start-column="47" selection-end-line="40" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../The-practical-of-compiler-princples/back-end/src/main/java/tech/aspi/backend/major/dao/MajorRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../The-practical-of-compiler-princples/back-end/src/main/java/tech/aspi/backend/filter/LoginFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="13" column="43" selection-start-line="13" selection-start-column="43" selection-end-line="13" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../The-practical-of-compiler-princples/back-end/src/main/java/tech/aspi/backend/major/controller/MajorController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-88">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../The-practical-of-compiler-princples/back-end/src/main/java/tech/aspi/backend/user/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-264">
+          <caret line="14" column="24" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/login.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="21" column="53" selection-start-line="21" selection-start-column="53" selection-end-line="21" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/tech/aspi/sims/Application.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="10" column="4" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../The-practical-of-compiler-princples/back-end/src/main/java/tech/aspi/backend/user/servlet/LoginServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="139">
+          <caret line="51" column="67" lean-forward="true" selection-start-line="51" selection-end-line="52" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="84" column="17" lean-forward="true" selection-start-line="84" selection-start-column="17" selection-end-line="84" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <last-edited>SIMS:war</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.5" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>Web</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>SIMS</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Maven: junit:junit:4.11</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
