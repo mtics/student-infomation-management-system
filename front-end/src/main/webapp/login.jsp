@@ -19,16 +19,16 @@
             <div class="login-box">
                 <div id="logo"></div>
                 <h1></h1>
-                <form name="form_login" action="/sims/servlet/loginServlet" method="post">
+                <form id="form_login" action="/servlet/loginServlet" method="post">
                     <div class="input username" id="username">
-                        <label for="text_username">用户名</label>
+                        <label>用户名</label>
                         <span></span>
-                        <input type="text" id="text_username" />
+                        <input type="text" name="text_username" />
                     </div>
                     <div class="input psw" id="psw">
-                        <label for="text_password">密&nbsp;&nbsp;&nbsp;&nbsp;码</label>
+                        <label>密&nbsp;&nbsp;&nbsp;&nbsp;码</label>
                         <span></span>
-                        <input type="password" id="text_password" />
+                        <input type="password" name="text_password" />
                     </div>
                     <!--
                     <div class="input validate" id="captcha">
@@ -38,7 +38,8 @@
                     </div>
                     -->
                     <div id="btn" class="loginButton">
-                        <input type="submit" class="button" value="登录"  id="login_button" />
+                        <input type="submit" class="button" value="登录"  id="button_login" />
+                        <input type="button" class="button" value="注册"  name="button_register" onclick="register()"/>
                     </div>
                 </form>
             </div>
@@ -62,15 +63,9 @@
     });
     $('select').select();
 
-    <!--
-    $('.loginButton').click(function(e) {
-        document.location.href = "check.jsp";
-    });
-    -->
-
-    $('#login_button').onclick(function(){
+    function Validate(){
         var userName = document.form_login.text_username.value ;
-        var passwd = document.form_login.text_passwd.value ;
+        var passwd = document.form_login.text_password.value ;
         if( userName== "" )
         {
             alert( "input user name！" ) ;
@@ -84,6 +79,10 @@
 
         return true;
     });
+
+    function register() {
+        document.location.href='/form.html';
+    }
 </script>
 
 </html>
