@@ -6,6 +6,7 @@ import tech.aspi.sims.backend.bulletin.dao.BulletinRepository;
 import tech.aspi.sims.backend.bulletin.model.Bulletin;
 
 import javax.annotation.Resource;
+import java.util.Date;
 import java.util.Optional;
 
 @Service
@@ -22,6 +23,9 @@ public class BulletinService {
     // 保存数据
     @Transactional
     public void save(Bulletin bulletin){
+
+        bulletin.setPublishedDate(new Date());
+
         bulletinRepository.save(bulletin);
     }
 

@@ -1,16 +1,15 @@
 package tech.aspi.sims.backend.bulletin.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import org.springframework.data.annotation.CreatedDate;
+
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity
 public class Bulletin {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "bull_id")
     private int bulletinId;
 
@@ -20,6 +19,8 @@ public class Bulletin {
     @Column(name = "bull_title")
     private String bulletinTitle;
 
+    @CreatedDate
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "bull_published_date")
     private Date publishedDate;
 

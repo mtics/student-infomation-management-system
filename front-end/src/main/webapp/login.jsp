@@ -19,7 +19,7 @@
             <div class="login-box">
                 <div id="logo"></div>
                 <h1></h1>
-                <form id="form_login" action="/servlet/loginServlet" method="post">
+                <form id="form_login" action="/servlet/loginServlet" method="post" onsubmit="return Validate(this)">
                     <div class="input username" id="username">
                         <label>用户名</label>
                         <span></span>
@@ -38,8 +38,7 @@
                     </div>
                     -->
                     <div id="btn" class="loginButton">
-                        <input type="submit" class="button" value="登录"  id="button_login" />
-                        <input type="button" class="button" value="注册"  name="button_register" onclick="register()"/>
+                        <input type="submit" class="button" value="登录"  name="button_login" />
                     </div>
                 </form>
             </div>
@@ -63,25 +62,17 @@
     });
     $('select').select();
 
-    function Validate(){
-        var userName = document.form_login.text_username.value ;
-        var passwd = document.form_login.text_password.value ;
-        if( userName== "" )
-        {
-            alert( "input user name！" ) ;
-            return false;
-        }
-        if( passwd== "" )
-        {
-            alert( "input password！" ) ;
-            return false;
-        }
+    function Validate(form){
 
+        var userName = form.text_username.value.trim() ;
+        var passwd = form.text_password.value.trim() ;
+
+        if( userName== '' || passwd== '' )
+        {
+            alert( "用户名或密码不得为空！" ) ;
+            return false;
+        }
         return true;
-    });
-
-    function register() {
-        document.location.href='/form.html';
     }
 </script>
 

@@ -17,52 +17,17 @@
 <div id="container">
     <div id="hd">
         <div class="hd-top">
-            <h1 class="logo"><a href="javascript:;" class="logo-icon"></a></h1>
+            <h1 class="logo"></h1>
             <div class="teacher-info">
                 <a href="javascript:;" class="teacher-avatar"><span><i class="info-num">2</i></span></a>
                 <span class="teacher-name">admin</span>
                 <a href="javascript:;" class="more-info"></a>
             </div>
             <div class="setting ue-clear">
-                <div class="setting-skin">
-                    <div class="switch-bar">
-                        <i class="skin-icon"></i>
-                        <span class="text">皮肤</span>
-                        <i class="arrow-icon"></i>
-                    </div>
-                </div>
                 <ul class="setting-main ue-clear">
-                    <li><a href="javascript:;">桌面</a></li>
                     <li><a href="javascript:;">设置</a></li>
-                    <li><a href="javascript:;">帮助</a></li>
                     <li><a href="javascript:;" class="close-btn exit"></a></li>
                 </ul>
-            </div>
-        </div>
-        <div class="hd-bottom">
-            <i class="home"><a href="javascript:;"></a></i>
-            <div class="nav-wrap">
-                <ul class="nav ue-clear">
-                    <li><a href="javascript:;">平台管理</a></li>
-                    <li><a href="javascript:;">系统管理</a></li>
-                    <li><a href="javascript:;">安全管理</a></li>
-                    <li><a href="javascript:;">数据中心</a></li>
-                    <li><a href="javascript:;">表单管理</a></li>
-                    <li><a href="javascript:;">流程管理</a></li>
-                    <li><a href="javascript:;">交流中心</a></li>
-                    <li><a href="javascript:;">企业邮箱</a></li>
-                    <li><a href="javascript:;">个人设置</a></li>
-                    <li><a href="javascript:;">交流中心</a></li>
-                    <li><a href="javascript:;">企业邮箱</a></li>
-                    <li><a href="javascript:;">个人设置</a></li>
-                    <li><a href="javascript:;">交流中心</a></li>
-                    <li><a href="javascript:;">企业邮箱</a></li>
-                    <li><a href="javascript:;">个人设置</a></li>
-                </ul>
-            </div>
-            <div class="nav-btn">
-                <a href="javascript:;" class="nav-prev-btn"></a>
-                <a href="javascript:;" class="nav-next-btn"></a>
             </div>
         </div>
     </div>

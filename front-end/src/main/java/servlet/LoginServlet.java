@@ -3,19 +3,25 @@ package servlet;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+import entity.Bulletin;
 import entity.User;
+import util.CookieUtil;
 import util.JsonUtil;
 
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Map;
 
 public class LoginServlet extends HttpServlet {
 
     private JsonUtil jsonUtil = new JsonUtil();
+
+    private CookieUtil cookieUtil = new CookieUtil();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -38,26 +44,48 @@ public class LoginServlet extends HttpServlet {
         // get password
         String passwd = (String)request.getParameter("text_password");
 
+        // 从服务器后台获取该用户对应的信息
         String url = "http://server.aspi.tech:8080/backend/user/findbyid?user_id="+userName;
+
+        // 从服务器后台读取公告信息
+        Map<Integer, Bulletin> bulletinMap = null;
+
         try {
             String jsonStr = jsonUtil.loadJsonFromURL(url);
 
+            // 若找不到该用户，则报错并跳回登录页
             if(jsonStr.equals("null")){
                 System.out.println("没有该用户");
                 out.print("<script>alert('没有该用户!')</script>");
                 out.print("<script>window.location.href='/login.jsp'</script>");
             }
 
+            // 若找到该用户的信息，则将其重新转换成JSON格式
             JsonObject json = (JsonObject)new JsonParser().parse(jsonStr);
 
-            //解析出来的密码会带\",所以需要将其消掉
-            if(passwd.equals(json.get("passwd").toString().replace("\"",""))){
+            // 解析出来的密码会带\",所以需要将其消掉
+            String passwdFromDataBase = json.get("passwd").toString().replace("\"","");
+
+            // 获取用户等级以作权限区分
+            String userLevel = json.get("userLevel").toString();
+
+            // 检查密码
+            if(passwd.equals(passwdFromDataBase)){
                 System.out.println("密码正确");
-                request.getSession().setAttribute ("username", userName);
-                request.getSession().setAttribute("password", passwd);
+                Cookie userNameCookie = cookieUtil.setCookie("username", userName);
+                Cookie userLevelCookie = cookieUtil.setCookie("userlevle", userLevel);
+
+                // 若密码正确，则将信息添加入Cookie
+                response.addCookie(userNameCookie);
+                response.addCookie(userLevelCookie);
+
+                // 添加一个公告信息
+                String bulletinJson = jsonUtil.loadJsonFromURL("http://server.aspi.tech:8080/backend/bulletin/findall");
+
+                request.getSession().setAttribute("bulletin_json", bulletinJson);
+
                 response.sendRedirect ("/index.jsp") ;
-            }
-            else {
+            }else {
                 out.print("<script>alert('用户名或密码错误!')</script>");
                 out.print("<script>window.location.href='/login.jsp'</script>");
                 //response.sendRedirect ("/login.jsp") ;

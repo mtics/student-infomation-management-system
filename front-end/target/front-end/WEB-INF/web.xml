@@ -10,11 +10,21 @@
         <display-name>loginServlet</display-name>
         <servlet-class>servlet.LoginServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>bulletinServlet</servlet-name>
+        <display-name>bulletinServlet</display-name>
+        <servlet-class>servlet.BulletinServlet</servlet-class>
+    </servlet>
+
+
     <servlet-mapping>
         <servlet-name>loginServlet</servlet-name>
         <url-pattern>/servlet/loginServlet</url-pattern>
     </servlet-mapping>
-
+    <servlet-mapping>
+        <servlet-name>bulletinServlet</servlet-name>
+        <url-pattern>/servlet/bulletinServlet</url-pattern>
+    </servlet-mapping>
 
   <welcome-file-list>
     <welcome-file>/login.jsp</welcome-file>
