@@ -89,41 +89,6 @@
             </div>
 
             <div class="table">
-                <div class="opt ue-clear">
-                	<span class="sortarea">
-                    	<span class="sort">
-                        	<label>排序：</label>
-                            <span class="name">
-                            	<i class="icon"></i>
-                                <span class="text">名称</span>
-                            </span>
-                        </span>
-
-                        <i class="list"></i>
-                        <i class="card"></i>
-                    </span>
-                    <span class="optarea">
-                        <a href="javascript:;" class="add">
-                            <i class="icon"></i>
-                            <span class="text">添加</span>
-                        </a>
-                        <a href="javascript:;" class="delete">
-                            <i class="icon"></i>
-                            <span class="text">删除</span>
-                        </a>
-
-                        <a href="javascript:;" class="statistics">
-                            <i class="icon"></i>
-                            <span class="text">统计</span>
-                        </a>
-
-                        <a href="javascript:;" class="config">
-                            <i class="icon"></i>
-                            <span class="text">配置</span>
-                        </a>
-                    </span>
-                </div>
-
                 <div class="grid"></div>
 
                 <div class="pagination"></div>
@@ -132,40 +97,39 @@
     </div>
 </div>
 </body>
-<script type="text/javascript" src="js/jquery.js"></script>
-<script type="text/javascript" src="js/global.js"></script>
-<script type="text/javascript" src="js/jquery.select.js"></script>
-<script type="text/javascript" src="js/core.js"></script>
-<script type="text/javascript" src="js/jquery.pagination.js"></script>
-<script type="text/javascript" src="js/jquery.grid.js"></script>
-<script type="text/javascript" src="js/WdatePicker.js"></script>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript" src="../js/global.js"></script>
+<script type="text/javascript" src="../js/jquery.select.js"></script>
+<script type="text/javascript" src="../js/core.js"></script>
+<script type="text/javascript" src="../js/jquery.pagination.js"></script>
+<script type="text/javascript" src="../js/jquery.grid.js"></script>
+<script type="text/javascript" src="../js/WdatePicker.js"></script>
 <script type="text/javascript">
     $('select').select();
+
     var head = [{
-        label: 'ID',
+        label: '公告ID',
         width: 100,
         sortable: 'default',
-        name: 'id'
+        name: 'bulletin_id'
     },{
-        label:'用户名',
-        width: 150,
+        label:'标题',
+        width: 200,
         sortable: 'default',
-        name:'name'
+        name:'bulletin_title'
     },{
-        label:'昵称',
-        width:150
+        label: '内容概要',
+        width: 400,
+        name: 'bulletin_content'
     },{
-        label: '籍贯',
-        width: 150
+        label: '发布者ID',
+        width: 100,
+        name: 'user_id'
+
     },{
-        label: '毕业院校',
-        minWidth: 200
-    },{
-        label: '出生日期',
-        width: 120
-    },{
-        label: '是否审核',
-        width:100
+        label: '发布时间',
+        width:170,
+        name: 'published_date'
     }];
 
     var oper = [{label:'删除',onclick:function(){
@@ -173,23 +137,15 @@
         }},{label:'编辑',onclick: function(){
             alert('编辑')
         }}]
-    var tbody = [
-        ["201301","admin","熊猫王子","江苏南京","南京林业大学","1982-10-18","已审核",oper],
-        ["201302","uimaker","小牛","山东济南","山东大学","1989-10-18","已审核",oper],
-        ["201301","admin","熊猫王子","江苏南京","南京林业大学","1982-10-18","已审核",oper],
-        ["201301","admin","熊猫王子","江苏南京","南京林业大学","1982-10-18","已审核",oper],
-        ["201302","uimaker","小牛","山东济南","山东大学","1989-10-18","已审核",oper],
-        ["201301","admin","熊猫王子","江苏南京","南京林业大学","1982-10-18","已审核",oper],
-        ["201301","admin","熊猫王子","江苏南京","南京林业大学","1982-10-18","已审核",oper],
-        ["201302","uimaker","小牛","山东济南","山东大学","1989-10-18","已审核",oper],
-        ["201301","admin","熊猫王子","江苏南京","南京林业大学","1982-10-18","已审核",oper],
-        ["201301","admin","熊猫王子","江苏南京","南京林业大学","1982-10-18","已审核",oper],
-        ["201302","uimaker","小牛","山东济南","山东大学","1989-10-18","已审核",oper],
-        ["201301","admin","熊猫王子","江苏南京","南京林业大学","1982-10-18","已审核",oper],
-        ["201301","admin","熊猫王子","江苏南京","南京林业大学","1982-10-18","已审核",oper],
-        ["201302","uimaker","小牛","山东济南","山东大学","1989-10-18","已审核",oper],
-        ["201301","admin","熊猫王子","江苏南京","南京林业大学","1982-10-18","已审核",oper]]
+    var tbody = []
 
+    var bulletin_str = <%=session.getAttribute("bulletin_json")%>;
+    var bulletin_json =eval(bulletin_str)
+
+    for(var i = 0; i < bulletin_json.length; i++){
+        tbody.push([bulletin_json[i].bulletinId,bulletin_json[i].bulletinTitle,
+            bulletin_json[i].bulletinContext,bulletin_json[i].userId,bulletin_json[i].publishedDate, oper]);
+    }
 
     $('.grid').Grid({
         thead: head,
