@@ -51,7 +51,7 @@
                     <div class="kv-item ue-clear">
                         <label><span class="impInfo">*</span>公告内容</label>
                         <div class="kv-item-content">
-                            <textarea placeholder="公告内容" name="text_bulletin_content" style="width:800px;height:240px;"></textarea>
+                            <textarea placeholder="公告内容" name="text_bulletin_context" style="width:800px;height:240px;"></textarea>
                         </div>
                     </div>
                 </div>

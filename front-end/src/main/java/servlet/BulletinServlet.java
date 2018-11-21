@@ -58,7 +58,7 @@ public class BulletinServlet extends HttpServlet {
         // 获取 bulletin's title
         String bulletinTitle = request.getParameter("text_bulletin_title");
         // 获取 bulletin's content
-        String bulletinContent = request.getParameter("text_bulletin_content");
+        String bulletinContext = request.getParameter("text_bulletin_context");
 
 
         Cookie[] cookies = request.getCookies();
@@ -72,23 +72,22 @@ public class BulletinServlet extends HttpServlet {
             }
         }
 
-        // 将公告信息加入到Map中
-        bulletinInfo.addProperty("bulletinTitle", java.net.URLEncoder.encode(bulletinTitle,"UTF-8"));
-        bulletinInfo.addProperty("bulletinContent", java.net.URLEncoder.encode(bulletinContent,"UTF-8"));
-        bulletinInfo.addProperty("userId", java.net.URLEncoder.encode(userName,"UTF-8"));
+        System.out.println("userId="+userName+
+                "&bulletinTitle="+bulletinTitle+"&bulletinContext="+bulletinContext);
+
+        url += "userId="+userName+
+                "&bulletinTitle="+bulletinTitle+"&bulletinContext="+bulletinContext;
+
+        System.out.println(bulletinInfo.toString());
 
         try {
 
-            isSuccess = clientUtil.sendPost(url, bulletinInfo);
-
-            System.out.println("userId="+userName+
-                    "&bulletinTitle="+bulletinTitle+"&bulletinContext="+bulletinContent);
+            isSuccess = clientUtil.sendPost(url);
 
             if(isSuccess){
-                out.print("<script>alert('Success!')</script>");
+                response.sendRedirect("/bulletin/table_bulletin.jsp");
             }else{
-                out.print("<script>alert('Faliure!')</script>");
-
+                response.sendRedirect("/bulletin/form_bulletin.jsp");
             }
 
             //response.sendRedirect(url);
