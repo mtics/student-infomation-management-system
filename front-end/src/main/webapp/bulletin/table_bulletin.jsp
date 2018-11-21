@@ -137,6 +137,7 @@
         }},{label:'编辑',onclick: function(){
             alert('编辑')
         }}]
+
     var tbody = []
 
     var bulletin_str = <%=session.getAttribute("bulletin_json")%>;

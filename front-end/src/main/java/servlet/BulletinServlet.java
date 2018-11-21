@@ -1,7 +1,6 @@
 package servlet;
 
 import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
 import util.ClientUtil;
 import util.JsonUtil;
 
@@ -12,12 +11,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.HashMap;
-import java.util.Map;
-
 public class BulletinServlet extends HttpServlet {
 
     private ClientUtil clientUtil = new ClientUtil();
+
+    private JsonUtil jsonUtil = new JsonUtil();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -85,6 +83,12 @@ public class BulletinServlet extends HttpServlet {
             isSuccess = clientUtil.sendPost(url);
 
             if(isSuccess){
+
+                // 添加一个公告信息
+                String bulletinJson = jsonUtil.loadJsonFromURL("http://server.aspi.tech:8080/backend/bulletin/findall");
+
+                request.getSession().setAttribute("bulletin_json", bulletinJson);
+
                 response.sendRedirect("/bulletin/table_bulletin.jsp");
             }else{
                 response.sendRedirect("/bulletin/form_bulletin.jsp");
