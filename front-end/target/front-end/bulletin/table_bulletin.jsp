@@ -1,4 +1,5 @@
-<%--
+<%@ page import="entity.Bulletin" %>
+<%@ page import="java.util.List" %><%--
   Created by IntelliJ IDEA.
   User: incentancy
   Date: 18-11-20
@@ -143,10 +144,20 @@
     var bulletin_str = <%=session.getAttribute("bulletin_json")%>;
     var bulletin_json =eval(bulletin_str)
 
+    <% List<Bulletin> bulletinList = (List<Bulletin>)session.getAttribute("bulletin_list");%>
+
     for(var i = 0; i < bulletin_json.length; i++){
         tbody.push([bulletin_json[i].bulletinId,bulletin_json[i].bulletinTitle,
             bulletin_json[i].bulletinContext,bulletin_json[i].userId,bulletin_json[i].publishedDate, oper]);
     }
+
+    <%
+        for(int i = 0; i < bulletinList.size(); i++){
+    %>
+        tbody.push([<%=bulletinList.get(i).getBulletinId()%>,<%=bulletinList.get(i).getBulletinTitle()%>,
+            <%=bulletinList.get(i).getBulletinContext()%>,<%=bulletinList.get(i).getUserId()%>,
+            <%=bulletinList.get(i).getPublishedDate()%>, oper]);
+    <%}%>
 
     $('.grid').Grid({
         thead: head,

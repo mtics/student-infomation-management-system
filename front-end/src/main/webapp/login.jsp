@@ -19,7 +19,7 @@
             <div class="login-box">
                 <div id="logo"></div>
                 <h1></h1>
-                <form id="form_login" action="/servlet/loginServlet" method="post" onsubmit="return Validate(this)">
+                <form id="form_login" action="/servlet/login" method="post" onsubmit="return Validate(this)">
                     <div class="input username" id="username">
                         <label>用户名</label>
                         <span></span>

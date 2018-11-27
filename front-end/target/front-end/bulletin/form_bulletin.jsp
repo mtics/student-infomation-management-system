@@ -37,7 +37,7 @@
             <h2 class="subfild">
                 <span>公告信息</span>
             </h2>
-            <form id="form_bulletin" action="/servlet/bulletinServlet" method="post" onsubmit="return Validate(this)">
+            <form id="form_bulletin" action="/servlet/bulletin/insert" method="post" onsubmit="return Validate(this)">
                 <div class="subfild-content base-info">
                     <div class="kv-item ue-clear">
                         <label><span class="impInfo">*</span>公告标题</label>

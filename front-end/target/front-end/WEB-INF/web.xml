@@ -11,19 +11,28 @@
         <servlet-class>servlet.LoginServlet</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>bulletinServlet</servlet-name>
-        <display-name>bulletinServlet</display-name>
-        <servlet-class>servlet.BulletinServlet</servlet-class>
+        <servlet-name>bulletinInsertServlet</servlet-name>
+        <display-name>bulletinInsertServlet</display-name>
+        <servlet-class>servlet.BulletinInsertServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>bulletinListServlet</servlet-name>
+        <display-name>bulletinListServlet</display-name>
+        <servlet-class>servlet.BulletinListServlet</servlet-class>
     </servlet>
 
 
     <servlet-mapping>
         <servlet-name>loginServlet</servlet-name>
-        <url-pattern>/servlet/loginServlet</url-pattern>
+        <url-pattern>/servlet/login</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>bulletinServlet</servlet-name>
-        <url-pattern>/servlet/bulletinServlet</url-pattern>
+        <servlet-name>bulletinInsertServlet</servlet-name>
+        <url-pattern>/servlet/bulletin/insert</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>bulletinListServlet</servlet-name>
+        <url-pattern>/servlet/bulletin/list</url-pattern>
     </servlet-mapping>
 
   <welcome-file-list>

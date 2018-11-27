@@ -2,6 +2,7 @@ package util;
 
 import com.google.gson.*;
 import entity.Bulletin;
+import net.sf.json.JSONArray;
 import org.apache.http.HttpEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
@@ -18,6 +19,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class JsonUtil {
@@ -48,6 +50,24 @@ public class JsonUtil {
             httpClient.close();
         }
         return json;
+    }
+
+    /**
+     * 将JSON解析成List<Bulletin>
+     * @param jsonStr
+     * @return
+     */
+    public List<Bulletin> jsonToBulletinList(String jsonStr){
+
+        JSONArray jsonArray = JSONArray.fromObject(jsonStr);
+
+        List<Bulletin> list = new ArrayList<Bulletin>();
+
+        for (int i = 0; i < jsonArray.size(); i ++){
+            list.add((Bulletin)jsonArray.get(i));
+        }
+
+        return list;
     }
 
     /**

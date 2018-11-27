@@ -5,6 +5,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import entity.Bulletin;
 import entity.User;
+import page.entity.Page;
 import util.CookieUtil;
 import util.JsonUtil;
 
@@ -15,6 +16,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import java.util.Map;
 
 public class LoginServlet extends HttpServlet {
@@ -46,9 +48,6 @@ public class LoginServlet extends HttpServlet {
 
         // 从服务器后台获取该用户对应的信息
         String url = "http://server.aspi.tech:8080/backend/user/findbyid?user_id="+userName;
-
-        // 从服务器后台读取公告信息
-        Map<Integer, Bulletin> bulletinMap = null;
 
         try {
             String jsonStr = jsonUtil.loadJsonFromURL(url);
@@ -82,7 +81,12 @@ public class LoginServlet extends HttpServlet {
                 // 添加一个公告信息
                 String bulletinJson = jsonUtil.loadJsonFromURL("http://server.aspi.tech:8080/backend/bulletin/findall");
 
-                request.getSession().setAttribute("bulletin_json", bulletinJson);
+                List<Bulletin> bulletinList = jsonUtil.jsonToBulletinList(bulletinJson);
+
+                Page<Bulletin> bulletinPage = new Page<Bulletin>(0, 10, bulletinList);
+
+                // 将获得的列表添加到cookie中
+                request.getSession().setAttribute("bulletin_list", bulletinPage.getList());
 
                 response.sendRedirect ("/index.jsp") ;
             }else {
