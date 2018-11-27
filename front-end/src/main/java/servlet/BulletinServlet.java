@@ -13,6 +13,8 @@ import java.io.IOException;
 import java.io.PrintWriter;
 public class BulletinServlet extends HttpServlet {
 
+
+
     private ClientUtil clientUtil = new ClientUtil();
 
     private JsonUtil jsonUtil = new JsonUtil();
