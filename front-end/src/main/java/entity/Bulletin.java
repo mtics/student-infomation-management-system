@@ -14,6 +14,17 @@ public class Bulletin {
 
     private String bulletinContext;
 
+    public Bulletin() {
+    }
+
+    public Bulletin(int bulletinId, String userId, String bulletinTitle, Date publishedDate, String bulletinContext) {
+        this.bulletinId = bulletinId;
+        this.userId = userId;
+        this.bulletinTitle = bulletinTitle;
+        this.publishedDate = publishedDate;
+        this.bulletinContext = bulletinContext;
+    }
+
     public int getBulletinId() {
         return bulletinId;
     }

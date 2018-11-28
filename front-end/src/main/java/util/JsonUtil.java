@@ -3,24 +3,18 @@ package util;
 import com.google.gson.*;
 import entity.Bulletin;
 import net.sf.json.JSONArray;
+import net.sf.json.JSONObject;
 import org.apache.http.HttpEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
-import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.net.URL;
-import java.net.URLConnection;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class JsonUtil {
 
@@ -57,14 +51,25 @@ public class JsonUtil {
      * @param jsonStr
      * @return
      */
-    public List<Bulletin> jsonToBulletinList(String jsonStr){
+    public List<Bulletin> jsonToBulletinList(String jsonStr) throws ParseException {
+
+        System.out.println(jsonStr);
 
         JSONArray jsonArray = JSONArray.fromObject(jsonStr);
 
         List<Bulletin> list = new ArrayList<Bulletin>();
 
+        Bulletin bulletin = null;
+
         for (int i = 0; i < jsonArray.size(); i ++){
-            list.add((Bulletin)jsonArray.get(i));
+
+            JSONObject jsonObject = jsonArray.getJSONObject(i);
+
+            bulletin = new Bulletin(jsonObject.getInt("bulletinId"), jsonObject.getString("userId"),
+                    jsonObject.getString("bulletinTitle"), sdf.parse(jsonObject.getString("publishedDate")),
+                    jsonObject.getString("bulletinContext"));
+
+            list.add(bulletin);
         }
 
         return list;
