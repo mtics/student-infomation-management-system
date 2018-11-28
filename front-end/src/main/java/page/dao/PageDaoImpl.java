@@ -1,11 +1,9 @@
 package page.dao;
 
+import entity.Bulletin;
 import page.entity.Page;
 
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.List;
-import java.util.ListIterator;
+import java.util.*;
 
 public class PageDaoImpl<T> implements PageDao<T>{
 
@@ -22,21 +20,26 @@ public class PageDaoImpl<T> implements PageDao<T>{
 
         List<T> list = null;
 
+        // 当前页码的索引
+        int currentPageIndex = currentPage-1;
+
         // 设置当前页数据开始的索引(相对于每一页的"0")
-        int startIndex = page.getPageSize()*(currentPage-1);
+        int startIndex = page.getPageSize()*(currentPageIndex);
         // 设置当前页数据结束的索引(相对于每一页的pageSize-1)
-        int endIndex = page.getPageSize()*(currentPage) - 1;
+        int endIndex = page.getPageSize()*(currentPageIndex+1) - 1;
+        //获取page中的list
+        List<T> tempList = page.getList();
 
         // 若当前页是最后一页
-        if(currentPage == page.getTotalPages()){
-            // 数据结束索引应该是总条数除以每页数据数的余数
-            endIndex = page.getTotalCount() % page.getPageSize();
+        // 因为页码索引是从0开始的，
+        // 所以(总页数-1)才是最后一页的索引
+        if(currentPageIndex == page.getTotalPages()-1){
+            // 数据结束索引应该是总条数-1
+            endIndex = page.getTotalCount()-1;
         }
 
-        // 将当前页中的数据加入返回列表中
-        for(int i = startIndex; i < endIndex; i ++){
-            list.add(page.getList().get(i));
-        }
+        // 从List中截取出当前页面的数据
+        list = tempList.subList(startIndex==0?0:startIndex-1,endIndex);
 
         return list;
     }

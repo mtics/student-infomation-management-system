@@ -5,6 +5,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import entity.Bulletin;
 import entity.User;
+import page.dao.PageDaoImpl;
 import page.entity.Page;
 import util.CookieUtil;
 import util.JsonUtil;
@@ -24,6 +25,8 @@ public class LoginServlet extends HttpServlet {
     private JsonUtil jsonUtil = new JsonUtil();
 
     private CookieUtil cookieUtil = new CookieUtil();
+
+    private PageDaoImpl pageDao = new PageDaoImpl();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -83,10 +86,16 @@ public class LoginServlet extends HttpServlet {
 
                 List<Bulletin> bulletinList = jsonUtil.jsonToBulletinList(bulletinJson);
 
-                Page<Bulletin> bulletinPage = new Page<Bulletin>(0, 10, bulletinList);
+                Page<Bulletin> bulletinPage = new Page<Bulletin>(1, 10, bulletinList);
+
+                bulletinList = pageDao.getDataListWithPage(bulletinPage.getCurrentPage(), bulletinPage);
+
+                String handledBulletinListJson = jsonUtil.bullutinListToJson(bulletinList);
 
                 // 将获得的列表添加到cookie中
-                request.getSession().setAttribute("bulletin_list", bulletinPage.getList());
+                request.getSession().setAttribute("bulletin_json", handledBulletinListJson);
+                request.getSession().setAttribute("bulletin_pages", bulletinPage.getTotalPages());
+                request.getSession().setAttribute("bulletin_current_page", bulletinPage.getCurrentPage()-1);
 
                 response.sendRedirect ("/index.jsp") ;
             }else {

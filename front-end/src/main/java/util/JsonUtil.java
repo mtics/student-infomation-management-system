@@ -76,6 +76,33 @@ public class JsonUtil {
     }
 
     /**
+     * 将List<Bulletin>转成Json
+     * @param list
+     * @return
+     */
+    public String bullutinListToJson(List<Bulletin> list){
+
+        JSONObject jsonObject = null;
+        JSONArray jsonArray = new JSONArray();
+
+        // 将List中的每个实体的属性都加入到JSONObject里
+        // JSONObject添加完属性后加到JSONArray里
+        for(Bulletin bulletin: list){
+            jsonObject = new JSONObject();
+
+            jsonObject.put("bulletinId", bulletin.getBulletinId());
+            jsonObject.put("userId", bulletin.getUserId());
+            jsonObject.put("bulletinTitle", bulletin.getBulletinTitle());
+            jsonObject.put("publishedDate", bulletin.getPublishedDate().toString());
+            jsonObject.put("bulletinContext", bulletin.getBulletinContext());
+
+            jsonArray.add(jsonObject);
+        }
+
+        return jsonArray.toString();
+    }
+
+    /**
     public static void main(String[] args){
         String url = "http://server.aspi.tech:8080/backend/user/findbyid?user_id=20181151105";
         try {

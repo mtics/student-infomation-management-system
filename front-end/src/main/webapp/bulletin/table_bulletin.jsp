@@ -6,7 +6,7 @@
   Time: 下午11:14
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -143,18 +143,26 @@
 
     var tbody = [];
 
-    <%--var bulletin_str = <%=session.getAttribute("bulletin_json")%>;--%>
-    <%--var bulletin_json =eval(bulletin_str)--%>
+    var bulletin_str = <%=session.getAttribute("bulletin_json")%>;
+    var bulletin_json =eval(bulletin_str)
 
-    <%--for(var i = 0; i < bulletin_json.length; i++){--%>
-        <%--tbody.push([bulletin_json[i].bulletinId,bulletin_json[i].bulletinTitle,--%>
-            <%--bulletin_json[i].bulletinContext,bulletin_json[i].userId,bulletin_json[i].publishedDate, oper]);--%>
-    <%--}--%>
+    for(var i = 0; i < bulletin_json.length; i++){
+        tbody.push([bulletin_json[i].bulletinId,bulletin_json[i].bulletinTitle,
+            bulletin_json[i].bulletinContext,bulletin_json[i].userId,bulletin_json[i].publishedDate, [
+                {label:'删除',onclick:function(){
+                    if(confirm("确认要删除？")){
+                        window.location.href='/servlet/bulletin/list?page_num='+(page+1);
+                    }
+                }},{label:'编辑',onclick: function(){
+                    alert('编辑')
+                }}
+            ]]);
+    }
 
-    <c:forEach items="${bulletin_list}" var="bulletin">
-        tbody.push(["${bulletin.getBulletinId()}", "${bulletin.userId}", "${bulletin.bulletinTitle}",
-            "${bulletin.publishedDate}", "${bulletin.bulletinContext}", oper]);
-    </c:forEach>
+    <%--<c:forEach items="${bulletin_list}" var="bulletin">--%>
+        <%--tbody.push(["${bulletin.bulletinId}", "${bulletin.userid}", "${bulletin.bulletinTitle}",--%>
+            <%--"${bulletin.publishedDate}", "${bulletin.bulletinContext}", oper]);--%>
+    <%--</c:forEach>--%>
 
     <%--<c:forEach items="${bulletin_list}" var="bulletin">--%>
     <%--tbody.push([${bulletin.getBulletinId()}, ${bulletin.userId}, ${bulletin.bulletinTitle},--%>
@@ -183,12 +191,17 @@
     /// 模拟异步
     setTimeout(function(){
         $('.grid').Grid('setData',tbody, head);
-    },2000)
+    },100)
 
-
-    $('.pagination').pagination(100,{
+    // pagination()方法中第一个参数是数据条数，第二个是点击页码后的响应函数
+    $('.pagination').pagination(<%=(int)session.getAttribute("bulletin_pages")*10%>,{
+        current_page : <%=(int)session.getAttribute("bulletin_current_page")%>,      //当前页码
+        num_display_entries : 4, // 中间显示页码的个数
+        num_edge_entries : 2, // 末尾显示页码的个数
+        prev_show_always : true, //是否总是显示最前页
+        next_show_always : true,//是否总是显示最后页
         callback: function(page){
-            alert(page);
+            window.location.href='/servlet/bulletin/list?page_num='+(page+1);
         },
         display_msg: false
     });
