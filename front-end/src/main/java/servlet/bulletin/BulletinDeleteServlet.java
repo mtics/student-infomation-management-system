@@ -23,18 +23,12 @@ public class BulletinDeleteServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        doPost(request, response);
-    }
-
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
         boolean isSuccess = false;
 
         // 提交数据URL
-        String url = "http://server.aspi.tech:8080/backend/bulletin/delete?";
+        String url = "http://server.aspi.tech:8080/backend/bulletin/deletebyid?bull_id=";
 
-        response.setContentType( "application/json;charset=UTF-8" );
+        response.setContentType( "text/plain;charset=UTF-8" );
         // 设置跨域请求头
         response.setHeader("Access-Control-Allow-Origin","*");
         response.setHeader("Access-Control-Allow-Methods", "POST");
@@ -49,10 +43,11 @@ public class BulletinDeleteServlet extends HttpServlet {
 
         try {
 
-            isSuccess = clientUtil.sendPost(url);
+            isSuccess = clientUtil.sendPost(url+bulletinId);
+
+            System.out.println(isSuccess);
 
             if(isSuccess){
-
                 // 更新公告信息
                 String bulletinJson = jsonUtil.loadJsonFromURL("http://server.aspi.tech:8080/backend/bulletin/findall");
 
@@ -82,5 +77,10 @@ public class BulletinDeleteServlet extends HttpServlet {
             //e.printStackTrace();
             System.out.println("json解析失败");
         }
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        doGet(request, response);
     }
 }

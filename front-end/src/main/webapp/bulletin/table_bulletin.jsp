@@ -135,39 +135,124 @@
         name: 'published_date'
     }];
 
-    var oper = [{label:'删除',onclick:function(){
-            alert('删除');
-        }},{label:'编辑',onclick: function(){
-            alert('编辑')
-        }}]
+    var oper = [];
 
     var tbody = [];
 
-    var bulletin_str = <%=session.getAttribute("bulletin_json")%>;
-    var bulletin_json =eval(bulletin_str)
+    var bulletin_str = <%=session.getAttribute("bulletins_json")%>;
+    var bulletin_json =eval(bulletin_str);
+
+    // 迷一般的智障操作
+    // 但没办法，就先这样用吧
+    // 找到合适的解决办法再修改
+    oper[0] = [{label:'删除',onclick:function(){
+            alert(0);
+            var url = "/servlet/bulletin/delete?bulletin_id="+bulletin_json[0].bulletinId;
+            alert(url);
+            if(confirm("确认删除该公告吗？")){
+                window.location.href=url;
+            }
+        }},{label:'编辑',onclick: function(){
+            var url = "/servlet/bulletin/update?bulletin_id="+bulletin_json[0].bulletinId;
+            alert(url);
+            window.location.href=url;
+        }}];
+    oper[1] = [{label:'删除',onclick:function(){
+            var url = "/servlet/bulletin/delete?bulletin_id="+bulletin_json[1].bulletinId;
+            alert(url);
+            if(confirm("确认删除该公告吗？")){
+                window.location.href=url;
+            }
+        }},{label:'编辑',onclick: function(){
+            var url = "/servlet/bulletin/update?bulletin_id="+bulletin_json[1].bulletinId;
+            window.location.href=url;
+        }}];
+    oper[2] = [{label:'删除',onclick:function(){
+            var url = "/servlet/bulletin/delete?bulletin_id="+bulletin_json[2].bulletinId;
+            alert(url);
+            if(confirm("确认删除该公告吗？")){
+                window.location.href=url;
+            }
+        }},{label:'编辑',onclick: function(){
+            var url = "/servlet/bulletin/update?bulletin_id="+bulletin_json[2].bulletinId;
+            window.location.href=url;
+        }}];
+    oper[3] = [{label:'删除',onclick:function(){
+            var url = "/servlet/bulletin/delete?bulletin_id="+bulletin_json[3].bulletinId;
+            alert(url);
+            if(confirm("确认删除该公告吗？")){
+                window.location.href=url;
+            }
+        }},{label:'编辑',onclick: function(){
+            var url = "/servlet/bulletin/update?bulletin_id="+bulletin_json[3].bulletinId;
+            window.location.href=url;
+        }}];
+    oper[4] = [{label:'删除',onclick:function(){
+            var url = "/servlet/bulletin/delete?bulletin_id="+bulletin_json[4].bulletinId;
+            alert(url);
+            if(confirm("确认删除该公告吗？")){
+                window.location.href=url;
+            }
+        }},{label:'编辑',onclick: function(){
+            var url = "/servlet/bulletin/update?bulletin_id="+bulletin_json[4].bulletinId;
+            window.location.href=url;
+        }}];
+    oper[5] = [{label:'删除',onclick:function(){
+            var url = "/servlet/bulletin/delete?bulletin_id="+bulletin_json[5].bulletinId;
+            alert(url);
+            if(confirm("确认删除该公告吗？")){
+                window.location.href=url;
+            }
+        }},{label:'编辑',onclick: function(){
+            var url = "/servlet/bulletin/update?bulletin_id="+bulletin_json[5].bulletinId;
+            window.location.href=url;
+        }}];
+    oper[6] = [{label:'删除',onclick:function(){
+            var url = "/servlet/bulletin/delete?bulletin_id="+bulletin_json[6].bulletinId;
+            alert(url);
+            if(confirm("确认删除该公告吗？")){
+                window.location.href=url;
+            }
+        }},{label:'编辑',onclick: function(){
+            var url = "/servlet/bulletin/update?bulletin_id="+bulletin_json[6].bulletinId;
+            window.location.href=url;
+        }}];
+    oper[7] = [{label:'删除',onclick:function(){
+            var url = "/servlet/bulletin/delete?bulletin_id="+bulletin_json[7].bulletinId;
+            alert(url);
+            if(confirm("确认删除该公告吗？")){
+                window.location.href=url;
+            }
+        }},{label:'编辑',onclick: function(){
+            var url = "/servlet/bulletin/update?bulletin_id="+bulletin_json[7].bulletinId;
+            window.location.href=url;
+        }}];
+    oper[8] = [{label:'删除',onclick:function(){
+            var url = "/servlet/bulletin/delete?bulletin_id="+bulletin_json[8].bulletinId;
+            alert(url);
+            if(confirm("确认删除该公告吗？")){
+                window.location.href=url;
+            }
+        }},{label:'编辑',onclick: function(){
+            var url = "/servlet/bulletin/update?bulletin_id="+bulletin_json[8].bulletinId;
+            window.location.href=url;
+        }}];
+    oper[9] = [{label:'删除',onclick:function(){
+            var url = "/servlet/bulletin/delete?bulletin_id="+bulletin_json[9].bulletinId;
+            alert(url);
+            if(confirm("确认删除该公告吗？")){
+                window.location.href=url;
+            }
+        }},{label:'编辑',onclick: function(){
+            var url = "/servlet/bulletin/update?bulletin_id="+bulletin_json[9].bulletinId;
+            window.location.href=url;
+        }}];
+
 
     for(var i = 0; i < bulletin_json.length; i++){
         tbody.push([bulletin_json[i].bulletinId,bulletin_json[i].bulletinTitle,
-            bulletin_json[i].bulletinContext,bulletin_json[i].userId,bulletin_json[i].publishedDate, [
-                {label:'删除',onclick:function(){
-                    if(confirm("确认要删除？")){
-                        window.location.href='/servlet/bulletin/list?page_num='+(page+1);
-                    }
-                }},{label:'编辑',onclick: function(){
-                    alert('编辑')
-                }}
-            ]]);
+            bulletin_json[i].bulletinContext,bulletin_json[i].userId,bulletin_json[i].publishedDate, oper[i]]);
     }
-
-    <%--<c:forEach items="${bulletin_list}" var="bulletin">--%>
-        <%--tbody.push(["${bulletin.bulletinId}", "${bulletin.userid}", "${bulletin.bulletinTitle}",--%>
-            <%--"${bulletin.publishedDate}", "${bulletin.bulletinContext}", oper]);--%>
-    <%--</c:forEach>--%>
-
-    <%--<c:forEach items="${bulletin_list}" var="bulletin">--%>
-    <%--tbody.push([${bulletin.getBulletinId()}, ${bulletin.userId}, ${bulletin.bulletinTitle},--%>
-        <%--${bulletin.publishedDate}, ${bulletin.bulletinContext}, oper]);--%>
-    <%--</c:forEach>--%>
 
     $('.grid').Grid({
         thead: head,

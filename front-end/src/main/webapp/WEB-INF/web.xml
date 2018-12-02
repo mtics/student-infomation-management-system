@@ -25,6 +25,11 @@
         <display-name>bulletinDeleteServlet</display-name>
         <servlet-class>servlet.bulletin.BulletinDeleteServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>bulletinInfoServlet</servlet-name>
+        <display-name>bulletinInfoServlet</display-name>
+        <servlet-class>servlet.bulletin.BulletinInfoServlet</servlet-class>
+    </servlet>
 
     <servlet-mapping>
         <servlet-name>loginServlet</servlet-name>
@@ -42,6 +47,11 @@
         <servlet-name>bulletinDeleteServlet</servlet-name>
         <url-pattern>/servlet/bulletin/delete</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>bulletinInfoServlet</servlet-name>
+        <url-pattern>/servlet/bulletin/update</url-pattern>
+    </servlet-mapping>
+
   <welcome-file-list>
     <welcome-file>/login.jsp</welcome-file>
   </welcome-file-list>

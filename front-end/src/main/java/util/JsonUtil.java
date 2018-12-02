@@ -93,7 +93,7 @@ public class JsonUtil {
             jsonObject.put("bulletinId", bulletin.getBulletinId());
             jsonObject.put("userId", bulletin.getUserId());
             jsonObject.put("bulletinTitle", bulletin.getBulletinTitle());
-            jsonObject.put("publishedDate", bulletin.getPublishedDate().toString());
+            jsonObject.put("publishedDate", sdf.format(bulletin.getPublishedDate()));
             jsonObject.put("bulletinContext", bulletin.getBulletinContext());
 
             jsonArray.add(jsonObject);

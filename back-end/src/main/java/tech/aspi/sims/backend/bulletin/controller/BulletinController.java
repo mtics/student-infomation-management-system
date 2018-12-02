@@ -40,4 +40,5 @@ public class BulletinController {
     public Optional<Bulletin> findById(int bull_id){
         return bulletinService.findById(bull_id);
     }
+
 }

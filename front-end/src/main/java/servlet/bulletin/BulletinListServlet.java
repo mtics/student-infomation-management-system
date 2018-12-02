@@ -46,7 +46,7 @@ public class BulletinListServlet extends HttpServlet {
             String handledBulletinListJson = jsonUtil.bullutinListToJson(bulletinList);
 
             // 将获得的列表添加到cookie中
-            request.getSession().setAttribute("bulletin_json", handledBulletinListJson);
+            request.getSession().setAttribute("bulletins_json", handledBulletinListJson);
             request.getSession().setAttribute("bulletin_pages", bulletinPage.getTotalPages());
             request.getSession().setAttribute("bulletin_current_page", bulletinPage.getCurrentPage()-1);
 

@@ -45,4 +45,5 @@ public class BulletinService {
     public Optional<Bulletin> findById(int bull_id){
         return bulletinRepository.findById(bull_id);
     }
+
 }

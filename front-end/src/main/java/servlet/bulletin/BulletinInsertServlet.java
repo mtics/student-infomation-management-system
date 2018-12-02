@@ -45,7 +45,7 @@ public class BulletinInsertServlet extends HttpServlet {
         boolean isSuccess = false;
 
         // 提交数据URL
-        String url = "http://server.aspi.tech:8080/backend/bulletin/save?";
+        StringBuffer url = new StringBuffer("http://server.aspi.tech:8080/backend/bulletin/save?");
 
         response.setContentType( "application/json;charset=UTF-8" );
         // 设置跨域请求头
@@ -64,6 +64,8 @@ public class BulletinInsertServlet extends HttpServlet {
         String bulletinTitle = request.getParameter("text_bulletin_title");
         // 获取 bulletin's content
         String bulletinContext = request.getParameter("text_bulletin_context");
+        // 获取 bulletin's content
+        String bulletinId = request.getParameter("text_bulletin_id");
 
 
         Cookie[] cookies = request.getCookies();
@@ -80,16 +82,23 @@ public class BulletinInsertServlet extends HttpServlet {
         System.out.println("userId="+userName+
                 "&bulletinTitle="+bulletinTitle+"&bulletinContext="+bulletinContext);
 
-        url += "userId="+userName+
-                "&bulletinTitle="+bulletinTitle+"&bulletinContext="+bulletinContext;
+        url.append("userId="+userName+
+                "&bulletinTitle="+bulletinTitle+"&bulletinContext="+bulletinContext);
 
-        System.out.println(bulletinInfo.toString());
+
+        if(bulletinId != null){
+            url.append("&bulletinId="+bulletinId);
+        }
+
+
 
         try {
 
-            isSuccess = clientUtil.sendPost(url);
+            isSuccess = clientUtil.sendPost(url.toString());
 
             if(isSuccess){
+
+                System.out.println(url);
 
                 // 更新公告信息
                 String bulletinJson = jsonUtil.loadJsonFromURL("http://server.aspi.tech:8080/backend/bulletin/findall");
