@@ -12,15 +12,37 @@
     <script type="text/javascript" src="js/global.js"></script>
     <title>学生信息管理系统SIMS</title>
 </head>
+<%
+    Cookie cookie = null;
+    String userName = null;
+    String portrait = null;
 
+    Cookie[] cookies = request.getCookies();
+
+    // 如果cookies中无值，则跳转到登录界面
+    if(cookies == null){
+        %><script>window.location.href='/login.jsp'</script><%
+    }else{
+        for(int i = 0; i < cookies.length; i++){
+            cookie = cookies[i];
+            if(cookie.getName().equals("username")){
+                userName = cookie.getValue();
+            }else if (cookie.getName().equals("portrait")){
+                portrait = cookie.getValue();
+            }
+        }
+    }
+
+
+%>
 <body>
 <div id="container">
     <div id="hd">
         <div class="hd-top">
             <h1 class="logo"></h1>
             <div class="teacher-info">
-                <a href="javascript:;" class="teacher-avatar"><span><i class="info-num">2</i></span></a>
-                <span class="teacher-name">admin</span>
+                <a href="javascript:;" class="teacher-avatar"></a>
+                <span class="teacher-name"><%=session.getAttribute("username")%></span>
                 <a href="javascript:;" class="more-info"></a>
             </div>
             <div class="setting ue-clear">

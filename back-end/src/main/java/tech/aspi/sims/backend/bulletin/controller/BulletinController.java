@@ -8,6 +8,7 @@ import tech.aspi.sims.backend.bulletin.model.Bulletin;
 import tech.aspi.sims.backend.bulletin.service.BulletinService;
 
 import javax.annotation.Resource;
+import java.util.List;
 import java.util.Optional;
 
 
@@ -41,4 +42,8 @@ public class BulletinController {
         return bulletinService.findById(bull_id);
     }
 
+    @GetMapping("/findallbyparams")
+    public List<Bulletin> findAllByParams(Bulletin bulletin){
+        return bulletinService.findAllByParams(bulletin);
+    }
 }

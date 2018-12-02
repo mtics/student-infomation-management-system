@@ -27,67 +27,39 @@
 <div id="container">
     <div id="hd"></div>
     <div id="bd">
-        <div id="main">
-            <div class="search-box ue-clear">
-                <div class="search-area">
-                    <div class="kv-item ue-clear">
-                        <label>选择时间：</label>
-                        <div class="kv-item-content ue-clear">
+        <form id="form_bulletin_search" action="/servlet/bulletin/list" method="get">
+            <input type="text" style="display: none" name="page_num" value="1"/>
+            <div id="main">
+                <div class="search-box ue-clear">
+                    <div class="search-area">
+                        <div class="kv-item ue-clear">
+                            <label>条件搜索：</label>
                             <span class="choose">
-                                <span class="checkboxouter">
-                                    <input type="radio" name="time" />
-                                    <span class="radio"></span>
+                                <span class="text">标题</span>
+                                <span class="kv-item-content">
+                                    <input type="text" name="search_bulletin_title" />
+                                    <span class="division"></span>
                                 </span>
-                                <span class="text">全部</span>
-                            </span>
-                            <span class="choose">
-                                <span class="checkboxouter">
-                                    <input type="radio" name="time" />
-                                    <span class="radio"></span>
-                                </span>
-                                <span class="text">近3天</span>
                             </span>
                             <span class="choose">
-                                <span class="checkboxouter">
-                                    <input type="radio" name="time" />
-                                    <span class="radio"></span>
+                                <span class="text">内容</span>
+                                <span class="kv-item-content">
+                                    <input type="text" name="search_bulletin_context" />
+                                    <span class="division"></span>
                                 </span>
-                                <span class="text">近一周</span>
                             </span>
                             <span class="choose">
-                                <span class="checkboxouter">
-                                    <input type="radio" name="time" />
-                                    <span class="radio"></span>
+                                <span class="text">发布者ID</span>
+                                <span class="kv-item-content">
+                                    <input type="text" name="search_user_id" />
+                                    <span class="division"></span>
                                 </span>
-                                <span class="text">近一月</span>
                             </span>
-                            <span class="choose">
-                                <span class="checkboxouter">
-                                    <input type="radio" name="time" data-define="define" />
-                                    <span class="radio"></span>
-                                </span>
-                                <span class="text">自定义</span>
-                            </span>
-                            <span class="define-input">
-                            	<input type="text" placeholder="开始时间" />
-                                <span class="division"></span>
-                                <input type="text" placeholder="结束时间" />
-                            </span>
-                        </div>
-                    </div>
-                    <div class="kv-item ue-clear">
-                        <label>选择类型:</label>
-                        <div class="kv-item-content">
-                            <select>
-                                <option>全部</option>
-                                <option>全部</option>
-                                <option>全部</option>
-                            </select>
                         </div>
                     </div>
                 </div>
                 <div class="search-button">
-                    <input class="button" type="button" value="搜索一下" />
+                    <input class="button" type="submit" value="搜索一下" name="button_search"/>
                 </div>
             </div>
 
@@ -96,7 +68,8 @@
 
                 <div class="pagination"></div>
             </div>
-        </div>
+        </form>
+
     </div>
 </div>
 </body>
