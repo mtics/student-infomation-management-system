@@ -18,6 +18,19 @@ public class Teacher {
 
     private String portrait;        //教师照片
 
+    public Teacher(String teacherId, String teacherName, String genger, Date birthday, String phone, String portrait, int collegeId) {
+        this.teacherId = teacherId;
+        this.teacherName = teacherName;
+        this.collegeId = collegeId;
+        this.genger = genger;
+        this.birthday = birthday;
+        this.phone = phone;
+        this.portrait = portrait;
+    }
+
+    public Teacher() {
+    }
+
     public String getTeacherId() {
         return teacherId;
     }

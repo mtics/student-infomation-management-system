@@ -14,6 +14,9 @@ public class CookieUtil {
 
         cookie.setMaxAge(60*60*24);
 
+        // 设置有效域为所有
+        cookie.setPath("/");
+
         return cookie;
     }
 }

@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
-
+<%@ page import="java.net.URLDecoder" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -19,20 +19,26 @@
 
     Cookie[] cookies = request.getCookies();
 
+    System.out.println("--------"+cookies.length);
+
     // 如果cookies中无值，则跳转到登录界面
     if(cookies == null){
         %><script>window.location.href='/login.jsp'</script><%
     }else{
         for(int i = 0; i < cookies.length; i++){
             cookie = cookies[i];
+
+            System.out.println("======"+cookie.getName()+"=======");
+
             if(cookie.getName().equals("username")){
-                userName = cookie.getValue();
+                userName = URLDecoder.decode(cookie.getValue());
             }else if (cookie.getName().equals("portrait")){
-                portrait = cookie.getValue();
+                portrait = URLDecoder.decode(cookie.getValue());
             }
         }
-    }
 
+        System.out.println(userName+"====="+portrait);
+    }
 
 %>
 <body>
@@ -41,9 +47,8 @@
         <div class="hd-top">
             <h1 class="logo"></h1>
             <div class="teacher-info">
-                <a href="javascript:;" class="teacher-avatar"></a>
-                <span class="teacher-name"><%=session.getAttribute("username")%></span>
-                <a href="javascript:;" class="more-info"></a>
+                <img src="<%=portrait%>" alt="user-avatar" class="teacher-avatar" height="45" width="45"/>
+                <span class="teacher-name"><%=userName%></span>
             </div>
             <div class="setting ue-clear">
                 <ul class="setting-main ue-clear">
@@ -59,7 +64,7 @@
 
     <div id="ft" class="ue-clear">
         <div class="ft1 ue-clear">
-            <i class="ft-icon1"></i> <span>数字管理系统 More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a></span>
+            <i class="ft-icon1"></i> <span>学生信息管理系统 SIMS<a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a></span>
             <em>Digital Pertal</em>
         </div>
         <div class="ft2 ue-clear">

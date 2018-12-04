@@ -18,6 +18,18 @@ public class Student {
 
     private int majorId;             //学生专业id
 
+    public Student(String studentId, String studentName, String gender, Date birthday, String phone, String portrait, int majorId) {
+        this.studentId = studentId;
+        this.studentName = studentName;
+        this.gender = gender;
+        this.birthday = birthday;
+        this.phone = phone;
+        this.portrait = portrait;
+        this.majorId = majorId;
+    }
+
+    public Student( ) {}
+
     public String getStudentId() {
         return studentId;
     }

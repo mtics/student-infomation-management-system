@@ -2,6 +2,8 @@ package util;
 
 import com.google.gson.*;
 import entity.Bulletin;
+import entity.Student;
+import entity.Teacher;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 import org.apache.http.HttpEntity;
@@ -75,6 +77,36 @@ public class JsonUtil {
         return list;
     }
 
+    public Student jsonToStudent(String jsonStr) throws ParseException {
+
+        System.out.println(jsonStr);
+
+        JSONObject jsonObject = JSONObject.fromObject(jsonStr);
+
+        String birthday = jsonObject.getString("birthday");
+
+        Student student = new Student(jsonObject.getString("studentId"), jsonObject.getString("studentName"),
+                jsonObject.getString("gender"), !birthday.equals("null") ? sdf.parse(birthday) : null,
+                jsonObject.getString("phone"),jsonObject.getString("portrait"), jsonObject.getInt("majorId"));
+
+
+        return student;
+    }
+
+    public Teacher jsonToTeacher(String jsonStr) throws ParseException {
+
+        System.out.println(jsonStr);
+
+        JSONObject jsonObject = JSONObject.fromObject(jsonStr);
+
+        String birthday = jsonObject.getString("birthday");
+
+        Teacher teacher = new Teacher(jsonObject.getString("teacherId"), jsonObject.getString("teacherName"),
+                jsonObject.getString("genger"), !birthday.equals("null")  ? sdf.parse(birthday) : null,
+                    jsonObject.getString("phone"),jsonObject.getString("portrait"), jsonObject.getInt("collegeId"));
+
+        return teacher;
+    }
     /**
      * 将List<Bulletin>转成Json
      * @param list

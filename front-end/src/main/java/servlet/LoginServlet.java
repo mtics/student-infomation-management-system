@@ -4,6 +4,8 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import entity.Bulletin;
+import entity.Student;
+import entity.Teacher;
 import entity.User;
 import page.dao.PageDaoImpl;
 import page.entity.Page;
@@ -17,6 +19,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.net.URLEncoder;
 import java.util.List;
 import java.util.Map;
 
@@ -74,12 +77,33 @@ public class LoginServlet extends HttpServlet {
             // 检查密码
             if(passwd.equals(passwdFromDataBase)){
                 System.out.println("密码正确");
-                Cookie userNameCookie = cookieUtil.setCookie("username", userName);
-                Cookie userLevelCookie = cookieUtil.setCookie("userlevle", userLevel);
 
                 // 若密码正确，则将信息添加入Cookie
+                Cookie userNameCookie = cookieUtil.setCookie("username", userName);
+                Cookie userLevelCookie = cookieUtil.setCookie("userlevle", userLevel);
                 response.addCookie(userNameCookie);
                 response.addCookie(userLevelCookie);
+
+                Cookie userPortraitCookie = null;
+
+
+                // 从数据库中找出用户对应的学生/教师信息
+                // 获得头像地址
+                if(userName.length() == 11){
+                    String studentUrl = "http://server.aspi.tech:8080/backend/student/findbyid?studentId="+userName;
+                    String studentJson = jsonUtil.loadJsonFromURL(studentUrl);
+                    Student student = jsonUtil.jsonToStudent(studentJson);
+                    userPortraitCookie = cookieUtil.setCookie("portrait", student.getPortrait());
+                    response.addCookie(userPortraitCookie);
+                }else{
+                    String teacherUrl = "http://server.aspi.tech:8080/backend/teacher/findbyid?teacherId="+userName;
+                    String teacherJson = jsonUtil.loadJsonFromURL(teacherUrl);
+                    Teacher teacher = jsonUtil.jsonToTeacher(teacherJson);
+                    userPortraitCookie = cookieUtil.setCookie("portrait", teacher.getPortrait());
+                    response.addCookie(userPortraitCookie);
+                }
+
+                System.out.println(userNameCookie.getValue()+"-----"+userPortraitCookie.getValue());
 
                 // 添加一个公告信息
                 String bulletinJson = jsonUtil.loadJsonFromURL("http://server.aspi.tech:8080/backend/bulletin/findall");
