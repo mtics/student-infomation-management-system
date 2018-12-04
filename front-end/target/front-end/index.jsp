@@ -52,14 +52,13 @@
             </div>
             <div class="setting ue-clear">
                 <ul class="setting-main ue-clear">
-                    <li><a href="javascript:;">设置</a></li>
                     <li><a href="javascript:;" class="close-btn exit"></a></li>
                 </ul>
             </div>
         </div>
     </div>
     <div id="bd">
-        <iframe width="100%" height="100%" id="mainIframe" src="nav.html" frameborder="0"></iframe>
+        <iframe width="100%" height="100%" id="mainIframe" src="nav.jsp" frameborder="0"></iframe>
     </div>
 
     <div id="ft" class="ue-clear">
@@ -125,29 +124,6 @@
     <div class="opt-panel-ml"></div>
     <div class="opt-panel-mr"></div>
     <div class="opt-panel-bl"></div>
-    <div class="opt-panel-bc"></div>
-    <div class="opt-panel-br"></div>
-</div>
-
-<div class="system-switch">
-    <ul>
-        <li>
-            <span class="system-name"><i></i>数字管理系统</span>
-        </li>
-        <li>
-            <span class="system-name"><i></i>网络信息管理系统</span>
-        </li>
-        <li>
-            <span class="system-name"><i></i>后台管理系统</span>
-        </li>
-        <li>
-            <span class="system-name"><i></i>信息科技ERP系统</span>
-        </li>
-        <li>
-            <span class="system-name"><i></i>网络管理系统</span>
-        </li>
-    </ul>
-    <div class="opt-panel-mr"></div>
     <div class="opt-panel-bc"></div>
     <div class="opt-panel-br"></div>
 </div>

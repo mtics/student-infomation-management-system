@@ -84,7 +84,9 @@ public class LoginServlet extends HttpServlet {
 
 
                 // 从数据库中找出用户对应的学生/教师信息
-                // 获得头像地址
+                // 获得头像地址.
+                // ID号11位的为学生，12位的为教师
+                // 特殊的在于有一个ID号为admin的管理员帐号
                 if(userName.length() == 11){
                     String studentUrl = "http://server.aspi.tech:8080/backend/student/findbyid?studentId="+userName;
                     String studentJson = jsonUtil.loadJsonFromURL(studentUrl);

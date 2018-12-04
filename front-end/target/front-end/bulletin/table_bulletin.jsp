@@ -1,4 +1,4 @@
-<%@ page import="entity.Bulletin" %>
+<%@ page import="bulletin.entity.Bulletin" %>
 <%@ page import="java.util.List" %><%--
   Created by IntelliJ IDEA.
   User: incentancy
