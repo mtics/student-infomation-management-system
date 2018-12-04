@@ -4,16 +4,24 @@ import com.qcloud.cos.COSClient;
 import com.qcloud.cos.ClientConfig;
 import com.qcloud.cos.auth.BasicCOSCredentials;
 import com.qcloud.cos.auth.COSCredentials;
+import com.qcloud.cos.model.GetObjectRequest;
 import com.qcloud.cos.model.PutObjectRequest;
 import com.qcloud.cos.model.UploadResult;
 import com.qcloud.cos.region.Region;
+import com.qcloud.cos.transfer.Download;
 import com.qcloud.cos.transfer.TransferManager;
 import com.qcloud.cos.transfer.Upload;
 import cos.constant.CosConstant;
+import cos.thread.UploadThread;
 
 import java.io.File;
+import java.net.URL;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+
+import static java.lang.Thread.sleep;
 
 public class CosUtil {
 
@@ -39,27 +47,48 @@ public class CosUtil {
         return cosClient;
     }
 
-    public String uploadFile(String filePath) throws InterruptedException {
+    /**
+     * 上传路径中的文件到COS
+     * 返回的是外链。
+     * 如果上传的文件名重复，会覆盖原文件
+     * @param filePath
+     */
+    public String uploadFile(final String filePath) throws InterruptedException {
 
-        // 截取出文件名;
-        int lastIndex = filePath.lastIndexOf("\\");
-        String fileName = filePath.substring(lastIndex);
+        // 创建新线程
+        UploadThread uploadThread = new UploadThread();
+        // 设置要上传的文件路径
+        uploadThread.setFilePath(filePath);
+        // 新线程上传文件
+        uploadThread.start();
+        //将异步执行变成同步执行
+        uploadThread.join();
 
-        File localFile = new File(filePath);
+        // 外链=前缀+文件名
+        String url = CosConstant.getPreUrl()+ uploadThread.getFileName();
 
-        PutObjectRequest putObjectRequest = new PutObjectRequest(CosConstant.getBucketName(), fileName, localFile);
-        // .....(提交上传下载请求, 如下文所属)
-        // 本地文件上传
-        Upload upload = transferManager.upload(putObjectRequest);
-        // 等待传输结束（如果想同步的等待上传结束，则调用 waitForCompletion）
-        UploadResult uploadResult = upload.waitForUploadResult();
+        System.out.println(url);
 
-        String uploadFileResult = uploadResult.
-        return uploadFileRet;
+        // 返回接收上传文件后获得的外链
+        return url;
     }
 
-    public void shutDownTransferManager(){
-        // 关闭 TransferManger
-        transferManager.shutdownNow();
+    public void download(final String filePath) {
+        try {
+            //下载到本地指定路径
+            File localDownFile = new File(filePath);
+            GetObjectRequest getObjectRequest = new GetObjectRequest(CosConstant.getBucketName(), CosConstant.getSecretKey());
+            // 下载文件
+            Download download = transferManager.download(getObjectRequest, localDownFile);
+            // 等待传输结束（如果想同步的等待上传结束，则调用 waitForCompletion）
+            download.waitForCompletion();
+            System.out.println("下载成功");
+        } catch (Throwable tb) {
+            System.out.println("下载失败");
+            tb.printStackTrace();
+        } finally {
+            // 关闭 TransferManger
+            transferManager.shutdownNow();
+        }
     }
 }
