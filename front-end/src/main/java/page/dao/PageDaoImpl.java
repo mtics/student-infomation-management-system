@@ -1,6 +1,5 @@
 package page.dao;
 
-import entity.Bulletin;
 import page.entity.Page;
 
 import java.util.*;

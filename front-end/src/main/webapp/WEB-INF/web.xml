@@ -8,32 +8,32 @@
     <servlet>
         <servlet-name>loginServlet</servlet-name>
         <display-name>loginServlet</display-name>
-        <servlet-class>servlet.LoginServlet</servlet-class>
+        <servlet-class>common.servlet.LoginServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>bulletinInsertServlet</servlet-name>
         <display-name>bulletinInsertServlet</display-name>
-        <servlet-class>servlet.bulletin.BulletinInsertServlet</servlet-class>
+        <servlet-class>bulletin.servlet.BulletinInsertServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>bulletinListServlet</servlet-name>
         <display-name>bulletinListServlet</display-name>
-        <servlet-class>servlet.bulletin.BulletinListServlet</servlet-class>
+        <servlet-class>bulletin.servlet.BulletinListServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>bulletinDeleteServlet</servlet-name>
         <display-name>bulletinDeleteServlet</display-name>
-        <servlet-class>servlet.bulletin.BulletinDeleteServlet</servlet-class>
+        <servlet-class>bulletin.servlet.BulletinDeleteServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>bulletinInfoServlet</servlet-name>
         <display-name>bulletinInfoServlet</display-name>
-        <servlet-class>servlet.bulletin.BulletinInfoServlet</servlet-class>
+        <servlet-class>bulletin.servlet.BulletinInfoServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>bulletinSearchServlet</servlet-name>
         <display-name>bulletinSearchServlet</display-name>
-        <servlet-class>servlet.bulletin.BulletinSearchServlet</servlet-class>
+        <servlet-class>bulletin.servlet.BulletinSearchServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
