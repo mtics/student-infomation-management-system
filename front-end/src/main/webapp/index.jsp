@@ -19,16 +19,12 @@
 
     Cookie[] cookies = request.getCookies();
 
-    System.out.println("--------"+cookies.length);
-
     // 如果cookies中无值，则跳转到登录界面
     if(cookies == null){
         %><script>window.location.href='/login.jsp'</script><%
     }else{
         for(int i = 0; i < cookies.length; i++){
             cookie = cookies[i];
-
-            System.out.println("======"+cookie.getName()+"=======");
 
             if(cookie.getName().equals("username")){
                 userName = URLDecoder.decode(cookie.getValue());
@@ -37,7 +33,6 @@
             }
         }
 
-        System.out.println(userName+"====="+portrait);
     }
 
 %>

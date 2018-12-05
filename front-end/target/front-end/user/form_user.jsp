@@ -37,19 +37,19 @@
             <h2 class="subfild">
                 <span>新增用户</span>
             </h2>
-            <form id="form_user" action="/servlet/user/insert" method="post" onsubmit="return Validate(this)">
+            <form id="form_user" action="/servlet/user/insert" method="post" enctype="multipart/form-data" onsubmit="return Validate(this)">
                 <div class="subfild-content base-info">
                     <div class="kv-item ue-clear">
                         <label><span class="impInfo">*</span>用户ID</label>
                         <div class="kv-item-content">
-                            <input type="text" placeholder="用户ID" />
+                            <input type="text" placeholder="用户ID" name="text_user_id"/>
                         </div>
                         <span class="kv-item-tip">学号为11位，职工号为12位</span>
                     </div>
                     <div class="kv-item ue-clear">
                         <label><span class="impInfo">*</span>用户姓名</label>
                         <div class="kv-item-content">
-                            <input type="text" placeholder="用户姓名" />
+                            <input type="text" placeholder="用户姓名" name="text_user_name"/>
                         </div>
                         <span class="kv-item-tip">姓名限制在6个字以内</span>
                     </div>
@@ -57,9 +57,9 @@
                     <div class="kv-item ue-clear">
                         <label><span class="impInfo">*</span>身份</label>
                         <div class="kv-item-content">
-                            <select>
-                                <option>学生</option>
-                                <option>教师</option>
+                            <select name="text_user_level">
+                                <option value="1" selected>学生</option>
+                                <option value="2">教师</option>
                             </select>
                         </div>
                     </div>
@@ -67,7 +67,7 @@
                     <div class="kv-item ue-clear time">
                         <label><span class="impInfo">*</span>生日</label>
                         <div class="kv-item-content">
-                            <input type="text" placeholder="生日" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd'})" />
+                            <input type="text" placeholder="生日" name="text_user_birthday"onfocus="WdatePicker({dateFmt:'yyyy-MM-dd'})" />
                             <i class="time-icon"></i>
                         </div>
                     </div>
@@ -76,14 +76,14 @@
                         <div class="kv-item-content">
                     	<span class="choose">
                             <span class="checkboxouter">
-                                <input type="radio" name="need" />
+                                <input type="radio" name="text_user_gender" value="男"/>
                                 <span class="radio"></span>
                             </span>
                             <span class="text">男</span>
                         </span>
                             <span class="choose">
                             <span class="checkboxouter">
-                                <input type="radio" name="need" />
+                                <input type="radio" name="text_user_gender" value="女"/>
                                 <span class="radio"></span>
                             </span>
                             <span class="text">女</span>
@@ -94,14 +94,14 @@
                     <div class="kv-item ue-clear">
                         <label><span class="impInfo">*</span>联系方式</label>
                         <div class="kv-item-content">
-                            <input type="text" placeholder="请输入手机号" />
+                            <input type="text" placeholder="请输入手机号" name="text_user_phone"/>
                         </div>
                     </div>
                     <div class="kv-item ue-clear">
                         <label><span class="impInfo">*</span>证件照</label>
                         <div class="kv-item-content file">
                             <span class="text"></span>
-                            <input type="file" />
+                            <input type="file" name="text_user_portrait"/>
                             <input type="button" class="button normal long2" value="浏览.." />
                         </div>
                     </div>
@@ -124,12 +124,12 @@
 
     function Validate(form1){
 
-        var bulletinTitle = form1.text_bulletin_title.value.trim() ;
-        var bulletinContent = form1.text_bulletin_content.value.trim() ;
+        var userId = form1.text_user_id.value.trim() ;
+        var userName = form1.text_user_name.value.trim() ;
 
-        if( bulletinTitle== '' || bulletinContent== '' )
+        if( userId== '' || userName== '' )
         {
-            alert( "公告标题和内容不得为空！" ) ;
+            alert( "用户ID和姓名不得为空！" ) ;
             return false;
         }
         return true;

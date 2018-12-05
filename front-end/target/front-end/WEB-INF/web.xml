@@ -35,6 +35,11 @@
         <display-name>bulletinSearchServlet</display-name>
         <servlet-class>bulletin.servlet.BulletinSearchServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>userInsertServlet</servlet-name>
+        <display-name>userInsertServlet</display-name>
+        <servlet-class>user.servlet.UserInsertServlet</servlet-class>
+    </servlet>
 
     <servlet-mapping>
         <servlet-name>loginServlet</servlet-name>
@@ -59,6 +64,10 @@
     <servlet-mapping>
         <servlet-name>bulletinSearchServlet</servlet-name>
         <url-pattern>/servlet/bulletin/search</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>userInsertServlet</servlet-name>
+        <url-pattern>/servlet/user/insert</url-pattern>
     </servlet-mapping>
 
   <welcome-file-list>
