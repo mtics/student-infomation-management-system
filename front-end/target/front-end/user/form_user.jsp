@@ -37,7 +37,7 @@
             <h2 class="subfild">
                 <span>新增用户</span>
             </h2>
-            <form id="form_user" action="/servlet/user/insert" method="post" enctype="multipart/form-data" onsubmit="return Validate(this)">
+            <form id="form_user" action="/servlet/user/insert" method="post" onsubmit="return Validate(this)" enctype="multipart/form-data">
                 <div class="subfild-content base-info">
                     <div class="kv-item ue-clear">
                         <label><span class="impInfo">*</span>用户ID</label>
@@ -76,7 +76,7 @@
                         <div class="kv-item-content">
                     	<span class="choose">
                             <span class="checkboxouter">
-                                <input type="radio" name="text_user_gender" value="男"/>
+                                <input type="radio" name="text_user_gender" value="男" checked="checked"/>
                                 <span class="radio"></span>
                             </span>
                             <span class="text">男</span>
@@ -92,10 +92,17 @@
                     </div>
 
                     <div class="kv-item ue-clear">
-                        <label><span class="impInfo">*</span>联系方式</label>
+                        <label><span class="impInfo">*</span>邮箱</label>
                         <div class="kv-item-content">
-                            <input type="text" placeholder="请输入手机号" name="text_user_phone"/>
+                            <input type="text" placeholder="请输入邮箱" name="text_user_email"/>
                         </div>
+                    </div>
+                    <div class="kv-item ue-clear">
+                        <label><span class="impInfo">*</span>学院/专业ID</label>
+                        <div class="kv-item-content">
+                            <input type="text" placeholder="请输入学院/专业ID" name="text_user_major"/>
+                        </div>
+                        <span class="kv-item-tip">学生输入专业ID，教师输入学院ID</span>
                     </div>
                     <div class="kv-item ue-clear">
                         <label><span class="impInfo">*</span>证件照</label>

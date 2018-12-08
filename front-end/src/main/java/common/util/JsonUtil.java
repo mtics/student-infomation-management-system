@@ -2,7 +2,7 @@ package common.util;
 
 import com.google.gson.*;
 import bulletin.entity.Bulletin;
-import student.Student;
+import student.entity.Student;
 import teacher.entity.Teacher;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
@@ -55,8 +55,6 @@ public class JsonUtil {
      */
     public List<Bulletin> jsonToBulletinList(String jsonStr) throws ParseException {
 
-        System.out.println(jsonStr);
-
         JSONArray jsonArray = JSONArray.fromObject(jsonStr);
 
         List<Bulletin> list = new ArrayList<Bulletin>();
@@ -77,9 +75,61 @@ public class JsonUtil {
         return list;
     }
 
-    public Student jsonToStudent(String jsonStr) throws ParseException {
+    /**
+     * 将JSON解析成List<Student>
+     * @param jsonStr
+     * @return
+     */
+    public List<Student> jsonToStudentList(String jsonStr) throws ParseException {
 
-        System.out.println(jsonStr);
+        JSONArray jsonArray = JSONArray.fromObject(jsonStr);
+
+        List<Student> list = new ArrayList<Student>();
+
+        Student student = null;
+
+        for (int i = 0; i < jsonArray.size(); i ++){
+
+            JSONObject jsonObject = jsonArray.getJSONObject(i);
+
+            student = new Student(jsonObject.getString("studentId"), jsonObject.getString("studentName"),
+                    jsonObject.getString("gender"), sdf.parse(jsonObject.getString("birthday")),
+                    jsonObject.getString("email"), jsonObject.getString("portrait"),jsonObject.getInt("majorId"));
+
+            list.add(student);
+        }
+
+        return list;
+    }
+
+    /**
+     * 将JSON解析成List<Student>
+     * @param jsonStr
+     * @return
+     */
+    public List<Teacher> jsonToTeacherList(String jsonStr) throws ParseException {
+
+        JSONArray jsonArray = JSONArray.fromObject(jsonStr);
+
+        List<Teacher> list = new ArrayList<Teacher>();
+
+        Teacher teacher = null;
+
+        for (int i = 0; i < jsonArray.size(); i ++){
+
+            JSONObject jsonObject = jsonArray.getJSONObject(i);
+
+            teacher = new Teacher(jsonObject.getString("teacherId"), jsonObject.getString("teacherName"),
+                    jsonObject.getString("gender"), sdf.parse(jsonObject.getString("birthday")),
+                    jsonObject.getString("email"), jsonObject.getString("portrait"),jsonObject.getInt("collegeId"));
+
+            list.add(teacher);
+        }
+
+        return list;
+    }
+
+    public Student jsonToStudent(String jsonStr) throws ParseException {
 
         JSONObject jsonObject = JSONObject.fromObject(jsonStr);
 
@@ -87,7 +137,7 @@ public class JsonUtil {
 
         Student student = new Student(jsonObject.getString("studentId"), jsonObject.getString("studentName"),
                 jsonObject.getString("gender"), !birthday.equals("null") ? sdf.parse(birthday) : null,
-                jsonObject.getString("phone"),jsonObject.getString("portrait"), jsonObject.getInt("majorId"));
+                jsonObject.getString("email"),jsonObject.getString("portrait"), jsonObject.getInt("majorId"));
 
 
         return student;
@@ -95,18 +145,17 @@ public class JsonUtil {
 
     public Teacher jsonToTeacher(String jsonStr) throws ParseException {
 
-        System.out.println(jsonStr);
-
         JSONObject jsonObject = JSONObject.fromObject(jsonStr);
 
         String birthday = jsonObject.getString("birthday");
 
         Teacher teacher = new Teacher(jsonObject.getString("teacherId"), jsonObject.getString("teacherName"),
-                jsonObject.getString("genger"), !birthday.equals("null")  ? sdf.parse(birthday) : null,
-                    jsonObject.getString("phone"),jsonObject.getString("portrait"), jsonObject.getInt("collegeId"));
+                jsonObject.getString("gender"), !birthday.equals("null")  ? sdf.parse(birthday) : null,
+                    jsonObject.getString("email"),jsonObject.getString("portrait"), jsonObject.getInt("collegeId"));
 
         return teacher;
     }
+
     /**
      * 将List<Bulletin>转成Json
      * @param list
@@ -135,13 +184,61 @@ public class JsonUtil {
     }
 
     /**
-    public static void main(String[] args){
-        String url = "http://server.aspi.tech:8080/backend/user/findbyid?user_id=20181151105";
-        try {
-            System.out.println(loadJsonFromURL(url));
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
+     * 将List<Student>转成Json
+     * @param list
+     * @return
      */
+    public String studentListToJson(List<Student> list){
+
+        JSONObject jsonObject = null;
+        JSONArray jsonArray = new JSONArray();
+
+        // 将List中的每个实体的属性都加入到JSONObject里
+        // JSONObject添加完属性后加到JSONArray里
+        for(Student student: list){
+            jsonObject = new JSONObject();
+
+            jsonObject.put("studentId", student.getStudentId());
+            jsonObject.put("studentName", student.getStudentName());
+            jsonObject.put("gender", student.getGender());
+            jsonObject.put("birthday", sdf.format(student.getBirthday()));
+            jsonObject.put("email", student.getEmail());
+            jsonObject.put("majorId", student.getMajorId());
+            jsonObject.put("portrait", student.getPortrait());
+
+            jsonArray.add(jsonObject);
+        }
+
+        return jsonArray.toString();
+    }
+
+    /**
+     * 将List<Teacher>转成Json
+     * @param list
+     * @return
+     */
+    public String teacherListToJson(List<Teacher> list){
+
+        JSONObject jsonObject = null;
+        JSONArray jsonArray = new JSONArray();
+
+        // 将List中的每个实体的属性都加入到JSONObject里
+        // JSONObject添加完属性后加到JSONArray里
+        for(Teacher teacher: list){
+            jsonObject = new JSONObject();
+
+            jsonObject.put("teacherId", teacher.getTeacherId());
+            jsonObject.put("teacherName", teacher.getTeacherName());
+            jsonObject.put("gender", teacher.getGender());
+            jsonObject.put("birthday", sdf.format(teacher.getBirthday()));
+            jsonObject.put("email", teacher.getEmail());
+            jsonObject.put("collegeId", teacher.getCollegeId());
+            jsonObject.put("portrait", teacher.getPortrait());
+
+            jsonArray.add(jsonObject);
+        }
+
+        return jsonArray.toString();
+    }
+
 }

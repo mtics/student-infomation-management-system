@@ -5,23 +5,15 @@ import com.qcloud.cos.ClientConfig;
 import com.qcloud.cos.auth.BasicCOSCredentials;
 import com.qcloud.cos.auth.COSCredentials;
 import com.qcloud.cos.model.GetObjectRequest;
-import com.qcloud.cos.model.PutObjectRequest;
-import com.qcloud.cos.model.UploadResult;
 import com.qcloud.cos.region.Region;
 import com.qcloud.cos.transfer.Download;
 import com.qcloud.cos.transfer.TransferManager;
-import com.qcloud.cos.transfer.Upload;
 import cos.constant.CosConstant;
 import cos.thread.UploadThread;
 
 import java.io.File;
-import java.net.URL;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-
-import static java.lang.Thread.sleep;
 
 public class CosUtil {
 
@@ -51,14 +43,14 @@ public class CosUtil {
      * 上传路径中的文件到COS
      * 返回的是外链。
      * 如果上传的文件名重复，会覆盖原文件
-     * @param filePath
+     * @param file
      */
-    public String uploadFile(final String filePath) throws InterruptedException {
+    public String uploadFile(final File file) throws InterruptedException {
 
         // 创建新线程
         UploadThread uploadThread = new UploadThread();
         // 设置要上传的文件路径
-        uploadThread.setFilePath(filePath);
+        uploadThread.setFile(file);
         // 新线程上传文件
         uploadThread.start();
         //将异步执行变成同步执行
@@ -67,7 +59,8 @@ public class CosUtil {
         // 外链=前缀+文件名
         String url = CosConstant.getPreUrl()+ uploadThread.getFileName();
 
-        System.out.println(url);
+        // 文件上传后将临时文件删除
+        file.delete();
 
         // 返回接收上传文件后获得的外链
         return url;

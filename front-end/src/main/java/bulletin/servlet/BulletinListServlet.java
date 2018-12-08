@@ -23,10 +23,8 @@ public class BulletinListServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        System.out.println(request.getParameter("page_num").toString());
-
         // 获取当前是页数
-        int currentPage = Integer.valueOf(request.getParameter("page_num"));
+        int currentPage = Integer.valueOf(request.getParameter("page_num") == null ? "1" : request.getParameter("page_num"));
         // 设置每页数据数
         int pageSize = 10;
 

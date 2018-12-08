@@ -18,9 +18,9 @@ public class UploadThread extends Thread {
 
     private URL url;
 
-    private String filePath;
-
     private String fileName;
+
+    private File file;
 
     // 线程池大小，建议在客户端与COS网络充足(如使用腾讯云的CVM，同园区上传COS)的情况下，设置成16或32即可, 可较充分的利用网络资源
     // 对于使用公网传输且网络带宽质量不高的情况，建议减小该值，避免因网速过慢，造成请求超时。
@@ -40,30 +40,25 @@ public class UploadThread extends Thread {
         this.url = url;
     }
 
-    public String getFilePath() {
-        return filePath;
+    public File getFile() {
+        return file;
     }
 
-    public void setFilePath(String filePath) {
-        this.filePath = filePath;
+    public void setFile(File file) {
+        this.file = file;
     }
 
     public String getFileName() {
         return fileName;
     }
 
-    public void setFileName(String fileName) {
-        this.fileName = fileName;
-    }
-
     @Override
     public void run() {
         try{
-            // 截取出文件名;
-            int lastIndex = filePath.lastIndexOf("/")+1;
-            fileName = filePath.substring(lastIndex);
 
-            File localFile = new File(filePath);
+            File localFile = file;
+
+            fileName = file.getName();
 
             PutObjectRequest putObjectRequest = new PutObjectRequest(CosConstant.getBucketName(), fileName, localFile);
             // .....(提交上传下载请求, 如下文所属)

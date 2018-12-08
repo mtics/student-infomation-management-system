@@ -9,6 +9,8 @@ import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
 
 import java.io.IOException;
+import java.net.URLEncoder;
+
 public class ClientUtil {
 
     public boolean sendPost(String url) throws IOException {

@@ -37,25 +37,58 @@
             <h2 class="subfild">
                 <span>公告信息</span>
             </h2>
-            <form id="form_bulletin" action="/servlet/bulletin/insert" method="post" onsubmit="return Validate(this)">
-                <input type="text" style="display: none" name="text_bulletin_id" value="<%=session.getAttribute("bulletin_id")%>"/>
-                <div class="subfild-content base-info">
-                    <div class="kv-item ue-clear">
-                        <label><span class="impInfo">*</span>公告标题</label>
-                        <div class="kv-item-content">
-                            <input type="text" placeholder="公告标题" name="text_bulletin_title" value="<%=session.getAttribute("bulletin_title")%>"/>
-                        </div>
-                        <span class="kv-item-tip">标题字数限制在60个字符内</span>
+            <form id="form_user" action="/servlet/user/insert" method="post" onsubmit="return Validate(this)" enctype="multipart/form-data">
+                <input type="text" style="display: none" name="text_user_id" value="<%=session.getAttribute("user_id")%>"/>
+                <input type="text" style="display: none" name="text_user_level" value="<%=session.getAttribute("user_level")%>"/>
+                <input type="text" style="display: none" name="text_user_portrait" value="<%=session.getAttribute("portrait")%>"/>
+                <div class="kv-item ue-clear">
+                    <label><span class="impInfo">*</span>用户姓名</label>
+                    <div class="kv-item-content">
+                        <input type="text" placeholder="用户姓名" name="text_user_name" value="<%=session.getAttribute("user_name")%>"/>
+                    </div>
+                    <span class="kv-item-tip">姓名限制在6个字以内</span>
+                </div>
+
+                <div class="kv-item ue-clear time">
+                    <label><span class="impInfo">*</span>生日</label>
+                    <div class="kv-item-content">
+                        <input type="text" placeholder="生日" name="text_user_birthday"onfocus="WdatePicker({dateFmt:'yyyy-MM-dd'})" value="<%=session.getAttribute("birthday")%>"/>
+                        <i class="time-icon"></i>
                     </div>
                 </div>
-                <div class="subfild-content remarkes-info">
-                    <div class="kv-item ue-clear">
-                        <label><span class="impInfo">*</span>公告内容</label>
-                        <div class="kv-item-content">
-                            <textarea placeholder="<%=session.getAttribute("bulletin_context")%>" name="text_bulletin_context" style="width:800px;height:240px;"><%=session.getAttribute("bulletin_context")%></textarea>
-                        </div>
-                        <span class="kv-item-tip">公告内容字数限制在300个字以内</span>
+                <div class="kv-item ue-clear">
+                    <label><span class="impInfo">*</span>性别</label>
+
+                    <div class="kv-item-content">
+                    	<span class="choose">
+                            <span class="checkboxouter">
+                                <input type="radio" name="text_user_gender" value="男" <% if(session.getAttribute("gender").equals("男")){%>checked="checked"<%}%>/>
+                                <span class="radio"></span>
+                            </span>
+                            <span class="text">男</span>
+                        </span>
+                        <span class="choose">
+                            <span class="checkboxouter">
+                                <input type="radio" name="text_user_gender" value="女" <% if(session.getAttribute("gender").equals("女")){%>checked="checked"<%}%>/>
+                                <span class="radio"></span>
+                            </span>
+                            <span class="text">女</span>
+                        </span>
                     </div>
+                </div>
+
+                <div class="kv-item ue-clear">
+                    <label><span class="impInfo">*</span>邮箱</label>
+                    <div class="kv-item-content">
+                        <input type="text" placeholder="请输入邮箱" name="text_user_email" value="<%=session.getAttribute("email")%>"/>
+                    </div>
+                </div>
+                <div class="kv-item ue-clear">
+                    <label><span class="impInfo">*</span>学院/专业ID</label>
+                    <div class="kv-item-content">
+                        <input type="text" placeholder="请输入学院/专业ID" name="text_user_major" value="<%=session.getAttribute("major_id")%>"/>
+                    </div>
+                    <span class="kv-item-tip">学生输入专业ID，教师输入学院ID</span>
                 </div>
 
                 <div class="buttons">

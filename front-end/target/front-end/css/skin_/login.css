@@ -30,7 +30,7 @@ html{*overflow:auto;}
 .styleArea .iselect-wrapper .iselwrap-val{padding-left:10px;font-size:14px;}
 
 /*登录按钮*/
-#btn{ position:absolute; left:193px; top:317px;}
+#btn{ position:absolute; left:167px; top:359px;}
 #btn input{ width:133px; height:39px; background:url(../../img/skin_/loginbtn.png); border:none; outline:none; cursor:pointer; font-size:16px; font-weight:bold;}
 #btn input:hover{background:url(../../img/skin_/loginbtn_active.png);}
 

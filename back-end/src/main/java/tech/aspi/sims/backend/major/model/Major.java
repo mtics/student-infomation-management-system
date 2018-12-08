@@ -1,34 +1,32 @@
 package tech.aspi.sims.backend.major.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
+@Table(name = "major")
 public class Major {
 
     @Id
     @GeneratedValue
-    @Column(name = "college_id")
-    private String collegeId;
+    @Column(name = "major_id")
+    private String majorId;
 
-    @Column(name = "college_name")
-    private String collegeName;
+    @Column(name = "major_name")
+    private String majorName;
 
-    public String getCollegeId() {
-        return collegeId;
+    public String getMajorId() {
+        return majorId;
     }
 
-    public void setCollegeId(String collegeId) {
-        this.collegeId = collegeId;
+    public void setMajorId(String majorId) {
+        this.majorId = majorId;
     }
 
-    public String getCollegeName() {
-        return collegeName;
+    public String getMajorName() {
+        return majorName;
     }
 
-    public void setCollegeName(String collegeName) {
-        this.collegeName = collegeName;
+    public void setMajorName(String majorName) {
+        this.majorName = majorName;
     }
 }

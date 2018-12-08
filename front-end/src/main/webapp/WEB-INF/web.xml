@@ -31,14 +31,54 @@
         <servlet-class>bulletin.servlet.BulletinInfoServlet</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>bulletinSearchServlet</servlet-name>
-        <display-name>bulletinSearchServlet</display-name>
-        <servlet-class>bulletin.servlet.BulletinSearchServlet</servlet-class>
-    </servlet>
-    <servlet>
         <servlet-name>userInsertServlet</servlet-name>
         <display-name>userInsertServlet</display-name>
         <servlet-class>user.servlet.UserInsertServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>studentListFrashServlet</servlet-name>
+        <display-name>studentListFrashServlet</display-name>
+        <servlet-class>student.servlet.StudentListFrashServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>studentDeleteServlet</servlet-name>
+        <display-name>studentDeleteServlet</display-name>
+        <servlet-class>student.servlet.StudentDeleteServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>studentInfoServlet</servlet-name>
+        <display-name>studentInfoServlet</display-name>
+        <servlet-class>student.servlet.StudentInfoServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>teacherListFrashServlet</servlet-name>
+        <display-name>teacherListFrashServlet</display-name>
+        <servlet-class>teacher.servlet.TeacherListFrashServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>teacherDeleteServlet</servlet-name>
+        <display-name>teacherDeleteServlet</display-name>
+        <servlet-class>teacher.servlet.TeacherDeleteServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>teacherInfoServlet</servlet-name>
+        <display-name>teacherInfoServlet</display-name>
+        <servlet-class>teacher.servlet.TeacherInfoServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>imageServlet</servlet-name>
+        <display-name>imageServlet</display-name>
+        <servlet-class>common.servlet.ImageServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>verificationServlet</servlet-name>
+        <display-name>verificationServlet</display-name>
+        <servlet-class>common.servlet.VerificationServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>findPasswdServlet</servlet-name>
+        <display-name>findPasswdServlet</display-name>
+        <servlet-class>user.servlet.UserPasswdServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
@@ -62,15 +102,49 @@
         <url-pattern>/servlet/bulletin/update</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>bulletinSearchServlet</servlet-name>
-        <url-pattern>/servlet/bulletin/search</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
         <servlet-name>userInsertServlet</servlet-name>
         <url-pattern>/servlet/user/insert</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>studentListFrashServlet</servlet-name>
+        <url-pattern>/servlet/student/list</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>studentDeleteServlet</servlet-name>
+        <url-pattern>/servlet/student/delete</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>studentInfoServlet</servlet-name>
+        <url-pattern>/servlet/student/info</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>teacherListFrashServlet</servlet-name>
+        <url-pattern>/servlet/teacher/list</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>teacherDeleteServlet</servlet-name>
+        <url-pattern>/servlet/teacher/delete</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>teacherInfoServlet</servlet-name>
+        <url-pattern>/servlet/teacher/info</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>imageServlet</servlet-name>
+        <url-pattern>/servlet/image</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>verificationServlet</servlet-name>
+        <url-pattern>/servlet/verification</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>findPasswdServlet</servlet-name>
+        <url-pattern>/servlet/findPasswd</url-pattern>
+    </servlet-mapping>
 
-  <welcome-file-list>
+
+
+    <welcome-file-list>
     <welcome-file>/login.jsp</welcome-file>
   </welcome-file-list>
 

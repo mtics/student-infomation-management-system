@@ -30,15 +30,20 @@
                         <span></span>
                         <input type="password" name="text_password" />
                     </div>
-                    <!--
                     <div class="input validate" id="captcha">
-                        <label for="captcha_value">验证码</label>
-                        <input type="text" id="captcha_value" />
-                        <div class="value">X3D5</div>
+                        <label for="checkcode">验证码</label>
+                        <input type="text" name="checkcode"  id="checkcode"/>
+                        <div class="value">
+                            <a href="javascript:reload();">
+                            <img  src="servlet/image" alt="验证码" id="image" />
+                            </a>
+                        </div>
                     </div>
-                    -->
-                    <div id="btn" class="loginButton">
+                    <div id="btn" class="loginButton" style="position: absolute; left: 169px; top: 359px">
                         <input type="submit" class="button" value="登录"  name="button_login" />
+                    </div>
+                    <div id="button_findpasswd" class="loginButton" style="position: absolute; left: 320px; top: 361px">
+                        <input type="button" class="button" value="忘记密码"  name="button_findpasswd" onclick="goToFindPasswd()"/>
                     </div>
                 </form>
             </div>
@@ -62,6 +67,7 @@
     });
     $('select').select();
 
+    // 该方法用于检验用户名、密码是否为空，以及验证码是否正确
     function Validate(form){
 
         var userName = form.text_username.value.trim() ;
@@ -72,7 +78,77 @@
             alert( "用户名或密码不得为空！" ) ;
             return false;
         }
+
+        // 若验证码不正确，则返回false
+        // 拒绝提交
+        if(!verificationcode()){
+            return false;
+        }
+
         return true;
+    }
+
+    function reload(){
+        document.getElementById("image").src="/servlet/image?date="+new Date().getTime();
+        $("#checkcode").val("");   // 将验证码清空
+    }
+
+    function verificationcode(){
+
+        var isRight = true;
+
+        var text=$.trim($("#checkcode").val());
+
+
+        /**
+         * 下面这个方法目前是不能用的
+         * $.post()异步执行，而之前的Validate()是同步执行
+         * 也就是说，如果Validate()执行到了$.post()，会开启异步执行
+         * 而Validate()本身会继续往下走，
+         * 从而结束了函数调用，使得$.post()看上去似乎没有调用
+         */
+        // $(selector).post(将请求发送到哪个URL(必需),
+        //                  连同请求发送到服务器的数据(可选),
+        //                  当请求成功时运行的函数(可选),
+        //                  预期的服务器响应的数据类型(可选))
+        // $.post("/servlet/verification",{op:text},function(data){
+        //
+        //     alert("data="+data);
+        //     data=parseInt($.trim(data));
+        //     if(data>0){
+        //         $("#span").text("验证成功!").css("color","green");
+        //         isRight = true;
+        //     }else{
+        //         $("#span").text("验证失败!").css("color","red");
+        //         reload();  //验证失败后需要更换验证码
+        //         isRight = false;
+        //     }
+        // });
+
+        $.ajax({
+            url: "/servlet/verification",
+            async: false,//这一步是非常重要的，作用是设置为同步执行
+            type: "POST",
+            data: {op: text },
+            success: function (data) {
+                data=parseInt($.trim(data));
+                if(data>0){
+                    isRight = true;
+                }else{
+                    alert("验证码错误！");
+                    reload();  //验证失败后需要更换验证码
+                    isRight = false;
+                }
+            }
+        });
+
+        $("#checkcode").val(""); // 将验证码清空
+
+        return isRight;
+    }
+
+    function goToFindPasswd() {
+        window.location.href = "findpasswd.jsp";
     }
 </script>
 

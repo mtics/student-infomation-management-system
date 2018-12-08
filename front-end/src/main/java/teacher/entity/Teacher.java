@@ -10,21 +10,21 @@ public class Teacher {
 
     private int collegeId;
 
-    private String genger;
+    private String gender;
 
     private Date birthday;
 
-    private String phone;
+    private String email;
 
     private String portrait;        //教师照片
 
-    public Teacher(String teacherId, String teacherName, String genger, Date birthday, String phone, String portrait, int collegeId) {
+    public Teacher(String teacherId, String teacherName, String gender, Date birthday, String email, String portrait, int collegeId) {
         this.teacherId = teacherId;
         this.teacherName = teacherName;
         this.collegeId = collegeId;
-        this.genger = genger;
+        this.gender = gender;
         this.birthday = birthday;
-        this.phone = phone;
+        this.email = email;
         this.portrait = portrait;
     }
 
@@ -55,12 +55,12 @@ public class Teacher {
         this.collegeId = collegeId;
     }
 
-    public String getGenger() {
-        return genger;
+    public String getGender() {
+        return gender;
     }
 
-    public void setGenger(String genger) {
-        this.genger = genger;
+    public void setGender(String gender) {
+        this.gender = gender;
     }
 
     public Date getBirthday() {
@@ -71,12 +71,12 @@ public class Teacher {
         this.birthday = birthday;
     }
 
-    public String getPhone() {
-        return phone;
+    public String getEmail() {
+        return email;
     }
 
-    public void setPhone(String phone) {
-        this.phone = phone;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getPortrait() {

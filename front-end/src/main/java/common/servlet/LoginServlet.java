@@ -2,11 +2,8 @@ package common.servlet;
 
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-import bulletin.entity.Bulletin;
-import student.Student;
+import student.entity.Student;
 import teacher.entity.Teacher;
-import page.dao.PageDaoImpl;
-import page.entity.Page;
 import common.util.CookieUtil;
 import common.util.JsonUtil;
 
@@ -17,15 +14,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.List;
 
 public class LoginServlet extends HttpServlet {
 
     private JsonUtil jsonUtil = new JsonUtil();
 
     private CookieUtil cookieUtil = new CookieUtil();
-
-    private PageDaoImpl pageDao = new PageDaoImpl();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -44,9 +38,9 @@ public class LoginServlet extends HttpServlet {
         PrintWriter out = response.getWriter();
 
         // get username
-        String userName = (String)request.getParameter("text_username");
+        String userName = request.getParameter("text_username");
         // get password
-        String passwd = (String)request.getParameter("text_password");
+        String passwd = request.getParameter("text_password");
 
         // 从服务器后台获取该用户对应的信息
         String url = "http://server.aspi.tech:8080/backend/user/findbyid?user_id="+userName;
@@ -72,23 +66,21 @@ public class LoginServlet extends HttpServlet {
 
             // 检查密码
             if(passwd.equals(passwdFromDataBase)){
-                System.out.println("密码正确");
 
                 // 若密码正确，则将信息添加入Cookie
                 Cookie userNameCookie = cookieUtil.setCookie("username", userName);
-                Cookie userLevelCookie = cookieUtil.setCookie("userlevle", userLevel);
+                Cookie userLevelCookie = cookieUtil.setCookie("userlevel", userLevel);
                 response.addCookie(userNameCookie);
                 response.addCookie(userLevelCookie);
 
                 Cookie userPortraitCookie = null;
-
 
                 // 从数据库中找出用户对应的学生/教师信息
                 // 获得头像地址.
                 // ID号11位的为学生，12位的为教师
                 // 特殊的在于有一个ID号为admin的管理员帐号
                 if(userName.length() == 11){
-                    String studentUrl = "http://server.aspi.tech:8080/backend/student/findbyid?studentId="+userName;
+                    String studentUrl = "http://server.aspi.tech:8080/backend/student/findbyid?stu_id="+userName;
                     String studentJson = jsonUtil.loadJsonFromURL(studentUrl);
                     Student student = jsonUtil.jsonToStudent(studentJson);
                     userPortraitCookie = cookieUtil.setCookie("portrait", student.getPortrait());
@@ -100,25 +92,6 @@ public class LoginServlet extends HttpServlet {
                     userPortraitCookie = cookieUtil.setCookie("portrait", teacher.getPortrait());
                     response.addCookie(userPortraitCookie);
                 }
-
-                System.out.println(userNameCookie.getValue()+"-----"+userPortraitCookie.getValue());
-
-                // 添加一个公告信息
-                String bulletinJson = jsonUtil.loadJsonFromURL("http://server.aspi.tech:8080/backend/bulletin/findall");
-
-                List<Bulletin> bulletinList = jsonUtil.jsonToBulletinList(bulletinJson);
-
-                Page<Bulletin> bulletinPage = new Page<Bulletin>(1, 10, bulletinList);
-
-                bulletinList = pageDao.getDataListWithPage(bulletinPage.getCurrentPage(), bulletinPage);
-
-                String handledBulletinListJson = jsonUtil.bullutinListToJson(bulletinList);
-
-                // 将获得的列表添加到cookie中
-                request.getSession().setAttribute("bulletins_json", handledBulletinListJson);
-                request.getSession().setAttribute("bulletin_pages", bulletinPage.getTotalPages());
-                request.getSession().setAttribute("bulletin_current_page", bulletinPage.getCurrentPage()-1);
-
                 response.sendRedirect ("/index.jsp") ;
             }else {
                 out.print("<script>alert('用户名或密码错误!')</script>");

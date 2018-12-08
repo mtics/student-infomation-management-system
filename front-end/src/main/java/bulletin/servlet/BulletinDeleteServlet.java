@@ -48,24 +48,7 @@ public class BulletinDeleteServlet extends HttpServlet {
             System.out.println(isSuccess);
 
             if(isSuccess){
-                // 更新公告信息
-                String bulletinJson = jsonUtil.loadJsonFromURL("http://server.aspi.tech:8080/backend/bulletin/findall");
-
-                List<Bulletin> bulletinList = jsonUtil.jsonToBulletinList(bulletinJson);
-
-                Page<Bulletin> bulletinPage = new Page<Bulletin>(1, 10, bulletinList);
-
-                bulletinList = pageDao.getDataListWithPage(bulletinPage.getCurrentPage(), bulletinPage);
-
-                String handledBulletinListJson = jsonUtil.bullutinListToJson(bulletinList);
-
-                // 将获得的列表添加到cookie中
-                request.getSession().setAttribute("bulletin_json", handledBulletinListJson);
-                request.getSession().setAttribute("bulletin_pages", bulletinPage.getTotalPages());
-                request.getSession().setAttribute("bulletin_current_page", bulletinPage.getCurrentPage()-1);
-
-
-                response.sendRedirect("/bulletin/table_bulletin.jsp");
+                response.sendRedirect("/servlet/bulletin/list");
             }else{
                 // 如果删除失败，直接返回即可
                 // session中的值不需要更新

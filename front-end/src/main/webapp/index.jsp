@@ -85,25 +85,6 @@
     </div>
 </div>
 
-<div class="opt-panel teacher-opt" style="top:52px;left:330px;">
-    <ul>
-        <li><a class="text">用户资料</a></li>
-        <li><a class="text">短消息<span class="num">(2)</span></a></li>
-        <li><a class="text">资料信息</a></li>
-        <li><a class="text">注销</a></li>
-        <li><a class="text">自定义</a></li>
-    </ul>
-    <div class="opt-panel-tl"></div>
-    <div class="opt-panel-tc"></div>
-    <div class="opt-panel-tr"></div>
-    <div class="opt-panel-ml"></div>
-    <div class="opt-panel-mr"></div>
-    <div class="opt-panel-bl"></div>
-    <div class="opt-panel-bc"></div>
-    <div class="opt-panel-br"></div>
-    <div class="opt-panel-arrow"></div>
-</div>
-
 <div class="opt-panel skin-opt" style="top:36px;right:157px;">
     <ul class="ue-clear">
         <li attr-color="#0f8dc7"></li>

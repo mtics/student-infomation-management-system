@@ -3,9 +3,11 @@ package tech.aspi.sims.backend.teacher.model;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 import java.util.Date;
 
 @Entity
+@Table(name = "teacher")
 public class Teacher {
 
     @Id
@@ -19,13 +21,13 @@ public class Teacher {
     private int collegeId;
 
     @Column(name = "gender")
-    private String genger;
+    private String gender;
 
     @Column(name = "birthday")
     private Date birthday;
 
-    @Column(name = "phone")
-    private String phone;
+    @Column(name = "email")
+    private String email;
 
     @Column(name = "portrait")
     private String portrait;        //教师照片
@@ -54,12 +56,12 @@ public class Teacher {
         this.collegeId = collegeId;
     }
 
-    public String getGenger() {
-        return genger;
+    public String getGender() {
+        return gender;
     }
 
-    public void setGenger(String genger) {
-        this.genger = genger;
+    public void setGender(String gender) {
+        this.gender = gender;
     }
 
     public Date getBirthday() {
@@ -70,12 +72,12 @@ public class Teacher {
         this.birthday = birthday;
     }
 
-    public String getPhone() {
-        return phone;
+    public String getEmail() {
+        return email;
     }
 
-    public void setPhone(String phone) {
-        this.phone = phone;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getPortrait() {

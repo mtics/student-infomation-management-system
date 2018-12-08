@@ -1,4 +1,4 @@
-package student;
+package student.entity;
 
 import java.util.Date;
 
@@ -12,18 +12,18 @@ public class Student {
 
     private Date birthday;
 
-    private String phone;
+    private String email;
 
     private String portrait;         //存储的是图片地址
 
     private int majorId;             //学生专业id
 
-    public Student(String studentId, String studentName, String gender, Date birthday, String phone, String portrait, int majorId) {
+    public Student(String studentId, String studentName, String gender, Date birthday, String email, String portrait, int majorId) {
         this.studentId = studentId;
         this.studentName = studentName;
         this.gender = gender;
         this.birthday = birthday;
-        this.phone = phone;
+        this.email = email;
         this.portrait = portrait;
         this.majorId = majorId;
     }
@@ -62,12 +62,12 @@ public class Student {
         this.birthday = birthday;
     }
 
-    public String getPhone() {
-        return phone;
+    public String getEmail() {
+        return email;
     }
 
-    public void setPhone(String phone) {
-        this.phone = phone;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getPortrait() {

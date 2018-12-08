@@ -4,10 +4,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import tech.aspi.sims.backend.student.model.Student;
 import tech.aspi.sims.backend.teacher.model.Teacher;
 import tech.aspi.sims.backend.teacher.service.TeacherService;
 
 import javax.annotation.Resource;
+import java.util.List;
 import java.util.Optional;
 
 
@@ -39,5 +41,10 @@ public class TeacherController {
     @GetMapping("/findbyid")
     public Optional<Teacher> findById(String teacherId){
         return teacherService.findById(teacherId);
+    }
+
+    @GetMapping("/findallbyparams")
+    public List<Teacher> findAllByParams(Teacher teacher){
+        return teacherService.findAllByParams(teacher);
     }
 }

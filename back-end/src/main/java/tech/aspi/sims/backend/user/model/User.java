@@ -3,8 +3,10 @@ package tech.aspi.sims.backend.user.model;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "sims_user")
 public class User {
 
     @Id

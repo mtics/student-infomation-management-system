@@ -51,7 +51,7 @@ public class BulletinInfoServlet extends HttpServlet {
             System.out.println("bulletinTitle: "+bulletinTitle);
             System.out.println("bulletinContext: "+bulletinContext);
 
-            response.sendRedirect ("/bulletin/form_user_update.jsp") ;
+            response.sendRedirect ("/bulletin/form_bulletin_update.jsp") ;
         } catch (Exception e) {
             e.printStackTrace();
         }

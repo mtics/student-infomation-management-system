@@ -65,7 +65,7 @@ public class BulletinService {
                 List<Predicate> predicates = new ArrayList<Predicate>();
 
                 // 如果有bulletinId，那就把它算上
-                if(bulletinParams.getBulletinId()!=0&&!StringUtils.isEmptyOrWhitespaceOnly(bulletinParams.getBulletinTitle())){
+                if(bulletinParams.getBulletinId()!=0){
                     predicates.add(criteriaBuilder.equal(root.get("bulletinId").as(Integer.class), bulletinParams.getBulletinId()));
                 }
                 // 如果有bulletinTitle，那就把它算上
@@ -78,7 +78,7 @@ public class BulletinService {
                     predicates.add(criteriaBuilder.like(root.get("bulletinContext").as(String.class), "%"+(String)bulletinParams.getBulletinContext()+"%"));
                 }
 
-                // 如果有userI，那就把它算上
+                // 如果有userId，那就把它算上
                 if(bulletinParams.getUserId()!=null&&!StringUtils.isEmptyOrWhitespaceOnly(bulletinParams.getUserId())){
                     predicates.add(criteriaBuilder.equal(root.get("userId").as(String .class), bulletinParams.getUserId()));
                 }

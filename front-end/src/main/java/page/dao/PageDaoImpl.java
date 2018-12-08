@@ -25,7 +25,7 @@ public class PageDaoImpl<T> implements PageDao<T>{
         // 设置当前页数据开始的索引(相对于每一页的"0")
         int startIndex = page.getPageSize()*(currentPageIndex);
         // 设置当前页数据结束的索引(相对于每一页的pageSize-1)
-        int endIndex = page.getPageSize()*(currentPageIndex+1) - 1;
+        int endIndex = page.getPageSize()*(currentPageIndex+1);
         //获取page中的list
         List<T> tempList = page.getList();
 

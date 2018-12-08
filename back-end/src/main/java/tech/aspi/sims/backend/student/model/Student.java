@@ -3,16 +3,18 @@ package tech.aspi.sims.backend.student.model;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 import java.util.Date;
 
 @Entity
+@Table(name = "student")
 public class Student {
 
     @Id
-    @Column(name = "stu_id")
+    @Column(name = "student_id")
     private String studentId;
 
-    @Column(name = "stu_name")
+    @Column(name = "student_name")
     private String studentName;
 
     @Column(name = "gender")
@@ -21,8 +23,8 @@ public class Student {
     @Column(name = "birthday")
     private Date birthday;
 
-    @Column(name = "phone")
-    private String phone;
+    @Column(name = "email")
+    private String email;
 
     @Column(name = "portrait")
     private String portrait;         //存储的是图片地址
@@ -62,12 +64,12 @@ public class Student {
         this.birthday = birthday;
     }
 
-    public String getPhone() {
-        return phone;
+    public String getEmail() {
+        return email;
     }
 
-    public void setPhone(String phone) {
-        this.phone = phone;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getPortrait() {

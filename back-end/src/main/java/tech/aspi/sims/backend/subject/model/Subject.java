@@ -1,22 +1,20 @@
 package tech.aspi.sims.backend.subject.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
+@Table(name = "subject")
 public class Subject {
 
     @Id
     @GeneratedValue
-    @Column(name = "sub_id")
+    @Column(name = "subject_id")
     private int subjectId;
 
     @Column(name = "major_id")
     private int majorId;
 
-    @Column(name = "sub_name")
+    @Column(name = "subject_name")
     private String subjectName;
 
     public int getSubjectId() {

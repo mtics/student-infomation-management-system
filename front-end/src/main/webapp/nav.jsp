@@ -22,7 +22,7 @@
 <%
     Cookie cookie = null;
     String userName = null;
-    int userlevel = 0;
+    int userLevel = -1;
 
     Cookie[] cookies = request.getCookies();
 
@@ -36,10 +36,9 @@
             if(cookie.getName().equals("username")){
                 userName = URLDecoder.decode(cookie.getValue());
             }else if (cookie.getName().equals("userlevel")){
-                userlevel = Integer.parseInt(URLDecoder.decode(cookie.getValue()));
+                userLevel = Integer.parseInt(URLDecoder.decode(cookie.getValue()));
             }
         }
-
     }
 
 %>
@@ -54,27 +53,32 @@
                     <a href="javascript:;" class="ue-clear"><i class="nav-ivon"></i><span class="nav-text">公告管理</span></a>
                     <ul class="subnav">
                         <%  // 若用户等级不为学生，则允许发布新公告
-                            if(userlevel != 1){
-                            %><li class="subnav-li" href="bulletin/form_bulletin.jsp" data-id="9"><a href="javascript:;" class="ue-clear"><i class="subnav-icon"></i><span class="subnav-text">发布公告</span></a></li>
+                            if(userLevel != 1){
+                            %>
+                                <li class="subnav-li" href="bulletin/form_bulletin.jsp" data-id="9"><a href="javascript:;" class="ue-clear"><i class="subnav-icon"></i><span class="subnav-text">发布公告</span></a></li>
                             <%
                             }
                         %>
-                        <li class="subnav-li" href="bulletin/table_bulletin.jsp" data-id="10"><a href="javascript:;" class="ue-clear"><i class="subnav-icon"></i><span class="subnav-text">公告记录</span></a></li>
-                        <li class="subnav-li" data-id="11"><a href="javascript:;" class="ue-clear"><i class="subnav-icon"></i><span class="subnav-text">自定义设置1</span></a></li>
+                        <li class="subnav-li" href="/servlet/bulletin/list" data-id="10"><a href="javascript:;" class="ue-clear"><i class="subnav-icon"></i><span class="subnav-text">公告记录</span></a></li>
                     </ul>
                 </li>
                 <li class="nav-li current">
                     <a href="javascript:;" class="ue-clear"><i class="nav-ivon"></i><span class="nav-text">用户信息设置</span></a>
                     <ul class="subnav">
                         <li class="subnav-li current" href="index.html" data-id="1"><a href="javascript:;" class="ue-clear"><i class="subnav-icon"></i><span class="subnav-text">首页</span></a></li>
-                        <%  // 若用户等级不为学生，则允许添加新用户
-                            if(userlevel != 1){
-                                %><li class="subnav-li" href="/user/form_user.jsp" data-id="2"><a href="javascript:;" class="ue-clear"><i class="subnav-icon"></i><span class="subnav-text">新增用户</span></a></li>
+                        <%  // 若用户等级不为学生，则允许添加新用户、查看学生列表
+                            if(userLevel != 1){
+                        %>
+                                <li class="subnav-li" href="/user/form_user.jsp" data-id="2"><a href="javascript:;" class="ue-clear"><i class="subnav-icon"></i><span class="subnav-text">新增用户</span></a></li>
+                                <li class="subnav-li" href="/servlet/student/list" data-id="3"><a href="javascript:;" class="ue-clear"><i class="subnav-icon"></i><span class="subnav-text">学生列表</span></a></li>
                                 <%
+                                if(userLevel == 3){
+                                %>
+                                    <li class="subnav-li" data-id="4" href="/servlet/teacher/list" ><a href="javascript:;" class="ue-clear"><i class="subnav-icon"></i><span class="subnav-text">教师列表</span></a></li>
+                        <%
+                                }
                             }
                         %>
-                        <li class="subnav-li" href="table.html" data-id="3"><a href="javascript:;" class="ue-clear"><i class="subnav-icon"></i><span class="subnav-text">表格</span></a></li>
-                        <li class="subnav-li" data-id="4"><a href="javascript:;" class="ue-clear"><i class="subnav-icon"></i><span class="subnav-text">自定义设置2</span></a></li>
                     </ul>
                 </li>
                 <li class="nav-li">
