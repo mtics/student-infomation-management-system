@@ -78,6 +78,18 @@
             </div>
 
             <div class="table">
+                <div class="opt ue-clear">
+                    <span class="optarea">
+                        <a href="/form_user.jsp" class="add">
+                            <i class="icon"></i>
+                            <span class="text">添加</span>
+                        </a>
+                        <a href="<%=session.getAttribute("teachers_current")%>"class="config">
+                            <i class="icon"></i>
+                            <span class="text">导出当前页</span>
+                        </a>
+                    </span>
+                </div>
                 <div class="grid"></div>
 
                 <div class="pagination"></div>

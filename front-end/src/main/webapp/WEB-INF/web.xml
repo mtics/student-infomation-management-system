@@ -80,6 +80,11 @@
         <display-name>findPasswdServlet</display-name>
         <servlet-class>user.servlet.UserPasswdServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>excelExpertServlet</servlet-name>
+        <display-name>excelExpertServlet</display-name>
+        <servlet-class>common.servlet.ExcelExpertServlet</servlet-class>
+    </servlet>
 
     <servlet-mapping>
         <servlet-name>loginServlet</servlet-name>
@@ -140,6 +145,10 @@
     <servlet-mapping>
         <servlet-name>findPasswdServlet</servlet-name>
         <url-pattern>/servlet/findPasswd</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>excelExpertServlet</servlet-name>
+        <url-pattern>/servlet/expert/excel</url-pattern>
     </servlet-mapping>
 
 

@@ -1,6 +1,8 @@
 package bulletin.servlet;
 
 import bulletin.entity.Bulletin;
+import common.util.ExpertUtil;
+import cos.util.CosUtil;
 import page.dao.PageDaoImpl;
 import page.entity.Page;
 import common.util.JsonUtil;
@@ -9,6 +11,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.File;
 import java.io.IOException;
 import java.util.List;
 
@@ -19,6 +22,10 @@ public class BulletinListServlet extends HttpServlet {
     private JsonUtil jsonUtil = new JsonUtil();
 
     private PageDaoImpl pageDao = new PageDaoImpl();
+
+    private ExpertUtil expertUtil = new ExpertUtil();
+
+    private CosUtil cosUtil = new CosUtil();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -77,10 +84,23 @@ public class BulletinListServlet extends HttpServlet {
 
             String handledBulletinListJson = jsonUtil.bullutinListToJson(bulletinList);
 
+            String allKeyNames = bulletinList.get(0).getAllKeyNames();
+
+            String allValues = "";
+
+            for(int i = 0; i < bulletinList.size(); i++){
+                allValues += bulletinList.get(i).getAllValues()+"\r";
+            }
+
+            File file = expertUtil.getCsvFile(allKeyNames, allValues, "bulletinFile.csv");
+
+            String currentPageListUrl = cosUtil.uploadFile(file);
+
             // 将获得的列表添加到cookie中
             request.getSession().setAttribute("bulletins_json", handledBulletinListJson);
             request.getSession().setAttribute("bulletin_pages", bulletinPage.getTotalPages());
             request.getSession().setAttribute("bulletin_current_page", bulletinPage.getCurrentPage()-1);
+            request.getSession().setAttribute("bulletins_current", currentPageListUrl);
 
             response.sendRedirect ("/bulletin/table_bulletin.jsp") ;
         } catch (Exception e) {

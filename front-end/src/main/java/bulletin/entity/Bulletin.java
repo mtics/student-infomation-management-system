@@ -64,4 +64,12 @@ public class Bulletin {
     public void setBulletinContext(String bulletinContext) {
         this.bulletinContext = bulletinContext;
     }
+
+    public String getAllKeyNames(){
+        return "bulletinId,bulletinTitle,bulletinContext,publishedDate,userId";
+    }
+
+    public String getAllValues(){
+        return bulletinId+","+bulletinTitle+","+bulletinContext+","+publishedDate+","+userId;
+    }
 }

@@ -1,6 +1,8 @@
 package student.servlet;
 
+import common.util.ExpertUtil;
 import common.util.JsonUtil;
+import cos.util.CosUtil;
 import page.dao.PageDaoImpl;
 import page.entity.Page;
 import student.entity.Student;
@@ -9,6 +11,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.File;
 import java.io.IOException;
 import java.util.List;
 
@@ -17,6 +20,10 @@ public class StudentListFrashServlet extends HttpServlet {
     private JsonUtil jsonUtil = new JsonUtil();
 
     private PageDaoImpl pageDao = new PageDaoImpl();
+
+    private ExpertUtil expertUtil = new ExpertUtil();
+
+    private CosUtil cosUtil = new CosUtil();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -84,10 +91,25 @@ public class StudentListFrashServlet extends HttpServlet {
 
             String handledStudentListJson = jsonUtil.studentListToJson(studentList);
 
+
+            String allKeyNames = studentList.get(0).getAllKeyNames();
+
+            String allValues = "";
+
+            for(int i = 0; i < studentList.size(); i++){
+                allValues += studentList.get(i).getAllValues()+"\r";
+            }
+
+            File file = expertUtil.getCsvFile(allKeyNames, allValues, "studentFile.csv");
+
+            String currentPageListUrl = cosUtil.uploadFile(file);
+
+
             // 将获得的列表添加到cookie中
             request.getSession().setAttribute("students_json", handledStudentListJson);
             request.getSession().setAttribute("student_pages", studentPage.getTotalPages());
             request.getSession().setAttribute("student_current_page", studentPage.getCurrentPage()-1);
+            request.getSession().setAttribute("students_current", currentPageListUrl);
 
             response.sendRedirect ("/user/table_student.jsp") ;
         } catch (Exception e) {

@@ -85,4 +85,12 @@ public class Student {
     public void setMajorId(int majorId) {
         this.majorId = majorId;
     }
+
+    public String getAllKeyNames(){
+        return "studentId"+",studentName"+",gender"+",birthday"+",email"+",portrait"+",majorId";
+    }
+
+    public String getAllValues(){
+        return studentId+","+studentName+","+gender+","+birthday+","+email+","+portrait+","+majorId;
+    }
 }

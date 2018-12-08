@@ -86,4 +86,12 @@ public class Teacher {
     public void setPortrait(String portrait) {
         this.portrait = portrait;
     }
+
+    public String getAllKeyNames(){
+        return "teacherId"+",teacherName"+",gender"+",birthday"+",email"+",portrait"+",collegeId";
+    }
+
+    public String getAllValues(){
+        return teacherId+","+teacherName+","+gender+","+birthday+","+email+","+portrait+","+collegeId;
+    }
 }

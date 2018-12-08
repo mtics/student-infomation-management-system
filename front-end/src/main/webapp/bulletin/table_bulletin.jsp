@@ -27,49 +27,63 @@
 <div id="container">
     <div id="hd"></div>
     <div id="bd">
-        <form id="form_bulletin_search" action="/servlet/bulletin/list" method="get">
-            <input type="text" style="display: none" name="page_num" value="1"/>
-            <div id="main">
+        <div id="main">
+            <form id="form_bulletin_search" action="/servlet/bulletin/list" method="get">
+                <input type="text" style="display: none" name="page_num" value="1"/>
                 <div class="search-box ue-clear">
-                    <div class="search-area">
-                        <div class="kv-item ue-clear">
-                            <label>条件搜索：</label>
-                            <span class="choose">
-                                <span class="text">标题</span>
-                                <span class="kv-item-content">
-                                    <input type="text" name="search_bulletin_title" />
-                                    <span class="division"></span>
-                                </span>
+                <div class="search-area">
+                    <div class="kv-item ue-clear">
+                        <label>条件搜索：</label>
+                        <span class="choose">
+                            <span class="text">标题</span>
+                            <span class="kv-item-content">
+                                <input type="text" name="search_bulletin_title" />
+                                <span class="division"></span>
                             </span>
-                            <span class="choose">
-                                <span class="text">内容</span>
-                                <span class="kv-item-content">
-                                    <input type="text" name="search_bulletin_context" />
-                                    <span class="division"></span>
-                                </span>
+                        </span>
+                        <span class="choose">
+                            <span class="text">内容</span>
+                            <span class="kv-item-content">
+                                <input type="text" name="search_bulletin_context" />
+                                <span class="division"></span>
                             </span>
-                            <span class="choose">
-                                <span class="text">发布者ID</span>
-                                <span class="kv-item-content">
-                                    <input type="text" name="search_user_id" />
-                                    <span class="division"></span>
-                                </span>
+                        </span>
+                        <span class="choose">
+                            <span class="text">发布者ID</span>
+                            <span class="kv-item-content">
+                                <input type="text" name="search_user_id" />
+                                <span class="division"></span>
                             </span>
-                        </div>
+                        </span>
                     </div>
                 </div>
-                <div class="search-button">
-                    <input class="button" type="submit" value="搜索一下" name="button_search"/>
                 </div>
+                <div class="search-button">
+                <input class="button" type="submit" value="搜索一下" name="button_search"/>
+                </div>
+            </form>
+        </div>
+
+
+        <div class="table">
+            <div class="opt ue-clear">
+                <span class="optarea">
+                    <a href="/form_bulletin.jsp" class="add">
+                        <i class="icon"></i>
+                        <span class="text">添加</span>
+                    </a>
+                    <a href="<%=session.getAttribute("bulletins_current")%>"class="config">
+                        <i class="icon"></i>
+                        <span class="text">导出当前页</span>
+                    </a>
+                </span>
             </div>
 
-            <div class="table">
-                <div class="grid"></div>
 
-                <div class="pagination"></div>
-            </div>
-        </form>
+            <div class="grid"></div>
 
+            <div class="pagination"></div>
+        </div>
     </div>
 </div>
 </body>

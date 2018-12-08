@@ -17,13 +17,12 @@ public class VerificationServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        System.out.println("VerificationServlet调用啦");
 
         HttpSession session =request.getSession();
         String verificationCode = (String)session.getAttribute("verificationCode");
         String checkcode = request.getParameter("op");
         PrintWriter out = response.getWriter();
-        if(checkcode.equals(verificationCode)){
+        if(checkcode.toLowerCase().equals(verificationCode.toLowerCase())){
             out.println(1);
         }else{
             out.println(0);
