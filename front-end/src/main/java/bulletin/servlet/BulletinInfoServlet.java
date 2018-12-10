@@ -27,7 +27,7 @@ public class BulletinInfoServlet extends HttpServlet {
 
         String jspBulletinId = request.getParameter("bulletin_id");
 
-        String url = "http://server.aspi.tech:8080/backend/bulletin/findbyid?bull_id="+jspBulletinId;
+        String url = "http://server.aspi.tech:8080/backend/bulletin/findall?bulletinId="+jspBulletinId;
 
         try {
 
@@ -41,15 +41,10 @@ public class BulletinInfoServlet extends HttpServlet {
             String bulletinTitle = json.get("bulletinTitle").toString().replace("\"", "");
             String bulletinContext = json.get("bulletinContext").toString().replace("\"", "");
 
-
             // 将获得的公告添加到session中
             request.getSession().setAttribute("bulletin_id", bulletinId);
             request.getSession().setAttribute("bulletin_title", bulletinTitle);
             request.getSession().setAttribute("bulletin_context", bulletinContext);
-
-            System.out.println("bulletinId: "+bulletinId);
-            System.out.println("bulletinTitle: "+bulletinTitle);
-            System.out.println("bulletinContext: "+bulletinContext);
 
             response.sendRedirect ("/bulletin/form_bulletin_update.jsp") ;
         } catch (Exception e) {

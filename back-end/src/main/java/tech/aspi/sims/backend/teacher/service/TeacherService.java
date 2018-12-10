@@ -44,22 +44,11 @@ public class TeacherService {
         teacherRepository.deleteById(teacherId);
     }
 
-    // 查询数据
-    @Transactional
-    public Iterable<Teacher> findAll() {
-        return teacherRepository.findAll();
-    }
-
-    @Transactional
-    public Optional<Teacher> findById(String teacherId){
-        return  teacherRepository.findById(teacherId);
-    }
-
     // 通过部分内容模糊查询数据
     @Transactional
-    public List<Teacher> findAllByParams(final Teacher teacherParams) {
+    public Iterable<Teacher> findAllByParams(final Teacher teacherParams) {
 
-        List<Teacher> teachers = teacherRepository.findAll(new Specification<Teacher>() {
+        Iterable<Teacher> teachers = teacherRepository.findAll(new Specification<Teacher>() {
             @Override
             public Predicate toPredicate(Root<Teacher> root, CriteriaQuery<?> criteriaQuery, CriteriaBuilder criteriaBuilder) {
 
@@ -86,7 +75,7 @@ public class TeacherService {
 
                 // 如果有collegeId，那就把它算上
                 if (teacherParams.getCollegeId() != 0) {
-                    predicates.add(criteriaBuilder.equal(root.get("collegeId").as(Integer.class), teacherParams.getCollegeId()));
+                    predicates.add(criteriaBuilder.equal(root.get("collegeId").as(String.class), teacherParams.getCollegeId()));
                 }
 
                 Predicate[] predicateArray = new Predicate[predicates.size()];

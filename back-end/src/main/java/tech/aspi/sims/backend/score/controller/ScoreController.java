@@ -8,6 +8,7 @@ import tech.aspi.sims.backend.score.model.Score;
 import tech.aspi.sims.backend.score.service.ScoreService;
 
 import javax.annotation.Resource;
+import java.util.List;
 import java.util.Optional;
 
 
@@ -32,12 +33,7 @@ public class ScoreController {
     }
 
     @GetMapping("/findall")
-    public Iterable<Score> findAll(){
-        return scoreService.findAll();
-    }
-
-    @GetMapping("/findbyid")
-    public Optional<Score> findById(int score_id){
-        return scoreService.findById(score_id);
+    public Iterable<Score> findAllByParams(Score scoreParams){
+        return scoreService.findAllByParams(scoreParams);
     }
 }

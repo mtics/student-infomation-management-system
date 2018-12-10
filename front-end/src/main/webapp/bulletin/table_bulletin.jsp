@@ -133,20 +133,16 @@
     // 但没办法，就先这样用吧
     // 找到合适的解决办法再修改
     oper[0] = [{label:'删除',onclick:function(){
-            alert(0);
             var url = "/servlet/bulletin/delete?bulletin_id="+bulletin_json[0].bulletinId;
-            alert(url);
             if(confirm("确认删除该公告吗？")){
                 window.location.href=url;
             }
         }},{label:'编辑',onclick: function(){
             var url = "/servlet/bulletin/update?bulletin_id="+bulletin_json[0].bulletinId;
-            alert(url);
             window.location.href=url;
         }}];
     oper[1] = [{label:'删除',onclick:function(){
             var url = "/servlet/bulletin/delete?bulletin_id="+bulletin_json[1].bulletinId;
-            alert(url);
             if(confirm("确认删除该公告吗？")){
                 window.location.href=url;
             }
@@ -156,7 +152,6 @@
         }}];
     oper[2] = [{label:'删除',onclick:function(){
             var url = "/servlet/bulletin/delete?bulletin_id="+bulletin_json[2].bulletinId;
-            alert(url);
             if(confirm("确认删除该公告吗？")){
                 window.location.href=url;
             }
@@ -166,7 +161,6 @@
         }}];
     oper[3] = [{label:'删除',onclick:function(){
             var url = "/servlet/bulletin/delete?bulletin_id="+bulletin_json[3].bulletinId;
-            alert(url);
             if(confirm("确认删除该公告吗？")){
                 window.location.href=url;
             }
@@ -176,7 +170,6 @@
         }}];
     oper[4] = [{label:'删除',onclick:function(){
             var url = "/servlet/bulletin/delete?bulletin_id="+bulletin_json[4].bulletinId;
-            alert(url);
             if(confirm("确认删除该公告吗？")){
                 window.location.href=url;
             }
@@ -186,7 +179,6 @@
         }}];
     oper[5] = [{label:'删除',onclick:function(){
             var url = "/servlet/bulletin/delete?bulletin_id="+bulletin_json[5].bulletinId;
-            alert(url);
             if(confirm("确认删除该公告吗？")){
                 window.location.href=url;
             }
@@ -196,7 +188,6 @@
         }}];
     oper[6] = [{label:'删除',onclick:function(){
             var url = "/servlet/bulletin/delete?bulletin_id="+bulletin_json[6].bulletinId;
-            alert(url);
             if(confirm("确认删除该公告吗？")){
                 window.location.href=url;
             }
@@ -206,7 +197,6 @@
         }}];
     oper[7] = [{label:'删除',onclick:function(){
             var url = "/servlet/bulletin/delete?bulletin_id="+bulletin_json[7].bulletinId;
-            alert(url);
             if(confirm("确认删除该公告吗？")){
                 window.location.href=url;
             }
@@ -216,7 +206,6 @@
         }}];
     oper[8] = [{label:'删除',onclick:function(){
             var url = "/servlet/bulletin/delete?bulletin_id="+bulletin_json[8].bulletinId;
-            alert(url);
             if(confirm("确认删除该公告吗？")){
                 window.location.href=url;
             }
@@ -226,7 +215,6 @@
         }}];
     oper[9] = [{label:'删除',onclick:function(){
             var url = "/servlet/bulletin/delete?bulletin_id="+bulletin_json[9].bulletinId;
-            alert(url);
             if(confirm("确认删除该公告吗？")){
                 window.location.href=url;
             }

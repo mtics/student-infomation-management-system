@@ -152,19 +152,16 @@
     oper[0] = [{label:'删除',onclick:function(){
             alert(0);
             var url = "/servlet/teacher/delete?teacherId="+teacher_json[0].teacherId;
-            alert(url);
-            if(confirm("确认删除该公告吗？")){
+            if(confirm("确认删除该教师吗？")){
                 window.location.href=url;
             }
         }},{label:'编辑',onclick: function(){
             var url = "/servlet/teacher/info?teacherId="+teacher_json[0].teacherId;
-            alert(url);
             window.location.href=url;
         }}];
     oper[1] = [{label:'删除',onclick:function(){
             var url = "/servlet/teacher/delete?teacherId="+teacher_json[1].teacherId;
-            alert(url);
-            if(confirm("确认删除该公告吗？")){
+            if(confirm("确认删除该教师吗？")){
                 window.location.href=url;
             }
         }},{label:'编辑',onclick: function(){
@@ -173,8 +170,7 @@
         }}];
     oper[2] = [{label:'删除',onclick:function(){
             var url = "/servlet/teacher/delete?teacherId="+teacher_json[2].teacherId;
-            alert(url);
-            if(confirm("确认删除该公告吗？")){
+            if(confirm("确认删除该教师吗？")){
                 window.location.href=url;
             }
         }},{label:'编辑',onclick: function(){
@@ -183,8 +179,7 @@
         }}];
     oper[3] = [{label:'删除',onclick:function(){
             var url = "/servlet/teacher/delete?teacherId="+teacher_json[3].teacherId;
-            alert(url);
-            if(confirm("确认删除该公告吗？")){
+            if(confirm("确认删除该教师吗？")){
                 window.location.href=url;
             }
         }},{label:'编辑',onclick: function(){
@@ -193,8 +188,7 @@
         }}];
     oper[4] = [{label:'删除',onclick:function(){
             var url = "/servlet/teacher/delete?teacherId="+teacher_json[4].teacherId;
-            alert(url);
-            if(confirm("确认删除该公告吗？")){
+            if(confirm("确认删除该教师吗？")){
                 window.location.href=url;
             }
         }},{label:'编辑',onclick: function(){
@@ -203,8 +197,7 @@
         }}];
     oper[5] = [{label:'删除',onclick:function(){
             var url = "/servlet/teacher/delete?teacherId="+teacher_json[5].teacherId;
-            alert(url);
-            if(confirm("确认删除该公告吗？")){
+            if(confirm("确认删除该教师吗？")){
                 window.location.href=url;
             }
         }},{label:'编辑',onclick: function(){
@@ -213,8 +206,7 @@
         }}];
     oper[6] = [{label:'删除',onclick:function(){
             var url = "/servlet/teacher/delete?teacherId="+teacher_json[6].teacherId;
-            alert(url);
-            if(confirm("确认删除该公告吗？")){
+            if(confirm("确认删除该教师吗？")){
                 window.location.href=url;
             }
         }},{label:'编辑',onclick: function(){
@@ -223,8 +215,7 @@
         }}];
     oper[7] = [{label:'删除',onclick:function(){
             var url = "/servlet/teacher/delete?teacherId="+teacher_json[7].teacherId;
-            alert(url);
-            if(confirm("确认删除该公告吗？")){
+            if(confirm("确认删除该教师吗？")){
                 window.location.href=url;
             }
         }},{label:'编辑',onclick: function(){
@@ -233,8 +224,7 @@
         }}];
     oper[8] = [{label:'删除',onclick:function(){
             var url = "/servlet/teacher/delete?teacherId="+teacher_json[8].teacherId;
-            alert(url);
-            if(confirm("确认删除该公告吗？")){
+            if(confirm("确认删除该教师吗？")){
                 window.location.href=url;
             }
         }},{label:'编辑',onclick: function(){
@@ -243,8 +233,7 @@
         }}];
     oper[9] = [{label:'删除',onclick:function(){
             var url = "/servlet/teacher/delete?teacherId="+teacher_json[9].teacherId;
-            alert(url);
-            if(confirm("确认删除该公告吗？")){
+            if(confirm("确认删除该教师吗？")){
                 window.location.href=url;
             }
         }},{label:'编辑',onclick: function(){

@@ -26,18 +26,13 @@ public class SubjectController {
     }
 
     @PostMapping("/deletebyid")
-    public String deleteById(int sub_id){
-        subjectService.deleteById(sub_id);
+    public String deleteById(int subjectId){
+        subjectService.deleteById(subjectId);
         return "SUCCESS";
     }
 
     @GetMapping("/findall")
-    public Iterable<Subject> findAll(){
-        return subjectService.findAll();
-    }
-
-    @GetMapping("/findbyid")
-    public Optional<Subject> findById(int sub_id){
-        return  subjectService.findById(sub_id);
+    public Iterable<Subject> findAllByParams(Subject subject){
+        return  subjectService.findAllByParams(subject);
     }
 }

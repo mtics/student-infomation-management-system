@@ -33,8 +33,8 @@ public class PageDaoImpl<T> implements PageDao<T>{
         // 因为页码索引是从0开始的，
         // 所以(总页数-1)才是最后一页的索引
         if(currentPageIndex == page.getTotalPages()-1){
-            // 数据结束索引应该是总条数-1
-            endIndex = page.getTotalCount()-1;
+            // 数据结束索引应该是总条数
+            endIndex = page.getTotalCount();
         }
 
         // 从List中截取出当前页面的数据

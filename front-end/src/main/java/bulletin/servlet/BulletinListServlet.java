@@ -17,8 +17,6 @@ import java.util.List;
 
 public class BulletinListServlet extends HttpServlet {
 
-    private Page<Bulletin> bulletinPage = null;
-
     private JsonUtil jsonUtil = new JsonUtil();
 
     private PageDaoImpl pageDao = new PageDaoImpl();
@@ -63,12 +61,11 @@ public class BulletinListServlet extends HttpServlet {
         if (isExistSearchBulletinTitle ||
                 isExistSearchBulletinContext || isExistSearchUserId) {
 
-            url = "http://server.aspi.tech:8080/backend/bulletin/findallbyparams?";
 
             // 因为不确定哪个条件是存在的，所以之前每个都会加"&"
             // 因此最后就需要添加一个恒成立条件"1=1"
             // 在没有条件的情况下，与"/findall"等价
-            url += tempParams + "1=1";
+            url += "?"+tempParams + "1=1";
 
         }
 
@@ -96,7 +93,7 @@ public class BulletinListServlet extends HttpServlet {
 
             String currentPageListUrl = cosUtil.uploadFile(file);
 
-            // 将获得的列表添加到cookie中
+            // 将获得的列表添加到session中
             request.getSession().setAttribute("bulletins_json", handledBulletinListJson);
             request.getSession().setAttribute("bulletin_pages", bulletinPage.getTotalPages());
             request.getSession().setAttribute("bulletin_current_page", bulletinPage.getCurrentPage()-1);

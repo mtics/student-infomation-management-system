@@ -34,17 +34,7 @@ public class TeacherController {
     }
 
     @GetMapping("/findall")
-    public Iterable<Teacher> findAll(){
-        return teacherService.findAll();
-    }
-
-    @GetMapping("/findbyid")
-    public Optional<Teacher> findById(String teacherId){
-        return teacherService.findById(teacherId);
-    }
-
-    @GetMapping("/findallbyparams")
-    public List<Teacher> findAllByParams(Teacher teacher){
+    public Iterable<Teacher> findAllByParams(Teacher teacher){
         return teacherService.findAllByParams(teacher);
     }
 }

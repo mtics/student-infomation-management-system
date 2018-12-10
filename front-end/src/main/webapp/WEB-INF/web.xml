@@ -78,13 +78,33 @@
     <servlet>
         <servlet-name>findPasswdServlet</servlet-name>
         <display-name>findPasswdServlet</display-name>
-        <servlet-class>user.servlet.UserPasswdServlet</servlet-class>
+        <servlet-class>user.servlet.UserPasswdFindServlet</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>excelExpertServlet</servlet-name>
-        <display-name>excelExpertServlet</display-name>
-        <servlet-class>common.servlet.ExcelExpertServlet</servlet-class>
+        <servlet-name>updatePasswdServlet</servlet-name>
+        <display-name>updatePasswdServlet</display-name>
+        <servlet-class>user.servlet.UserPasswdUpdateServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>subjectListGetServlet</servlet-name>
+        <display-name>subjectListGetServlet</display-name>
+        <servlet-class>subject.servlet.SubjectListGetServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>scoreSubmitServlet</servlet-name>
+        <display-name>scoreSubmitServlet</display-name>
+        <servlet-class>subject.servlet.ScoreSubmitServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>subjectListQueryServlet</servlet-name>
+        <display-name>subjectListQueryServlet</display-name>
+        <servlet-class>subject.servlet.SubjectListQueryServlet</servlet-class>
+    </servlet>
+
+
+
+
+
 
     <servlet-mapping>
         <servlet-name>loginServlet</servlet-name>
@@ -144,11 +164,23 @@
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>findPasswdServlet</servlet-name>
-        <url-pattern>/servlet/findPasswd</url-pattern>
+        <url-pattern>/servlet/passwd/find</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>excelExpertServlet</servlet-name>
-        <url-pattern>/servlet/expert/excel</url-pattern>
+        <servlet-name>updatePasswdServlet</servlet-name>
+        <url-pattern>/servlet/password/update</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>subjectListGetServlet</servlet-name>
+        <url-pattern>/servlet/subject/list</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>scoreSubmitServlet</servlet-name>
+        <url-pattern>/servlet/score/submit</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>subjectListQueryServlet</servlet-name>
+        <url-pattern>/servlet/score/query</url-pattern>
     </servlet-mapping>
 
 

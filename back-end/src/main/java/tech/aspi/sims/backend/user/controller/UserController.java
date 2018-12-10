@@ -27,8 +27,8 @@ public class UserController {
     }
 
     @PostMapping("/deletebyid")
-    public String deleteById(String user_id){
-        userService.deleteById(user_id);
+    public String deleteById(String userId){
+        userService.deleteById(userId);
         return "SUCCESS";
     }
 
@@ -38,12 +38,12 @@ public class UserController {
     }
 
     @GetMapping("/findbyid")
-    public Optional<User> findById(String user_id){
-        return userService.findById(user_id);
+    public Optional<User> findById(String userId){
+        return userService.findById(userId);
     }
 
     @GetMapping("/findbylevel")
-    public List<User> queryByUserLevel(int user_level){
-        return  userService.queryByUserLevel(user_level);
+    public Iterable<User> queryByUserLevel(int userLevel){
+        return  userService.queryByUserLevel(userLevel);
     }
 }

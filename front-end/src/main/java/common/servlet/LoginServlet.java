@@ -43,7 +43,7 @@ public class LoginServlet extends HttpServlet {
         String passwd = request.getParameter("text_password");
 
         // 从服务器后台获取该用户对应的信息
-        String url = "http://server.aspi.tech:8080/backend/user/findbyid?user_id="+userName;
+        String url = "http://server.aspi.tech:8080/backend/user/findbyid?userId="+userName;
 
         try {
             String jsonStr = jsonUtil.loadJsonFromURL(url);
@@ -80,13 +80,13 @@ public class LoginServlet extends HttpServlet {
                 // ID号11位的为学生，12位的为教师
                 // 特殊的在于有一个ID号为admin的管理员帐号
                 if(userName.length() == 11){
-                    String studentUrl = "http://server.aspi.tech:8080/backend/student/findbyid?stu_id="+userName;
+                    String studentUrl = "http://server.aspi.tech:8080/backend/student/findall?studentId="+userName;
                     String studentJson = jsonUtil.loadJsonFromURL(studentUrl);
                     Student student = jsonUtil.jsonToStudent(studentJson);
                     userPortraitCookie = cookieUtil.setCookie("portrait", student.getPortrait());
                     response.addCookie(userPortraitCookie);
                 }else{
-                    String teacherUrl = "http://server.aspi.tech:8080/backend/teacher/findbyid?teacherId="+userName;
+                    String teacherUrl = "http://server.aspi.tech:8080/backend/teacher/findall?teacherId="+userName;
                     String teacherJson = jsonUtil.loadJsonFromURL(teacherUrl);
                     Teacher teacher = jsonUtil.jsonToTeacher(teacherJson);
                     userPortraitCookie = cookieUtil.setCookie("portrait", teacher.getPortrait());

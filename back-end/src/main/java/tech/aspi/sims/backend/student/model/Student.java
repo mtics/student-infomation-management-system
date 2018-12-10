@@ -1,10 +1,10 @@
 package tech.aspi.sims.backend.student.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import tech.aspi.sims.backend.score.model.Score;
+
+import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "student")

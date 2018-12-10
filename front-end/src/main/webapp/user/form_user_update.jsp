@@ -42,6 +42,9 @@
                 <input type="text" style="display: none" name="text_user_level" value="<%=session.getAttribute("user_level")%>"/>
                 <input type="text" style="display: none" name="text_user_portrait" value="<%=session.getAttribute("portrait")%>"/>
                 <div class="kv-item ue-clear">
+                    <span class="kv-item-tip">如需修改照片，请联系某某某老师！</span>
+                </div>
+                <div class="kv-item ue-clear">
                     <label><span class="impInfo">*</span>用户姓名</label>
                     <div class="kv-item-content">
                         <input type="text" placeholder="用户姓名" name="text_user_name" value="<%=session.getAttribute("user_name")%>"/>

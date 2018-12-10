@@ -40,7 +40,6 @@ public class ClientUtil {
             response= httpClient.execute(post);
 
             responseStr = EntityUtils.toString(response.getEntity());
-            System.out.println(responseStr);
 
             // 检验返回码
             int statusCode = response.getStatusLine().getStatusCode();

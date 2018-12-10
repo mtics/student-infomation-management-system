@@ -1,5 +1,8 @@
 package tech.aspi.sims.backend.score.model;
 
+import tech.aspi.sims.backend.student.model.Student;
+import tech.aspi.sims.backend.subject.model.Subject;
+
 import javax.persistence.*;
 
 @Entity
@@ -7,14 +10,14 @@ import javax.persistence.*;
 public class Score {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "score_id")
     private int scoreId;
 
-    @Column(name = "sub_id")
+    @Column(name = "subject_id")
     private int subjectId;
 
-    @Column(name = "stu_id")
+    @Column(name = "student_id")
     private String studentId;
 
     @Column(name = "score_value")

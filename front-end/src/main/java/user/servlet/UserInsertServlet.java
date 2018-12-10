@@ -133,7 +133,6 @@ public class UserInsertServlet extends HttpServlet {
                         // 获取上传文件大小和文件名称
                         long upFileSize = item.getSize();
                         String tempFileName = item.getName();
-                        System.out.println("UploadFileName: " + savedFileName);
 
                         // 此时文件暂存在服务器的内存中，构造临时对象
                         File tempFile = new File(savedFileName);
@@ -142,11 +141,11 @@ public class UserInsertServlet extends HttpServlet {
 
                         portraitUrl = cosUtil.uploadFile(tempFile);
 
-                        System.out.println("portraitUrl:"+portraitUrl);
-
                     }
                 }
             }
+
+            String jumpToUrl = null;
 
             // 拼接post地址
             if(userLevel == 1){
@@ -154,11 +153,13 @@ public class UserInsertServlet extends HttpServlet {
                 url.append("studentId="+ URLEncoder.encode(userId, "UTF-8"));
                 url.append("&studentName="+URLEncoder.encode(userName, "UTF-8"));
                 url.append("&majorId="+tempMajorId);
+                jumpToUrl = "/servlet/student/list";
             }else if(userLevel == 2){
                 url = new StringBuffer("http://server.aspi.tech:8080/backend/teacher/save?");
                 url.append("teacherId="+URLEncoder.encode(userId, "UTF-8"));
                 url.append("&teacherName="+URLEncoder.encode(userName, "UTF-8"));
                 url.append("&collegeId="+tempMajorId);
+                jumpToUrl = "/servlet/teacher/list";
             }
 
             if(!gender.equals("") && gender != null){
@@ -177,7 +178,7 @@ public class UserInsertServlet extends HttpServlet {
             isSuccess = clientUtil.sendPost(url.toString());
 
             if(isSuccess){
-                response.sendRedirect("/index.jsp");
+                response.sendRedirect(jumpToUrl);
             }else{
                 response.sendRedirect("/user/form_user.jsp");
             }

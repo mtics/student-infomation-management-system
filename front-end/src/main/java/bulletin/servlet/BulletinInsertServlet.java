@@ -79,8 +79,6 @@ public class BulletinInsertServlet extends HttpServlet {
             }
         }
 
-        System.out.println("userId="+userName+
-                "&bulletinTitle="+bulletinTitle+"&bulletinContext="+bulletinContext);
 
         url.append("userId="+userName+
                 "&bulletinTitle="+bulletinTitle+"&bulletinContext="+bulletinContext);
@@ -105,8 +103,7 @@ public class BulletinInsertServlet extends HttpServlet {
 
             //response.sendRedirect(url);
         } catch (Exception e) {
-            //e.printStackTrace();
-            System.out.println("json解析失败");
+            e.printStackTrace();
         }
     }
 }

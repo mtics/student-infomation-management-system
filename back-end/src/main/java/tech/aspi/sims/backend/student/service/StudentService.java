@@ -4,6 +4,7 @@ import com.mysql.jdbc.StringUtils;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import tech.aspi.sims.backend.score.model.Score;
 import tech.aspi.sims.backend.student.dao.StudentRepository;
 import tech.aspi.sims.backend.student.model.Student;
 
@@ -45,22 +46,11 @@ public class StudentService {
         studentRepository.delete(student);
     }
 
-    // 查询数据
-    @Transactional
-    public Iterable<Student> findAll() {
-        return studentRepository.findAll();
-    }
-
-    @Transactional
-    public Optional<Student> findById(String stuId){
-        return studentRepository.findById(stuId);
-    }
-
     // 通过部分内容模糊查询数据
     @Transactional
-    public List<Student> findAllByParams(final Student studentParams) {
+    public Iterable<Student> findAllByParams(final Student studentParams) {
 
-        List<Student> students = studentRepository.findAll(new Specification<Student>() {
+        Iterable<Student> students = studentRepository.findAll(new Specification<Student>() {
             @Override
             public Predicate toPredicate(Root<Student> root, CriteriaQuery<?> criteriaQuery, CriteriaBuilder criteriaBuilder) {
 
@@ -87,7 +77,7 @@ public class StudentService {
 
                 // 如果有majorId，那就把它算上
                 if (studentParams.getMajorId() != 0) {
-                    predicates.add(criteriaBuilder.equal(root.get("majorId").as(Integer.class), studentParams.getMajorId()));
+                    predicates.add(criteriaBuilder.equal(root.get("majorId").as(String.class), studentParams.getMajorId()));
                 }
 
                 Predicate[] predicateArray = new Predicate[predicates.size()];
@@ -99,4 +89,5 @@ public class StudentService {
 
         return students;
     }
+
 }

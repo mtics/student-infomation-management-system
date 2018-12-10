@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-public class UserPasswdServlet extends HttpServlet {
+public class UserPasswdFindServlet extends HttpServlet {
 
     private JsonUtil jsonUtil = new JsonUtil();
 

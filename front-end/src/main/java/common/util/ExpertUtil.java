@@ -51,7 +51,6 @@ public class ExpertUtil {
 
             // 得到key
             String key = iterator.next();
-            String value = first.getString(key);
 
             // 创建列名
             XSSFCell cell = row.createCell(index);
@@ -69,7 +68,6 @@ public class ExpertUtil {
             while (iterator.hasNext()) { // 遍历key集合
                 String key1 = iterator.next(); // 得到key
                 String value = jsonObject.getString(key1);
-                System.out.println(value);
                 XSSFCell cell = row.createCell(index);
                 cell.setCellValue(value);
                 index++;

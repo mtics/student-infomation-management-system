@@ -39,17 +39,7 @@ public class StudentController {
     }
 
     @GetMapping("/findall")
-    public Iterable<Student> findAll(){
-        return studentService.findAll();
-    }
-
-    @GetMapping("/findbyid")
-    public Optional<Student> findById(String studentId){
-        return studentService.findById(studentId);
-    }
-
-    @GetMapping("/findallbyparams")
-    public List<Student> findAllByParams(Student student){
+    public Iterable<Student> findAllByParams(Student student){
         return studentService.findAllByParams(student);
     }
 }

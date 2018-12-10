@@ -11,5 +11,5 @@ import java.util.List;
 public interface UserRepository extends CrudRepository<User, String> {
 
     @Query(value = "select * from user where user_level = ?", nativeQuery = true)
-    public List<User> queryByUserLevel(int user_level);
+    Iterable<User> queryByUserLevel(int user_level);
 }

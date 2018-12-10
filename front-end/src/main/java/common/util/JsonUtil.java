@@ -3,6 +3,8 @@ package common.util;
 import com.google.gson.*;
 import bulletin.entity.Bulletin;
 import student.entity.Student;
+import subject.entity.Score;
+import subject.entity.Subject;
 import teacher.entity.Teacher;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
@@ -103,6 +105,59 @@ public class JsonUtil {
     }
 
     /**
+     * 将JSON解析成List<Subject>
+     * @param jsonStr
+     * @return
+     */
+    public List<Subject> jsonToSubjectList(String jsonStr) throws ParseException {
+
+        JSONArray jsonArray = JSONArray.fromObject(jsonStr);
+
+        List<Subject> list = new ArrayList<Subject>();
+
+        Subject subject = null;
+
+        for (int i = 0; i < jsonArray.size(); i ++){
+
+            JSONObject jsonObject = jsonArray.getJSONObject(i);
+
+            subject = new Subject(jsonObject.getInt("subjectId"),
+                    jsonObject.getInt("majorId"),jsonObject.getString("subjectName"));
+
+            list.add(subject);
+        }
+
+        return list;
+    }
+
+    /**
+     * 将JSON解析成List<Score>
+     * @param jsonStr
+     * @return
+     */
+    public List<Score> jsonToScoreList(String jsonStr) throws ParseException {
+
+        JSONArray jsonArray = JSONArray.fromObject(jsonStr);
+
+        List<Score> list = new ArrayList<Score>();
+
+        Score score = null;
+
+        for (int i = 0; i < jsonArray.size(); i ++){
+
+            JSONObject jsonObject = jsonArray.getJSONObject(i);
+
+            score = new Score(jsonObject.getInt("scoreId"),
+                    jsonObject.getInt("subjectId"),jsonObject.getString("studentId"),jsonObject.getDouble("scoreValue"));
+
+            list.add(score);
+        }
+
+        return list;
+    }
+
+
+    /**
      * 将JSON解析成List<Student>
      * @param jsonStr
      * @return
@@ -131,7 +186,10 @@ public class JsonUtil {
 
     public Student jsonToStudent(String jsonStr) throws ParseException {
 
-        JSONObject jsonObject = JSONObject.fromObject(jsonStr);
+        JSONArray jsonArray = JSONArray.fromObject(jsonStr);
+        // 因为调用该方法的只有通过id查找的，
+        // 故json中最多只有一个实体，只需获取第0个即可
+        JSONObject jsonObject = jsonArray.getJSONObject(0);
 
         String birthday = jsonObject.getString("birthday");
 
@@ -145,7 +203,10 @@ public class JsonUtil {
 
     public Teacher jsonToTeacher(String jsonStr) throws ParseException {
 
-        JSONObject jsonObject = JSONObject.fromObject(jsonStr);
+        JSONArray jsonArray = JSONArray.fromObject(jsonStr);
+        // 因为调用该方法的只有通过id查找的，
+        // 故json中最多只有一个实体，只需获取第0个即可
+        JSONObject jsonObject = jsonArray.getJSONObject(0);
 
         String birthday = jsonObject.getString("birthday");
 

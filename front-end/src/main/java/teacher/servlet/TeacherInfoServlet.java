@@ -5,40 +5,44 @@ import com.google.gson.JsonParser;
 import common.util.ClientUtil;
 import common.util.JsonUtil;
 import page.dao.PageDaoImpl;
+import teacher.entity.Teacher;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 
 public class TeacherInfoServlet extends HttpServlet {
 
     private JsonUtil jsonUtil = new JsonUtil();
+
+    private SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         String jspTeacherId = request.getParameter("teacherId");
 
-        String url = "http://server.aspi.tech:8080/backend/teacher/findbyid?teacherId="+jspTeacherId;
+        String url = "http://server.aspi.tech:8080/backend/teacher/findall?teacherId="+jspTeacherId;
 
         try {
 
             String teacherJson = jsonUtil.loadJsonFromURL(url);
 
-            JsonObject json = (JsonObject)new JsonParser().parse(teacherJson);
+            Teacher teacher = jsonUtil.jsonToTeacher(teacherJson);
 
             System.out.println(teacherJson);
 
-            String userId = json.get("teacherId").toString().replace("\"", "");
-            String userName = json.get("teacherName").toString().replace("\"", "");
+            String userId = teacher.getTeacherId();
+            String userName = teacher.getTeacherName();
             String userLevel = "2";     // 教师等级为2
-            String birthday = json.get("birthday").toString().replace("\"", "");
-            String gender = json.get("gender").toString().replace("\"", "");
-            String email = json.get("email").toString().replace("\"", "");
-            String collegeId = json.get("collegeId").toString();
-            String portrait = json.get("portrait").toString().replace("\"", "");
+            String birthday = simpleDateFormat.format(teacher.getBirthday());
+            String gender = teacher.getGender();
+            String email = teacher.getEmail();
+            int collegeId = teacher.getCollegeId();
+            String portrait = teacher.getPortrait();
 
             System.out.println(collegeId);
 

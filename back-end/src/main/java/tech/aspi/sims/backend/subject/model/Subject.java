@@ -1,13 +1,16 @@
 package tech.aspi.sims.backend.subject.model;
 
+import tech.aspi.sims.backend.score.model.Score;
+
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "subject")
 public class Subject {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "subject_id")
     private int subjectId;
 

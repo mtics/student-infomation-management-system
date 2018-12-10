@@ -44,7 +44,7 @@ public class UserService {
     }
 
     @Transactional
-    public List<User> queryByUserLevel(int user_level){
+    public Iterable<User> queryByUserLevel(int user_level){
         return userRepository.queryByUserLevel(user_level);
     }
 }

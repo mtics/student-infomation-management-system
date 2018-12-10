@@ -41,6 +41,15 @@
         }
     }
 
+    String updateInfoUrl = null;
+    if(userLevel ==1){
+        updateInfoUrl = "/servlet/user/passwd/update?studentId="+userName;
+    }else{
+        updateInfoUrl = "/servlet/teacher/info?teacherId="+userName;
+    }
+
+    String updatePasswdUrl = "user/form_user_passwd.jsp";
+
 %>
 <body>
 <div id="container">
@@ -65,7 +74,7 @@
                 <li class="nav-li current">
                     <a href="javascript:;" class="ue-clear"><i class="nav-ivon"></i><span class="nav-text">用户信息设置</span></a>
                     <ul class="subnav">
-                        <li class="subnav-li current" href="index.html" data-id="1"><a href="javascript:;" class="ue-clear"><i class="subnav-icon"></i><span class="subnav-text">首页</span></a></li>
+                        <li class="subnav-li current" href="main.jsp" data-id="1"><a href="javascript:;" class="ue-clear"><i class="subnav-icon"></i><span class="subnav-text">首页</span></a></li>
                         <%  // 若用户等级不为学生，则允许添加新用户、查看学生列表
                             if(userLevel != 1){
                         %>
@@ -79,24 +88,25 @@
                                 }
                             }
                         %>
+                        <li class="subnav-li current" href="<%=updateInfoUrl%>" data-id="8"><a href="javascript:;" class="ue-clear"><i class="subnav-icon"></i><span class="subnav-text">修改信息</span></a></li>
+                        <li class="subnav-li current" href="<%=updatePasswdUrl%>" data-id="9"><a href="javascript:;" class="ue-clear"><i class="subnav-icon"></i><span class="subnav-text">修改密码</span></a></li>
                     </ul>
                 </li>
-                <li class="nav-li">
-                    <a href="javascript:;" class="ue-clear"><i class="nav-ivon"></i><span class="nav-text">工作安排</span></a>
-                    <ul class="subnav">
-                        <li class="subnav-li" data-id="5"><a href="javascript:;" class="ue-clear"><i class="subnav-icon"></i><span class="subnav-text">工作安排查询1</span></a></li>
-                        <li class="subnav-li" data-id="6"><a href="javascript:;" class="ue-clear"><i class="subnav-icon"></i><span class="subnav-text">安排管理1</span></a></li>
-                        <li class="subnav-li" data-id="7"><a href="javascript:;" class="ue-clear"><i class="subnav-icon"></i><span class="subnav-text">类型选择1</span></a></li>
-                    </ul>
-                </li>
-                <li class="nav-li last-nav-li">
-                    <a href="javascript:;" class="ue-clear"><i class="nav-ivon"></i><span class="nav-text">数据管理</span></a>
-                    <ul class="subnav">
-                        <li class="subnav-li" data-id="12"><a href="javascript:;" class="ue-clear"><i class="subnav-icon"></i><span class="subnav-text">工作安排查询2</span></a></li>
-                        <li class="subnav-li" data-id="13"><a href="javascript:;" class="ue-clear"><i class="subnav-icon"></i><span class="subnav-text">安排管理2</span></a></li>
-                        <li class="subnav-li" data-id="14"><a href="javascript:;" class="ue-clear"><i class="subnav-icon"></i><span class="subnav-text">类型选择2</span></a></li>
-                    </ul>
-                </li>
+
+                <%
+                    if(userLevel == 1){
+                %>
+                    <li class="nav-li">
+                        <a href="javascript:;" class="ue-clear"><i class="nav-ivon"></i><span class="nav-text">成绩管理</span></a>
+                        <ul class="subnav">
+                            <li class="subnav-li"  href="/servlet/score/query?student_id=<%=userName%>" data-id="5"><a href="javascript:;" class="ue-clear"><i class="subnav-icon"></i><span class="subnav-text">成绩查询</span></a></li>
+
+                        </ul>
+                    </li>
+                <%
+                    }
+                %>
+
             </ul>
             <div class="tree-list outwindow">
                 <div class="tree ztree"></div>

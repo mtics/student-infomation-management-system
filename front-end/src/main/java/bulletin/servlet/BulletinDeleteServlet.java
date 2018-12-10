@@ -26,7 +26,7 @@ public class BulletinDeleteServlet extends HttpServlet {
         boolean isSuccess = false;
 
         // 提交数据URL
-        String url = "http://server.aspi.tech:8080/backend/bulletin/deletebyid?bull_id=";
+        String url = "http://server.aspi.tech:8080/backend/bulletin/deletebyid?bullId=";
 
         response.setContentType( "text/plain;charset=UTF-8" );
         // 设置跨域请求头

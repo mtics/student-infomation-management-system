@@ -150,105 +150,133 @@
     // 但没办法，就先这样用吧
     // 找到合适的解决办法再修改
     oper[0] = [{label:'删除',onclick:function(){
-            alert(0);
             var url = "/servlet/student/delete?studentId="+student_json[0].studentId;
-            alert(url);
-            if(confirm("确认删除该公告吗？")){
+            if(confirm("确认删除该学生吗？")){
                 window.location.href=url;
             }
-        }},{label:'编辑',onclick: function(){
-            var url = "/servlet/student/info?studentId="+student_json[0].studentId;
-            alert(url);
+        }},{label:'编辑',onclick: function() {
+            var url = "/servlet/student/info?studentId=" + student_json[0].studentId;
+            window.location.href = url;
+        }},{label:'录入成绩',onclick: function(){
+            var url = "/servlet/subject/list?studentId="+student_json[0].studentId;
+            url += "&majorId="+student_json[0].majorId;
             window.location.href=url;
         }}];
     oper[1] = [{label:'删除',onclick:function(){
             var url = "/servlet/student/delete?studentId="+student_json[1].studentId;
-            alert(url);
-            if(confirm("确认删除该公告吗？")){
+            if(confirm("确认删除该学生吗？")){
                 window.location.href=url;
             }
-        }},{label:'编辑',onclick: function(){
-            var url = "/servlet/student/info?studentId="+student_json[1].studentId;
+        }},{label:'编辑',onclick: function() {
+            var url = "/servlet/student/info?studentId=" + student_json[1].studentId;
+            window.location.href = url;
+        }},{label:'录入成绩',onclick: function(){
+            var url = "/servlet/subject/list?studentId="+student_json[1].studentId;
+            url += "&majorId="+student_json[1].majorId;
             window.location.href=url;
         }}];
     oper[2] = [{label:'删除',onclick:function(){
             var url = "/servlet/student/delete?studentId="+student_json[2].studentId;
-            alert(url);
-            if(confirm("确认删除该公告吗？")){
+            if(confirm("确认删除该学生吗？")){
                 window.location.href=url;
             }
-        }},{label:'编辑',onclick: function(){
-            var url = "/servlet/student/info?studentId="+student_json[2].studentId;
+        }},{label:'编辑',onclick: function() {
+            var url = "/servlet/student/info?studentId=" + student_json[2].studentId;
+            window.location.href = url;
+        }},{label:'录入成绩',onclick: function(){
+            var url = "/servlet/subject/list?studentId="+student_json[2].studentId;
+            url += "&majorId="+student_json[2].majorId;
             window.location.href=url;
         }}];
     oper[3] = [{label:'删除',onclick:function(){
             var url = "/servlet/student/delete?studentId="+student_json[3].studentId;
-            alert(url);
-            if(confirm("确认删除该公告吗？")){
+            if(confirm("确认删除该学生吗？")){
                 window.location.href=url;
             }
-        }},{label:'编辑',onclick: function(){
-            var url = "/servlet/student/info?studentId="+student_json[3].studentId;
+        }},{label:'编辑',onclick: function() {
+            var url = "/servlet/student/info?studentId=" + student_json[3].studentId;
+            window.location.href = url;
+        }},{label:'录入成绩',onclick: function(){
+            var url = "/servlet/subject/list?studentId="+student_json[3].studentId;
+            url += "&majorId="+student_json[3].majorId;
             window.location.href=url;
         }}];
     oper[4] = [{label:'删除',onclick:function(){
             var url = "/servlet/student/delete?studentId="+student_json[4].studentId;
-            alert(url);
-            if(confirm("确认删除该公告吗？")){
+            if(confirm("确认删除该学生吗？")){
                 window.location.href=url;
             }
-        }},{label:'编辑',onclick: function(){
-            var url = "/servlet/student/info?studentId="+student_json[4].studentId;
+        }},{label:'编辑',onclick: function() {
+            var url = "/servlet/student/info?studentId=" + student_json[4].studentId;
+            window.location.href = url;
+        }},{label:'录入成绩',onclick: function(){
+            var url = "/servlet/subject/list?studentId="+student_json[4].studentId;
+            url += "&majorId="+student_json[4].majorId;
             window.location.href=url;
         }}];
     oper[5] = [{label:'删除',onclick:function(){
             var url = "/servlet/student/delete?studentId="+student_json[5].studentId;
-            alert(url);
-            if(confirm("确认删除该公告吗？")){
+            if(confirm("确认删除该学生吗？")){
                 window.location.href=url;
             }
-        }},{label:'编辑',onclick: function(){
-            var url = "/servlet/student/info?studentId="+student_json[5].studentId;
+        }},{label:'编辑',onclick: function() {
+            var url = "/servlet/student/info?studentId=" + student_json[5].studentId;
+            window.location.href = url;
+        }},{label:'录入成绩',onclick: function(){
+            var url = "/servlet/subject/list?studentId="+student_json[5].studentId;
+            url += "&majorId="+student_json[5].majorId;
             window.location.href=url;
         }}];
     oper[6] = [{label:'删除',onclick:function(){
             var url = "/servlet/student/delete?studentId="+student_json[6].studentId;
-            alert(url);
-            if(confirm("确认删除该公告吗？")){
+            if(confirm("确认删除该学生吗？")){
                 window.location.href=url;
             }
-        }},{label:'编辑',onclick: function(){
-            var url = "/servlet/student/info?studentId="+student_json[6].studentId;
+        }},{label:'编辑',onclick: function() {
+            var url = "/servlet/student/info?studentId=" + student_json[6].studentId;
+            window.location.href = url;
+        }},{label:'录入成绩',onclick: function(){
+            var url = "/servlet/subject/list?studentId="+student_json[6].studentId;
+            url += "&majorId="+student_json[6].majorId;
             window.location.href=url;
         }}];
     oper[7] = [{label:'删除',onclick:function(){
             var url = "/servlet/student/delete?studentId="+student_json[7].studentId;
-            alert(url);
-            if(confirm("确认删除该公告吗？")){
+            if(confirm("确认删除该学生吗？")){
                 window.location.href=url;
             }
-        }},{label:'编辑',onclick: function(){
-            var url = "/servlet/student/info?studentId="+student_json[7].studentId;
+        }},{label:'编辑',onclick: function() {
+            var url = "/servlet/student/info?studentId=" + student_json[7].studentId;
+            window.location.href = url;
+        }},{label:'录入成绩',onclick: function(){
+            var url = "/servlet/subject/list?studentId="+student_json[7].studentId;
+            url += "&majorId="+student_json[7].majorId;
             window.location.href=url;
         }}];
     oper[8] = [{label:'删除',onclick:function(){
             var url = "/servlet/student/delete?studentId="+student_json[8].studentId;
-            alert(url);
-            if(confirm("确认删除该公告吗？")){
+            if(confirm("确认删除该学生吗？")){
                 window.location.href=url;
             }
-        }},{label:'编辑',onclick: function(){
-            var url = "/servlet/student/info?studentId="+student_json[8].studentId;
+        }},{label:'编辑',onclick: function() {
+            var url = "/servlet/student/info?studentId=" + student_json[8].studentId;
+            window.location.href = url;
+        }},{label:'录入成绩',onclick: function(){
+            var url = "/servlet/subject/list?studentId="+student_json[8].studentId;
+            url += "&majorId="+student_json[8].majorId;
             window.location.href=url;
         }}];
     oper[9] = [{label:'删除',onclick:function(){
             var url = "/servlet/student/delete?studentId="+student_json[9].studentId;
-            alert(url);
-            if(confirm("确认删除该公告吗？")){
+            if(confirm("确认删除该学生吗？")){
                 window.location.href=url;
             }
-        }},{label:'编辑',onclick: function(){
-            var url = "/servlet/student/info?studentId="+student_json[9].studentId;
+        }},{label:'编辑',onclick: function() {
+            var url = "/servlet/student/info?studentId=" + student_json[9].studentId;
+            window.location.href = url;
+        }},{label:'录入成绩',onclick: function(){
+            var url = "/servlet/subject/list?studentId="+student_json[9].studentId;
+            url += "&majorId="+student_json[9].majorId;
             window.location.href=url;
         }}];
 

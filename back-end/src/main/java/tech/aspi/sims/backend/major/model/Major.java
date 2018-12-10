@@ -7,7 +7,7 @@ import javax.persistence.*;
 public class Major {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "major_id")
     private String majorId;
 

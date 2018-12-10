@@ -70,12 +70,10 @@ public class StudentListFrashServlet extends HttpServlet {
         if (isExistSearchStudentId || isExistBirthday || isExistSearchPhone ||
                 isExistSearchStudentName || isExistSearchGender || isExistBirthday) {
 
-            url = "http://server.aspi.tech:8080/backend/student/findallbyparams?";
-
             // 因为不确定哪个条件是存在的，所以之前每个都会加"&"
             // 因此最后就需要添加一个恒成立条件"1=1"
             // 在没有条件的情况下，与"/findall"等价
-            url += tempParams + "1=1";
+            url += "?"+tempParams + "1=1";
 
         }
 

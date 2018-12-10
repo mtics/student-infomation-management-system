@@ -3,41 +3,45 @@ package student.servlet;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import common.util.JsonUtil;
+import student.entity.Student;
+import teacher.entity.Teacher;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 
 public class StudentInfoServlet extends HttpServlet {
 
     private JsonUtil jsonUtil = new JsonUtil();
+
+    private SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         String jspStudentId = request.getParameter("studentId");
 
-        String url = "http://server.aspi.tech:8080/backend/student/findbyid?studentId="+jspStudentId;
+        String url = "http://server.aspi.tech:8080/backend/student/findall?studentId="+jspStudentId;
 
         try {
 
             String studentJson = jsonUtil.loadJsonFromURL(url);
 
-            JsonObject json = (JsonObject)new JsonParser().parse(studentJson);
+            Student student = jsonUtil.jsonToStudent(studentJson);
 
             System.out.println(studentJson);
 
-            String userId = json.get("studentId").toString().replace("\"", "");
-            String userName = json.get("studentName").toString().replace("\"", "");
-            String userLevel = "1";     // 学生等级为1
-            String birthday = json.get("birthday").toString().replace("\"", "");
-            String gender = json.get("gender").toString().replace("\"", "");
-            String email = json.get("email").toString().replace("\"", "");
-            String majorId = json.get("majorId").toString();
-            String portrait = json.get("portrait").toString().replace("\"", "");
-
+            String userId = student.getStudentId();
+            String userName = student.getStudentName();
+            String userLevel = "2";     // 教师等级为2
+            String birthday = simpleDateFormat.format(student.getBirthday());
+            String gender = student.getGender();
+            String email = student.getEmail();
+            int majorId = student.getMajorId();
+            String portrait = student.getPortrait();
             System.out.println(majorId);
 
             // 将获得的公告添加到session中

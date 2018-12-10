@@ -67,9 +67,6 @@ public class UploadThread extends Thread {
             // 异步,等待传输结束（如果想同步的等待上传结束，则调用 waitForCompletion）
             UploadResult uploadResult = upload.waitForUploadResult();
 
-            System.out.println("上传结束时间: " + sdf.format(new Date()));
-            System.out.println("上传成功！");
-
             // 获取上传成功之后文件的下载地址
             url = cosUtil.getCosClient().generatePresignedUrl(CosConstant.getBucketName(), CosConstant.getSecretKey(),
                     new Date(new Date().getTime() + 5 * 60 * 10000));

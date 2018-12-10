@@ -148,7 +148,7 @@
     }
 
     function goToFindPasswd() {
-        window.location.href = "findpasswd.jsp";
+        window.location.href = "/user/findpasswd.jsp";
     }
 </script>
 

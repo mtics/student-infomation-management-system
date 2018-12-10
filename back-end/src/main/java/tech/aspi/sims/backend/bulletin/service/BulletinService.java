@@ -43,17 +43,6 @@ public class BulletinService {
         bulletinRepository.deleteById(bull_id);
     }
 
-    // 查询数据
-    @Transactional
-    public Iterable<Bulletin> findAll() {
-        return bulletinRepository.findAll();
-    }
-
-    @Transactional
-    public Optional<Bulletin> findById(int bull_id){
-        return bulletinRepository.findById(bull_id);
-    }
-
     // 通过部分内容模糊查询数据
     @Transactional
     public List<Bulletin> findAllByParams(final Bulletin bulletinParams) {
@@ -66,7 +55,7 @@ public class BulletinService {
 
                 // 如果有bulletinId，那就把它算上
                 if(bulletinParams.getBulletinId()!=0){
-                    predicates.add(criteriaBuilder.equal(root.get("bulletinId").as(Integer.class), bulletinParams.getBulletinId()));
+                    predicates.add(criteriaBuilder.equal(root.get("bulletinId").as(String.class), bulletinParams.getBulletinId()));
                 }
                 // 如果有bulletinTitle，那就把它算上
                 if(bulletinParams.getBulletinTitle()!=null&&!StringUtils.isEmptyOrWhitespaceOnly(bulletinParams.getBulletinTitle())){

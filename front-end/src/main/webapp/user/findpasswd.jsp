@@ -5,10 +5,10 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=emulateIE7" />
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
-    <link rel="stylesheet" type="text/css" href="css/skin_/login.css" />
-    <script type="text/javascript" src="js/jquery.js"></script>
-    <script type="text/javascript" src="js/jquery.select.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+    <link rel="stylesheet" type="text/css" href="../css/skin_/login.css" />
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/jquery.select.js"></script>
     <title>密码找回</title>
 </head>
 
@@ -19,7 +19,7 @@
             <div class="login-box">
                 <div id="logo"></div>
                 <h1></h1>
-                <form id="form_find_passwd" action="/servlet/findPasswd" method="post" onsubmit="return Validate(this)">
+                <form id="form_find_passwd" action="/servlet/passwd/find" method="post" onsubmit="return Validate(this)">
                     <div class="input username" id="username" style="top: 245px">
                         <label>用户名</label>
                         <span></span>

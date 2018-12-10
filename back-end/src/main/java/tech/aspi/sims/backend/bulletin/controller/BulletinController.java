@@ -27,22 +27,12 @@ public class BulletinController {
     }
 
     @PostMapping("/deletebyid")
-    public String deleteById(int bull_id){
-        bulletinService.deleteById(bull_id);
+    public String deleteById(int bullId){
+        bulletinService.deleteById(bullId);
         return "SUCCESS";
     }
 
     @GetMapping("/findall")
-    public Iterable<Bulletin> findAll(){
-        return bulletinService.findAll();
-    }
-
-    @GetMapping("/findbyid")
-    public Optional<Bulletin> findById(int bull_id){
-        return bulletinService.findById(bull_id);
-    }
-
-    @GetMapping("/findallbyparams")
     public List<Bulletin> findAllByParams(Bulletin bulletin){
         return bulletinService.findAllByParams(bulletin);
     }
