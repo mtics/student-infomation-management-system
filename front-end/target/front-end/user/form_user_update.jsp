@@ -35,7 +35,7 @@
     <div id="bd">
         <div id="main">
             <h2 class="subfild">
-                <span>公告信息</span>
+                <span>信息修改</span>
             </h2>
             <form id="form_user" action="/servlet/user/insert" method="post" onsubmit="return Validate(this)" enctype="multipart/form-data">
                 <input type="text" style="display: none" name="text_user_id" value="<%=session.getAttribute("user_id")%>"/>

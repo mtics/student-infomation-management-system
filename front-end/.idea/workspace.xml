@@ -11,15 +11,9 @@
   <component name="ChangeListManager">
     <list default="true" id="b5f6cda4-be1e-4c5d-80e6-32a6bcaefc2c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bulletin/servlet/BulletinInfoServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bulletin/servlet/BulletinInfoServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/user/servlet/UserPasswdUpdateServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/user/servlet/UserPasswdUpdateServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/bulletin/table_bulletin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/bulletin/table_bulletin.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/nav.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/nav.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/nav.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/user/form_user.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/user/form_user.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/user/table_student.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/user/table_student.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/user/servlet/UserPasswdFindServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/user/servlet/UserPasswdFindServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/user/form_user_update.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/user/form_user_update.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/front-end.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/front-end.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/front-end/nav.html" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -119,7 +113,7 @@
     <session id="453618133">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="16" />
+          <entry key="project.closed" value="17" />
           <entry key="project.open.time.0" value="9" />
           <entry key="project.open.time.1" value="3" />
           <entry key="project.open.time.12" value="1" />
@@ -140,8 +134,8 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="6" />
-          <entry key="JAVA" value="10577" />
-          <entry key="JSP" value="5950" />
+          <entry key="JAVA" value="10753" />
+          <entry key="JSP" value="5952" />
           <entry key="PLAIN_TEXT" value="52" />
           <entry key="XML" value="315" />
         </counts>
@@ -159,8 +153,8 @@
           <entry key="CLASS" value="1" />
           <entry key="CSS" value="4" />
           <entry key="HTML" value="8" />
-          <entry key="JAVA" value="169" />
-          <entry key="JSP" value="69" />
+          <entry key="JAVA" value="170" />
+          <entry key="JSP" value="70" />
           <entry key="JavaScript" value="4" />
           <entry key="PLAIN_TEXT" value="1" />
           <entry key="XML" value="15" />
@@ -175,6 +169,15 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="177">
               <caret line="261" column="44" lean-forward="true" selection-start-line="261" selection-start-column="44" selection-end-line="261" selection-end-column="44" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/user/form_user_update.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="468">
+              <caret line="37" column="26" selection-start-line="37" selection-start-column="26" selection-end-line="37" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -198,27 +201,6 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/main.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="251">
-              <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="54" column="17" lean-forward="true" selection-start-line="54" selection-start-column="17" selection-end-line="54" selection-end-column="17" />
-              <folding>
-                <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/bulletin/servlet/BulletinInfoServlet.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="251">
@@ -227,11 +209,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/nav.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="353">
-              <caret line="45" column="41" selection-start-line="45" selection-start-column="41" selection-end-line="45" selection-end-column="41" />
+            <state relative-caret-position="221">
+              <caret line="39" column="13" lean-forward="true" selection-start-line="39" selection-start-column="13" selection-end-line="39" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/user/servlet/UserPasswdFindServlet.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="352">
+              <caret line="71" column="13" selection-start-line="71" selection-start-column="13" selection-end-line="71" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -329,9 +320,7 @@
         <option value="$PROJECT_DIR$/src/main/java/student/entity/Student.java" />
         <option value="$PROJECT_DIR$/src/main/java/teacher/entity/Teacher.java" />
         <option value="$PROJECT_DIR$/src/main/java/common/servlet/VerificationServlet.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/user/form_user_update.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/user/table_teacher.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/user/servlet/UserPasswdFindServlet.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/findpasswd.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/subject/Score.java" />
         <option value="$PROJECT_DIR$/src/main/java/subject/Subject.java" />
@@ -367,6 +356,8 @@
         <option value="$PROJECT_DIR$/src/main/java/user/servlet/UserPasswdUpdateServlet.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/bulletin/table_bulletin.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/nav.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/user/servlet/UserPasswdFindServlet.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/user/form_user_update.jsp" />
       </list>
     </option>
   </component>
@@ -508,7 +499,7 @@
     <property name="SearchEverywhereHistoryKey" value="current_page&#9;null&#9;null" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544405860753" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544423634084" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../jsp_studentsystem" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -709,18 +700,18 @@
       <workItem from="1544265548443" duration="6982000" />
       <workItem from="1544349480951" duration="4950000" />
       <workItem from="1544354771006" duration="1858000" />
-      <workItem from="1544358700278" duration="17376000" />
+      <workItem from="1544358700278" duration="20464000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="226676000" />
+    <option name="totallyTimeSpent" value="229764000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-6" width="1855" height="1086" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22437674" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22437674" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -730,7 +721,7 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32947367" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.36105263" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.36105263" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -793,17 +784,16 @@
           <properties />
           <option name="timeStamp" value="42" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/user/servlet/UserPasswdFindServlet.java</url>
+          <line>51</line>
+          <properties />
+          <option name="timeStamp" value="43" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/bulletin/servlet/BulletinDeleteServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="46" lean-forward="true" selection-start-line="46" selection-end-line="46" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/student/servlet/StudentDeleteServlet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="660">
@@ -842,13 +832,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/user/form_user_update.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="534">
-          <caret line="40" column="66" selection-start-line="40" selection-end-line="41" />
         </state>
       </provider>
     </entry>
@@ -1201,8 +1184,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/nav.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="353">
-          <caret line="45" column="41" selection-start-line="45" selection-start-column="41" selection-end-line="45" selection-end-column="41" />
+        <state relative-caret-position="221">
+          <caret line="39" column="13" lean-forward="true" selection-start-line="39" selection-start-column="13" selection-end-line="39" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/user/servlet/UserPasswdFindServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="71" column="13" selection-start-line="71" selection-start-column="13" selection-end-line="71" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/user/form_user_update.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="468">
+          <caret line="37" column="26" selection-start-line="37" selection-start-column="26" selection-end-line="37" selection-end-column="26" />
         </state>
       </provider>
     </entry>

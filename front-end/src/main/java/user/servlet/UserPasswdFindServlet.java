@@ -4,6 +4,9 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import common.util.JsonUtil;
 import email.entity.Email;
+import net.sf.json.JSONArray;
+import student.entity.Student;
+import teacher.entity.Teacher;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -11,6 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 
 public class UserPasswdFindServlet extends HttpServlet {
 
@@ -28,7 +32,7 @@ public class UserPasswdFindServlet extends HttpServlet {
 
         String jspUserId = request.getParameter("text_username");
 
-        String findUserUrl = "http://server.aspi.tech:8080/backend/user/findbyid?user_id="+jspUserId;
+        String findUserUrl = "http://server.aspi.tech:8080/backend/user/findbyid?userId="+jspUserId;
 
         PrintWriter printWriter = response.getWriter();
 
@@ -49,14 +53,23 @@ public class UserPasswdFindServlet extends HttpServlet {
 
             // 接下来找到用户的邮箱地址
             if(jspUserId.length() == 11){
-                findUserUrl = "http://server.aspi.tech:8080/backend/student/findbyid?studentId="+jspUserId;
+                findUserUrl = "http://server.aspi.tech:8080/backend/student/findall?studentId="+jspUserId;
             }else{
-                findUserUrl = "http://server.aspi.tech:8080/backend/teacher/findbyid?teacherId="+jspUserId;
+                findUserUrl = "http://server.aspi.tech:8080/backend/teacher/findall?teacherId="+jspUserId;
             }
 
             jsonStr = jsonUtil.loadJsonFromURL(findUserUrl);
-            json = (JsonObject)new JsonParser().parse(jsonStr);
-            String emailAddress = json.get("email").toString().replace("\"", "");
+
+            String emailAddress;
+
+
+            if(jspUserId.length() == 11){
+                List<Student> studentList = jsonUtil.jsonToStudentList(jsonStr);
+                emailAddress = studentList.get(0).getEmail();
+            }else{
+                List<Teacher> teacherList = jsonUtil.jsonToTeacherList(jsonStr);
+                emailAddress = teacherList.get(0).getEmail();
+            }
 
             // 模拟邮箱发送
             // 设置收件地址
