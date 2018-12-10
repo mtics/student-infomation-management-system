@@ -43,12 +43,12 @@
 
     String updateInfoUrl = null;
     if(userLevel ==1){
-        updateInfoUrl = "/servlet/user/passwd/update?studentId="+userName;
+        updateInfoUrl = "/servlet/student/info?studentId="+userName;
     }else{
         updateInfoUrl = "/servlet/teacher/info?teacherId="+userName;
     }
 
-    String updatePasswdUrl = "user/form_user_passwd.jsp";
+    String updatePasswdUrl = "/user/form_user_passwd.jsp";
 
 %>
 <body>
@@ -64,11 +64,11 @@
                         <%  // 若用户等级不为学生，则允许发布新公告
                             if(userLevel != 1){
                             %>
-                                <li class="subnav-li" href="bulletin/form_bulletin.jsp" data-id="9"><a href="javascript:;" class="ue-clear"><i class="subnav-icon"></i><span class="subnav-text">发布公告</span></a></li>
+                                <li class="subnav-li" href="/bulletin/form_bulletin.jsp" data-id="10"><a href="javascript:;" class="ue-clear"><i class="subnav-icon"></i><span class="subnav-text">发布公告</span></a></li>
                             <%
                             }
                         %>
-                        <li class="subnav-li" href="/servlet/bulletin/list" data-id="10"><a href="javascript:;" class="ue-clear"><i class="subnav-icon"></i><span class="subnav-text">公告记录</span></a></li>
+                        <li class="subnav-li" href="/servlet/bulletin/list" data-id="11"><a href="javascript:;" class="ue-clear"><i class="subnav-icon"></i><span class="subnav-text">公告记录</span></a></li>
                     </ul>
                 </li>
                 <li class="nav-li current">

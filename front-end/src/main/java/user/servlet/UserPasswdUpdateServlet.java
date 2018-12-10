@@ -48,11 +48,8 @@ public class UserPasswdUpdateServlet extends HttpServlet {
             isSuccess = clientUtil.sendPost(url.toString());
 
             if(isSuccess){
-                out.print("<script>alert('密码修改成功！')</script>");
-                out.print("<script>window.location.href='/user/form_user_passwd.jsp'</script>");
-                //response.sendRedirect ("/login.jsp") ;
+                response.sendRedirect ("/main.jsp") ;
             }else{
-
                 out.print("<script>alert('密码修改失败！')</script>");
                 out.print("<script>window.location.href='/user/form_user_passwd.jsp'</script>");
             }

@@ -57,10 +57,20 @@
                     <div class="kv-item ue-clear">
                         <label><span class="impInfo">*</span>身份</label>
                         <div class="kv-item-content">
-                            <select name="text_user_level">
-                                <option value="1" selected>学生</option>
-                                <option value="2">教师</option>
-                            </select>
+                    	<span class="choose">
+                            <span class="checkboxouter">
+                                <input type="radio" name="text_user_level" value="1" checked="checked"/>
+                                <span class="radio"></span>
+                            </span>
+                            <span class="text">学生</span>
+                        </span>
+                            <span class="choose">
+                            <span class="checkboxouter">
+                                <input type="radio" name="text_user_level" value="2"/>
+                                <span class="radio"></span>
+                            </span>
+                            <span class="text">教师</span>
+                        </span>
                         </div>
                     </div>
 

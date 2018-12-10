@@ -157,7 +157,7 @@
         }},{label:'编辑',onclick: function() {
             var url = "/servlet/student/info?studentId=" + student_json[0].studentId;
             window.location.href = url;
-        }},{label:'录入成绩',onclick: function(){
+        }},{label:'成绩',onclick: function(){
             var url = "/servlet/subject/list?studentId="+student_json[0].studentId;
             url += "&majorId="+student_json[0].majorId;
             window.location.href=url;
@@ -170,7 +170,7 @@
         }},{label:'编辑',onclick: function() {
             var url = "/servlet/student/info?studentId=" + student_json[1].studentId;
             window.location.href = url;
-        }},{label:'录入成绩',onclick: function(){
+        }},{label:'成绩',onclick: function(){
             var url = "/servlet/subject/list?studentId="+student_json[1].studentId;
             url += "&majorId="+student_json[1].majorId;
             window.location.href=url;
@@ -183,7 +183,7 @@
         }},{label:'编辑',onclick: function() {
             var url = "/servlet/student/info?studentId=" + student_json[2].studentId;
             window.location.href = url;
-        }},{label:'录入成绩',onclick: function(){
+        }},{label:'成绩',onclick: function(){
             var url = "/servlet/subject/list?studentId="+student_json[2].studentId;
             url += "&majorId="+student_json[2].majorId;
             window.location.href=url;
@@ -196,7 +196,7 @@
         }},{label:'编辑',onclick: function() {
             var url = "/servlet/student/info?studentId=" + student_json[3].studentId;
             window.location.href = url;
-        }},{label:'录入成绩',onclick: function(){
+        }},{label:'成绩',onclick: function(){
             var url = "/servlet/subject/list?studentId="+student_json[3].studentId;
             url += "&majorId="+student_json[3].majorId;
             window.location.href=url;
@@ -209,7 +209,7 @@
         }},{label:'编辑',onclick: function() {
             var url = "/servlet/student/info?studentId=" + student_json[4].studentId;
             window.location.href = url;
-        }},{label:'录入成绩',onclick: function(){
+        }},{label:'成绩',onclick: function(){
             var url = "/servlet/subject/list?studentId="+student_json[4].studentId;
             url += "&majorId="+student_json[4].majorId;
             window.location.href=url;
@@ -222,7 +222,7 @@
         }},{label:'编辑',onclick: function() {
             var url = "/servlet/student/info?studentId=" + student_json[5].studentId;
             window.location.href = url;
-        }},{label:'录入成绩',onclick: function(){
+        }},{label:'成绩',onclick: function(){
             var url = "/servlet/subject/list?studentId="+student_json[5].studentId;
             url += "&majorId="+student_json[5].majorId;
             window.location.href=url;
@@ -235,7 +235,7 @@
         }},{label:'编辑',onclick: function() {
             var url = "/servlet/student/info?studentId=" + student_json[6].studentId;
             window.location.href = url;
-        }},{label:'录入成绩',onclick: function(){
+        }},{label:'成绩',onclick: function(){
             var url = "/servlet/subject/list?studentId="+student_json[6].studentId;
             url += "&majorId="+student_json[6].majorId;
             window.location.href=url;
@@ -248,7 +248,7 @@
         }},{label:'编辑',onclick: function() {
             var url = "/servlet/student/info?studentId=" + student_json[7].studentId;
             window.location.href = url;
-        }},{label:'录入成绩',onclick: function(){
+        }},{label:'成绩',onclick: function(){
             var url = "/servlet/subject/list?studentId="+student_json[7].studentId;
             url += "&majorId="+student_json[7].majorId;
             window.location.href=url;
@@ -261,7 +261,7 @@
         }},{label:'编辑',onclick: function() {
             var url = "/servlet/student/info?studentId=" + student_json[8].studentId;
             window.location.href = url;
-        }},{label:'录入成绩',onclick: function(){
+        }},{label:'成绩',onclick: function(){
             var url = "/servlet/subject/list?studentId="+student_json[8].studentId;
             url += "&majorId="+student_json[8].majorId;
             window.location.href=url;
@@ -274,7 +274,7 @@
         }},{label:'编辑',onclick: function() {
             var url = "/servlet/student/info?studentId=" + student_json[9].studentId;
             window.location.href = url;
-        }},{label:'录入成绩',onclick: function(){
+        }},{label:'成绩',onclick: function(){
             var url = "/servlet/subject/list?studentId="+student_json[9].studentId;
             url += "&majorId="+student_json[9].majorId;
             window.location.href=url;

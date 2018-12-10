@@ -1,7 +1,9 @@
 package bulletin.servlet;
 
+import bulletin.entity.Bulletin;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+import net.sf.json.JSONArray;
 import page.dao.PageDaoImpl;
 import common.util.ClientUtil;
 import common.util.JsonUtil;
@@ -11,6 +13,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.List;
 
 public class BulletinInfoServlet extends HttpServlet {
 
@@ -33,13 +36,15 @@ public class BulletinInfoServlet extends HttpServlet {
 
             String bulletinJson = jsonUtil.loadJsonFromURL(url);
 
-            JsonObject json = (JsonObject)new JsonParser().parse(bulletinJson);
+            List<Bulletin> bulletins = jsonUtil.jsonToBulletinList(bulletinJson);
+
+            Bulletin bulletin = bulletins.get(0);
 
             System.out.println(bulletinJson);
 
-            String bulletinId = json.get("bulletinId").toString();
-            String bulletinTitle = json.get("bulletinTitle").toString().replace("\"", "");
-            String bulletinContext = json.get("bulletinContext").toString().replace("\"", "");
+            int bulletinId = bulletin.getBulletinId();
+            String bulletinTitle = bulletin.getBulletinTitle();
+            String bulletinContext = bulletin.getBulletinContext();
 
             // 将获得的公告添加到session中
             request.getSession().setAttribute("bulletin_id", bulletinId);

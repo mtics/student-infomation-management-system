@@ -1,5 +1,6 @@
 <%@ page import="bulletin.entity.Bulletin" %>
-<%@ page import="java.util.List" %><%--
+<%@ page import="java.util.List" %>
+<%@ page import="java.net.URLDecoder" %><%--
   Created by IntelliJ IDEA.
   User: incentancy
   Date: 18-11-20
@@ -22,7 +23,29 @@
 
     <title>表格</title>
 </head>
+<%
+    Cookie cookie = null;
+    String userName = null;
+    int userLevel = -1;
 
+    Cookie[] cookies = request.getCookies();
+
+    // 如果cookies中无值，则跳转到登录界面
+    if(cookies == null){
+%><script>window.location.href='/login.jsp'</script><%
+    }else{
+        for(int i = 0; i < cookies.length; i++){
+            cookie = cookies[i];
+
+            if(cookie.getName().equals("username")){
+                userName = URLDecoder.decode(cookie.getValue());
+            }else if (cookie.getName().equals("userlevel")){
+                userLevel = Integer.parseInt(URLDecoder.decode(cookie.getValue()));
+            }
+        }
+    }
+
+%>
 <body>
 <div id="container">
     <div id="hd"></div>
@@ -109,7 +132,7 @@
         name:'bulletin_title'
     },{
         label: '内容概要',
-        width: 400,
+        width: 850,
         name: 'bulletin_content'
     },{
         label: '发布者ID',
@@ -223,11 +246,32 @@
             window.location.href=url;
         }}];
 
+    <%
+        // 若用户不为学生，则允许修改公告
+        if(userLevel!=1){
+            %>
 
-    for(var i = 0; i < bulletin_json.length; i++){
-        tbody.push([bulletin_json[i].bulletinId,bulletin_json[i].bulletinTitle,
-            bulletin_json[i].bulletinContext,bulletin_json[i].userId,bulletin_json[i].publishedDate, oper[i]]);
-    }
+            for(var i = 0; i < bulletin_json.length; i++){
+                tbody.push([bulletin_json[i].bulletinId,bulletin_json[i].bulletinTitle,
+                    bulletin_json[i].bulletinContext,bulletin_json[i].userId,bulletin_json[i].publishedDate, oper[i]]);
+            }
+
+            <%
+        }else{
+
+            %>
+
+            for(var i = 0; i < bulletin_json.length; i++){
+                tbody.push([bulletin_json[i].bulletinId,bulletin_json[i].bulletinTitle,
+                    bulletin_json[i].bulletinContext,bulletin_json[i].userId,bulletin_json[i].publishedDate]);
+            }
+
+    <%
+
+}
+%>
+
+
 
     $('.grid').Grid({
         thead: head,
