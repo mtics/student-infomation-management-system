@@ -89,7 +89,7 @@
     }
 
     function reload(){
-        document.getElementById("image").src="/servlet/image?date="+new Date().getTime();
+        document.getElementById("image").src="/servladet/image?date="+new Date().getTime();
         $("#checkcode").val("");   // 将验证码清空
     }
 
